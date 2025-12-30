@@ -1,6 +1,7 @@
 // ===== ForgeMaster EXP Calculator =====
+// Data from official Forge Master Information spreadsheet (December 2025)
 
-// Probability data for each forge level (percentages)
+// Probability data for each forge level (as decimals from Excel)
 const forgeProbabilities = {
     1: { primitive: 100.00 },
     2: { primitive: 99.00, medieval: 1.00 },
@@ -37,6 +38,45 @@ const forgeProbabilities = {
     33: { multiverse: 28.50, quantum: 58.00, underworld: 13.00, divine: 0.50 },
     34: { multiverse: 12.00, quantum: 64.00, underworld: 23.00, divine: 1.00 },
     35: { quantum: 62.00, underworld: 36.00, divine: 2.00 }
+};
+
+// Forge upgrade costs and times from Excel
+const forgeUpgrades = {
+    1: { cost: 'Free', time: 'N/A', costValue: 0 },
+    2: { cost: '400', time: '5m', costValue: 400 },
+    3: { cost: '700', time: '15m', costValue: 700 },
+    4: { cost: '1.5k', time: '30m', costValue: 1500 },
+    5: { cost: '3.5k', time: '1h', costValue: 3500 },
+    6: { cost: '10k', time: '1h 59m', costValue: 10000 },
+    7: { cost: '25k', time: '7h 33m', costValue: 25000 },
+    8: { cost: '50k', time: '13h 6m', costValue: 50000 },
+    9: { cost: '99.9k (33.3k x 3)', time: '18h 39m', costValue: 99900 },
+    10: { cost: '150k (50k x 3)', time: '1d 13m', costValue: 150000 },
+    11: { cost: '249.9k (83.3k x 3)', time: '1d 11h', costValue: 249900 },
+    12: { cost: '336k (112k x 3)', time: '2d 1h', costValue: 336000 },
+    13: { cost: '452k (113k x 4)', time: '2d 17h', costValue: 452000 },
+    14: { cost: '612k (153k x 4)', time: '3d 13h', costValue: 612000 },
+    15: { cost: '830k (166k x 5)', time: '4d 11h', costValue: 830000 },
+    16: { cost: '1.12M (224k x 5)', time: '5d 9h', costValue: 1120000 },
+    17: { cost: '1.51M (252k x 6)', time: '6d 7h', costValue: 1510000 },
+    18: { cost: '2.04M (291k x 7)', time: '7d 6h', costValue: 2040000 },
+    19: { cost: '2.75M (344k x 8)', time: '8d 4h', costValue: 2750000 },
+    20: { cost: '3.7M (413k x 9)', time: '9d 2h', costValue: 3700000 },
+    21: { cost: '5.02M (502k x 10)', time: '10d 53m', costValue: 5020000 },
+    22: { cost: '6.78M (678k x 10)', time: '10d 23h', costValue: 6780000 },
+    23: { cost: '9.16M (916k x 10)', time: '11d 21h', costValue: 9160000 },
+    24: { cost: '12.3M (1.23M x 10)', time: '12d 19h', costValue: 12300000 },
+    25: { cost: '16.6M (1.66M x 10)', time: '13d 17h', costValue: 16600000 },
+    26: { cost: '20M (2M x 10)', time: '14d 15h', costValue: 20000000 },
+    27: { cost: '24M (2.4M x 10)', time: '15d 14h', costValue: 24000000 },
+    28: { cost: '28.8M (2.88M x 10)', time: '16d 12h', costValue: 28800000 },
+    29: { cost: '34.6M (3.46M x 10)', time: '17d 10h', costValue: 34600000 },
+    30: { cost: '41.5M (4.15M x 10)', time: '18d 8h', costValue: 41500000 },
+    31: { cost: '49.8M (4.98M x 10)', time: '19d 7h', costValue: 49800000 },
+    32: { cost: '59.8M (5.98M x 10)', time: '20d 5h', costValue: 59800000 },
+    33: { cost: '71.7M (7.17M x 10)', time: '21d 3h', costValue: 71700000 },
+    34: { cost: '86.1M (8.61M x 10)', time: '22d 1h', costValue: 86100000 },
+    35: { cost: '103M (10.3M x 10)', time: '23d', costValue: 103000000 }
 };
 
 // EXP values for each tier
@@ -107,7 +147,7 @@ function init() {
     populateForgeLevels();
     loadSavedLevel();
     setupEventListeners();
-    calculate(); // Initial calculation
+    calculate();
     registerServiceWorker();
 }
 
@@ -146,14 +186,10 @@ function saveLevelToStorage(level) {
 
 // Setup event listeners
 function setupEventListeners() {
-    // Mode toggle
     calcModeBtn.addEventListener('click', () => switchMode('calculate'));
     targetModeBtn.addEventListener('click', () => switchMode('target'));
-
-    // Calculate button
     calculateBtn.addEventListener('click', calculate);
 
-    // Input changes - auto calculate
     forgeLevelSelect.addEventListener('change', () => {
         saveLevelToStorage(forgeLevelSelect.value);
         calculate();
@@ -161,7 +197,6 @@ function setupEventListeners() {
     hammerCountInput.addEventListener('input', debounce(calculate, 300));
     targetExpInput.addEventListener('input', debounce(calculate, 300));
 
-    // Enter key triggers calculation
     hammerCountInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') calculate();
     });
@@ -187,23 +222,18 @@ function debounce(func, wait) {
 function switchMode(mode) {
     currentMode = mode;
 
-    // Update button states
     calcModeBtn.classList.toggle('active', mode === 'calculate');
     targetModeBtn.classList.toggle('active', mode === 'target');
 
-    // Show/hide appropriate input groups
     hammerInputGroup.classList.toggle('hidden', mode !== 'calculate');
     targetInputGroup.classList.toggle('hidden', mode !== 'target');
 
-    // Show/hide appropriate results
     calcResults.classList.toggle('hidden', mode !== 'calculate');
     targetResults.classList.toggle('hidden', mode !== 'target');
 
-    // Update button text
     calculateBtn.querySelector('.btn-text').textContent =
         mode === 'calculate' ? 'Calculate' : 'Find Hammers';
 
-    // Recalculate
     calculate();
 }
 
@@ -227,14 +257,12 @@ function calculate() {
     const expPerHammer = calculateExpPerHammer(level);
 
     if (currentMode === 'calculate') {
-        // Calculate mode: EXP from hammer count
         const hammerCount = parseInt(hammerCountInput.value) || 0;
         const totalExp = expPerHammer * hammerCount;
 
         expectedExpEl.textContent = formatNumber(totalExp);
         expPerHammerEl.textContent = expPerHammer.toFixed(4);
     } else {
-        // Target mode: Hammers needed for target EXP
         const targetExp = parseInt(targetExpInput.value) || 0;
         const hammersNeeded = Math.ceil(targetExp / expPerHammer);
         const expectedWithHammers = expPerHammer * hammersNeeded;
@@ -243,7 +271,6 @@ function calculate() {
         expectedWithRecommendedEl.textContent = formatNumber(expectedWithHammers);
     }
 
-    // Update probability breakdown
     updateProbabilityBreakdown(level);
 }
 

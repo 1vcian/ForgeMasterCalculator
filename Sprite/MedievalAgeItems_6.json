@@ -1,0 +1,350 @@
+{
+	"m_AtlasName": "",
+	"m_AtlasRD": {
+		"m_AlphaTexture": { "m_Collection": "ee919d6f0103c41b9a66c4daf656c32b", "m_PathID": 0 },
+		"m_AtlasRectOffset": {
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_Bindpose": [],
+		"m_DownscaleMultiplier": 0,
+		"m_IndexBuffer": "",
+		"m_SecondaryTextures": [],
+		"m_SettingsRaw": 0,
+		"m_SubMeshes": [],
+		"m_Texture": { "m_Collection": "ee919d6f0103c41b9a66c4daf656c32b", "m_PathID": 0 },
+		"m_TextureRect": {
+			"m_Height": 0,
+			"m_Width": 0,
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_TextureRectOffset": {
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_UvTransform": {
+			"m_W": 0,
+			"m_X": 0,
+			"m_Y": 0,
+			"m_Z": 0
+		},
+		"m_VertexData": {
+			"m_Channels": [],
+			"m_Data": "",
+			"m_VertexCount": 0
+		}
+	},
+	"m_AtlasTags": [],
+	"m_Bones": [],
+	"m_Border": {
+		"m_W": 0,
+		"m_X": 0,
+		"m_Y": 0,
+		"m_Z": 0
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "ee919d6f0103c41b9a66c4daf656c32b", "m_PathID": 0 },
+	"m_Extrude": 1,
+	"m_HideFlags": 0,
+	"m_IsPolygon": false,
+	"m_Name": "MedievalAgeItems_6",
+	"m_Offset": {
+		"m_X": 5.0961,
+		"m_Y": -148.53119
+	},
+	"m_PackingTag": "",
+	"m_PhysicsShape": [
+		[
+			{
+				"m_X": 0.19097818,
+				"m_Y": 0.19963397
+			},
+			{
+				"m_X": 0.19097818,
+				"m_Y": 0.40708077
+			},
+			{
+				"m_X": 0.18565904,
+				"m_Y": 0.41771907
+			},
+			{
+				"m_X": 0.09523351,
+				"m_Y": 0.47091058
+			},
+			{
+				"m_X": 0.08459521,
+				"m_Y": 0.66771907
+			},
+			{
+				"m_X": 0.068637766,
+				"m_Y": 0.8751659
+			},
+			{
+				"m_X": 0.06331862,
+				"m_Y": 0.9336765
+			},
+			{
+				"m_X": 0.04736117,
+				"m_Y": 1.093251
+			},
+			{
+				"m_X": -0.00051116943,
+				"m_Y": 1.5081446
+			},
+			{
+				"m_X": -0.032426063,
+				"m_Y": 1.6889956
+			},
+			{
+				"m_X": -0.06434096,
+				"m_Y": 1.8060169
+			},
+			{
+				"m_X": -0.07497925,
+				"m_Y": 1.811336
+			},
+			{
+				"m_X": -0.23987286,
+				"m_Y": 1.811336
+			},
+			{
+				"m_X": -0.245192,
+				"m_Y": 1.8060169
+			},
+			{
+				"m_X": -0.245192,
+				"m_Y": 1.7262297
+			},
+			{
+				"m_X": -0.20263882,
+				"m_Y": 1.4709105
+			},
+			{
+				"m_X": -0.16008563,
+				"m_Y": 1.1570808
+			},
+			{
+				"m_X": -0.12817074,
+				"m_Y": 0.90708077
+			},
+			{
+				"m_X": -0.10689414,
+				"m_Y": 0.6358042
+			},
+			{
+				"m_X": -0.101574995,
+				"m_Y": 0.5400595
+			},
+			{
+				"m_X": -0.17604308,
+				"m_Y": 0.4230382
+			},
+			{
+				"m_X": -0.20795797,
+				"m_Y": 0.38580418
+			},
+			{
+				"m_X": -0.20263882,
+				"m_Y": 0.21559143
+			},
+			{
+				"m_X": -0.18668137,
+				"m_Y": 0.18367653
+			},
+			{
+				"m_X": -0.10689414,
+				"m_Y": 0.17835738
+			},
+			{
+				"m_X": -0.101574995,
+				"m_Y": -0.20994048
+			},
+			{
+				"m_X": -0.08561755,
+				"m_Y": -0.23121707
+			},
+			{
+				"m_X": 0.08459521,
+				"m_Y": -0.23121707
+			},
+			{
+				"m_X": 0.09523351,
+				"m_Y": -0.22589792
+			},
+			{
+				"m_X": 0.100552656,
+				"m_Y": -0.20994048
+			},
+			{
+				"m_X": 0.16970159,
+				"m_Y": 0.18367653
+			}
+		]
+	],
+	"m_Pivot": {
+		"m_X": 0.56214756,
+		"m_Y": 0.11320003
+	},
+	"m_PixelsToUnits": 188,
+	"m_PrefabAsset": { "m_Collection": "ee919d6f0103c41b9a66c4daf656c32b", "m_PathID": 0 },
+	"m_PrefabInstance": { "m_Collection": "ee919d6f0103c41b9a66c4daf656c32b", "m_PathID": 0 },
+	"m_RD": {
+		"m_AlphaTexture": { "m_Collection": "ee919d6f0103c41b9a66c4daf656c32b", "m_PathID": 0 },
+		"m_AtlasRectOffset": {
+			"m_X": -1,
+			"m_Y": -1
+		},
+		"m_Bindpose": [],
+		"m_DownscaleMultiplier": 1,
+		"m_IndexBuffer": "AAABAAIAAgABAAMA",
+		"m_SecondaryTextures": [],
+		"m_SettingsRaw": 0,
+		"m_SubMeshes": [
+			{
+				"m_BaseVertex": 0,
+				"m_FirstByte": 0,
+				"m_FirstVertex": 0,
+				"m_IndexCount": 6,
+				"m_LocalAABB": {
+					"m_Center": {
+						"m_X": 0,
+						"m_Y": 0,
+						"m_Z": 0
+					},
+					"m_Extent": {
+						"m_X": 0,
+						"m_Y": 0,
+						"m_Z": 0
+					}
+				},
+				"m_Topology": 0,
+				"m_VertexCount": 4
+			}
+		],
+		"m_Texture": { "m_Collection": "ee919d6f0103c41b9a66c4daf656c32b", "m_PathID": 1 },
+		"m_TextureRect": {
+			"m_Height": 384,
+			"m_Width": 82,
+			"m_X": 230,
+			"m_Y": 475
+		},
+		"m_TextureRectOffset": {
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_UvTransform": {
+			"m_W": 518.4688,
+			"m_X": 188,
+			"m_Y": 276.0961,
+			"m_Z": 188
+		},
+		"m_VertexData": {
+			"m_Channels": [
+				{
+					"m_Dimension": 3,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 2,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 1
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				},
+				{
+					"m_Dimension": 0,
+					"m_Format": 0,
+					"m_Offset": 0,
+					"m_Stream": 0
+				}
+			],
+			"m_Data": "nhN7vt3Z5z8AAAAAyo9DPt3Z5z8AAAAAnhN7vizEbL4AAAAAyo9DPizEbL4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+			"m_VertexCount": 4
+		}
+	},
+	"m_Rect": {
+		"m_Height": 384,
+		"m_Width": 82,
+		"m_X": 230,
+		"m_Y": 475
+	},
+	"m_RenderDataKey": {
+		"Key": {
+			"m_Data_0_": 4141423086,
+			"m_Data_1_": 2974560272,
+			"m_Data_2_": 2907465385,
+			"m_Data_3_": 2990302575
+		},
+		"Value": -1973683003
+	},
+	"m_ScriptableObjects": [],
+	"m_SpriteAtlas": { "m_Collection": "ee919d6f0103c41b9a66c4daf656c32b", "m_PathID": 0 },
+	"m_SpriteID": ""
+}

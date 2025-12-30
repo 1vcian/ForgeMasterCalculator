@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Info - ForgeMaster Helper</title>
+    <meta name="description" content="ForgeMaster game information - Clans, War, Tech Tree, Pets, PvP and more">
+    <meta name="theme-color" content="#f59e0b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="icons/hammer.png">
+    <link rel="apple-touch-icon" href="icons/hammer.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="bg-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <a href="https://www.buymeacoffee.com/1vcian" target="_blank" rel="noopener noreferrer" class="coffee-overlay">
+            <svg class="coffee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                <path d="M6 1v3" />
+                <path d="M10 1v3" />
+                <path d="M14 1v3" />
+            </svg>
+            <span>Buy me a coffee</span>
+        </a>
+
+        <header class="header">
+            <div class="logo">
+                <img src="icons/hammer.png" alt="Hammer" class="logo-icon">
+                <h1>Game Info</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Forge EXP</a>
+                <a href="mounts.html" class="nav-link">Mounts</a>
+                <a href="eggs.html" class="nav-link">Eggs</a>
+                <a href="info.html" class="nav-link active">Info</a>
+            </nav>
+            <a href="https://github.com/1vcian/ForgeMasterCalculator" target="_blank" rel="noopener noreferrer"
+                class="github-link">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                Visit project
+            </a>
+            <p class="subtitle">Complete game reference guide</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Tab Navigation -->
+            <div class="tab-nav" id="tabNav">
+                <button class="tab-btn active" data-tab="war">War</button>
+                <button class="tab-btn" data-tab="clans">Clans</button>
+                <button class="tab-btn" data-tab="pets">Pets</button>
+                <button class="tab-btn" data-tab="techtree">Tech Tree</button>
+                <button class="tab-btn" data-tab="pvp">PvP</button>
+                <button class="tab-btn" data-tab="faq">FAQ</button>
+            </div>
+
+            <!-- War Tab -->
+            <div class="tab-content active" id="war">
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon timer"></span>
+                        War Schedule
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <p><span class="game-icon timer"></span> Wars start every <strong>Tuesday (UTC)</strong> and last for <strong>6 days</strong>, with a 24-hour cooldown period.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        Clan War Rewards
+                    </h3>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tier</th>
+                                    <th>Result</th>
+                                    <th><span class="game-icon hammer-icon"></span></th>
+                                    <th><span class="game-icon crown"></span></th>
+                                    <th><span class="game-icon ticket-green"></span></th>
+                                    <th><span class="game-icon key-orange"></span></th>
+                                    <th><span class="game-icon potion"></span></th>
+                                    <th><span class="game-icon winder"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tier-s" rowspan="2">S (≥25 pts)</td>
+                                    <td>Win</td>
+                                    <td>8.4k</td>
+                                    <td>280k</td>
+                                    <td>5.6k</td>
+                                    <td>22</td>
+                                    <td>4.2</td>
+                                    <td>2.29k</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss</td>
+                                    <td>4.2k</td>
+                                    <td>140k</td>
+                                    <td>2.8k</td>
+                                    <td>11</td>
+                                    <td>2.1</td>
+                                    <td>1.12k</td>
+                                </tr>
+                                <tr>
+                                    <td class="tier-a" rowspan="2">A (≥20 pts)</td>
+                                    <td>Win</td>
+                                    <td>5.9k</td>
+                                    <td>196k</td>
+                                    <td>4k</td>
+                                    <td>16</td>
+                                    <td>3k</td>
+                                    <td>1.55k</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss</td>
+                                    <td>3k</td>
+                                    <td>98k</td>
+                                    <td>2k</td>
+                                    <td>8</td>
+                                    <td>1.5k</td>
+                                    <td>780</td>
+                                </tr>
+                                <tr>
+                                    <td class="tier-b" rowspan="2">B (≥15 pts)</td>
+                                    <td>Win</td>
+                                    <td>4k</td>
+                                    <td>140k</td>
+                                    <td>2.8k</td>
+                                    <td>11</td>
+                                    <td>2k</td>
+                                    <td>1k</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss</td>
+                                    <td>2k</td>
+                                    <td>70k</td>
+                                    <td>1.4k</td>
+                                    <td>5</td>
+                                    <td>1k</td>
+                                    <td>550</td>
+                                </tr>
+                                <tr>
+                                    <td class="tier-c" rowspan="2">C (≥10 pts)</td>
+                                    <td>Win</td>
+                                    <td>2.9k</td>
+                                    <td>96k</td>
+                                    <td>1.9k</td>
+                                    <td>8</td>
+                                    <td>1.5k</td>
+                                    <td>750</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss</td>
+                                    <td>1.4k</td>
+                                    <td>48k</td>
+                                    <td>960</td>
+                                    <td>4</td>
+                                    <td>720</td>
+                                    <td>400</td>
+                                </tr>
+                                <tr>
+                                    <td class="tier-d" rowspan="2">D (≥5 pts)</td>
+                                    <td>Win</td>
+                                    <td>2k</td>
+                                    <td>67k</td>
+                                    <td>1.35k</td>
+                                    <td>5</td>
+                                    <td>1k</td>
+                                    <td>540</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss</td>
+                                    <td>1k</td>
+                                    <td>33k</td>
+                                    <td>670</td>
+                                    <td>3</td>
+                                    <td>500</td>
+                                    <td>270</td>
+                                </tr>
+                                <tr>
+                                    <td class="tier-e" rowspan="2">E (≥0 pts)</td>
+                                    <td>Win</td>
+                                    <td>1.4k</td>
+                                    <td>47k</td>
+                                    <td>950</td>
+                                    <td>4</td>
+                                    <td>700</td>
+                                    <td>380</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss</td>
+                                    <td>700</td>
+                                    <td>24k</td>
+                                    <td>470</td>
+                                    <td>2</td>
+                                    <td>350</td>
+                                    <td>190</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="info-note">
+                        <strong>Loss Penalties:</strong> Tier-S: -5 pts | Tier-A: -3 pts | Tier-B: -1 pt<br>
+                        <span class="game-icon hammer-icon"></span> = Hammers | 
+                        <span class="game-icon crown"></span> = Coins | 
+                        <span class="game-icon ticket-green"></span> = Green Tickets |
+                        <span class="game-icon key-orange"></span> = Egg Keys | 
+                        <span class="game-icon potion"></span> = Potions |
+                        <span class="game-icon winder"></span> = Winders
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        Individual War Rewards
+                    </h3>
+                    <div class="data-table scrollable">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Points</th>
+                                    <th><span class="game-icon hammer-icon"></span></th>
+                                    <th><span class="game-icon ticket-green"></span></th>
+                                    <th><span class="game-icon key-orange"></span></th>
+                                    <th><span class="game-icon crown"></span></th>
+                                    <th><span class="game-icon potion"></span></th>
+                                    <th><span class="game-icon winder"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>10k</td><td>100</td><td>60</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>20k</td><td>-</td><td>-</td><td>-</td><td>5k</td><td>70</td><td>35</td></tr>
+                                <tr><td>50k</td><td>140</td><td>84</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>75k</td><td>-</td><td>-</td><td>-</td><td>7k</td><td>98</td><td>50</td></tr>
+                                <tr><td>100k</td><td>200</td><td>118</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>150k</td><td>-</td><td>-</td><td>-</td><td>9.8k</td><td>137</td><td>70</td></tr>
+                                <tr><td>200k</td><td>280</td><td>165</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>250k</td><td>-</td><td>-</td><td>-</td><td>13.7k</td><td>192</td><td>100</td></tr>
+                                <tr><td>300k</td><td>380</td><td>230</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>350k</td><td>-</td><td>-</td><td>-</td><td>19k</td><td>269</td><td>140</td></tr>
+                                <tr><td>400k</td><td>550</td><td>323</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr><td>450k</td><td>-</td><td>-</td><td>-</td><td>27k</td><td>376</td><td>190</td></tr>
+                                <tr><td>500k</td><td>750</td><td>452</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr class="total-row"><td><strong>Total</strong></td><td>2.4k</td><td>1,432</td><td>7</td><td>81.5k</td><td>1,142</td><td>585</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="info-note">
+                        <span class="game-icon hammer-icon"></span> = Hammer | 
+                        <span class="game-icon ticket-green"></span> = Green Ticket | 
+                        <span class="game-icon key-orange"></span> = Egg Key | 
+                        <span class="game-icon crown"></span> = Coin |
+                        <span class="game-icon potion"></span> = Potion |
+                        <span class="game-icon winder"></span> = Winder
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon timer"></span>
+                        War Daily Actions
+                    </h3>
+                    <div class="war-day-grid">
+                        <div class="war-day">
+                            <h4><span class="game-icon timer"></span> Tuesday (1pt each)</h4>
+                            <ul>
+                                <li>Forge Primitive/Medieval/Early-Modern: 1pt each</li>
+                                <li>Forge Modern/Space/Interstellar: 2pts each</li>
+                                <li>Forge Underworld: 2pts</li>
+                                <li>Forge Multiverse/Quantum/Divine: 3pts each</li>
+                                <li>Tech Tree I: 300pts | II: 7.5k | III: 20k | IV: 35k | V: 62k</li>
+                                <li>Skill Upgrades: Common 50 → Mythic 175 pts</li>
+                            </ul>
+                        </div>
+                        <div class="war-day">
+                            <h4><span class="game-icon timer"></span> Wednesday (2pts)</h4>
+                            <ul>
+                                <li>Spend 1,000 Coins on Forge: 10pts</li>
+                                <li>Start/Complete Forge Upgrade: 10,000pts each</li>
+                                <li>Use Dungeon Key: 1,000pts</li>
+                                <li>Hatch Eggs: Common 250 → Mythic 16,000pts</li>
+                                <li>Merge Pets: Common 50 → Mythic 3,200pts</li>
+                            </ul>
+                        </div>
+                        <div class="war-day">
+                            <h4><span class="game-icon timer"></span> Thursday (2pts)</h4>
+                            <ul>
+                                <li>All Forge actions available</li>
+                                <li>Skill Upgrades: Common 50 → Mythic 175pts</li>
+                                <li>Mount Summons: Common 400 → Mythic 3,000pts</li>
+                            </ul>
+                        </div>
+                        <div class="war-day">
+                            <h4><span class="game-icon timer"></span> Friday (2pts)</h4>
+                            <ul>
+                                <li>Spend 1,000 Coins on Forge: 10pts</li>
+                                <li>Start/Complete Forge Upgrade: 10,000pts each</li>
+                                <li>Tech Tree upgrades (I-V)</li>
+                                <li>Hatch Eggs & Merge Pets</li>
+                            </ul>
+                        </div>
+                        <div class="war-day">
+                            <h4><span class="game-icon timer"></span> Saturday (2pts)</h4>
+                            <ul>
+                                <li>All Forge actions</li>
+                                <li>Use Dungeon Key: 1,000pts</li>
+                                <li>Mount Summons & Merges</li>
+                            </ul>
+                        </div>
+                        <div class="war-day">
+                            <h4><span class="game-icon timer"></span> Sunday (4pts)</h4>
+                            <ul>
+                                <li><span class="game-icon swords"></span> Defeat rival clan members: 1-50pts each</li>
+                                <li><span class="game-icon star"></span> Win the all-out brawl: 1,000pts</li>
+                                <li>Start with 5 tickets, reset after 45 defeats</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clans Tab -->
+            <div class="tab-content" id="clans">
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon swords"></span>
+                        Clan Information
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <p><span class="game-icon chest-unlocked"></span> Clans unlock at <strong>Stage 4-15</strong></p>
+                        </div>
+                        <div class="faq-item">
+                            <p>🌐 You can only be in a clan with players on your <strong>same server</strong></p>
+                        </div>
+                        <div class="faq-item">
+                            <p>👥 Maximum <strong>50 members</strong> per clan</p>
+                        </div>
+                        <div class="faq-item">
+                            <p>⏰ <strong>24-hour cooldown</strong> after leaving/being kicked before joining a new clan</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        War Tips
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <p>⚠️ You must form the clan <strong>before wars start</strong> to participate</p>
+                        </div>
+                        <div class="faq-item">
+                            <p>✅ If you join mid-war, you can still participate and receive rewards</p>
+                        </div>
+                        <div class="faq-item">
+                            <p>❌ If you leave mid-war to join another clan, your personal rewards reset to 0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pets Tab -->
+            <div class="tab-content" id="pets">
+                <div class="info-card">
+                    <h3>
+                        <span class="pet-icon small snail"></span>
+                        Common Pets (Drops from 1-1)
+                    </h3>
+                    <p class="info-note"><span class="game-icon timer"></span> Hatching time: 30 minutes</p>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="pet-icon small snail"></span> Snail</td><td>50</td><td>1,200</td></tr>
+                                <tr><td><span class="pet-icon small turtle"></span> Turtle</td><td>50</td><td>1,200</td></tr>
+                                <tr><td><span class="pet-icon small mouse"></span> Mouse</td><td>100</td><td>800</td></tr>
+                                <tr><td><span class="pet-icon small chicken"></span> Chicken</td><td>100</td><td>800</td></tr>
+                                <tr><td><span class="pet-icon small cat"></span> Cat</td><td>100</td><td>800</td></tr>
+                                <tr><td><span class="pet-icon small dog"></span> Dog</td><td>150</td><td>400</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3 class="tier rare">Rare Pets (Drops from 1-1)</h3>
+                    <p class="info-note"><span class="game-icon timer"></span> Hatching time: 2 hours</p>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="pet-icon small hedgehog"></span> Hedgehog</td><td>250</td><td>6,000</td></tr>
+                                <tr><td><span class="pet-icon small bear"></span> Bear</td><td>250</td><td>6,000</td></tr>
+                                <tr><td><span class="pet-icon small ostrich"></span> Ostrich</td><td>500</td><td>4,000</td></tr>
+                                <tr><td><span class="pet-icon small scorpion"></span> Scorpion</td><td>750</td><td>2,000</td></tr>
+                                <tr><td><span class="pet-icon small spider"></span> Spider</td><td>750</td><td>2,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3 class="tier epic">Epic Pets (Drops from 1-4)</h3>
+                    <p class="info-note"><span class="game-icon timer"></span> Hatching time: 4 hours</p>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="pet-icon small panda"></span> Panda</td><td>1,250</td><td>30,000</td></tr>
+                                <tr><td><span class="pet-icon small griffin"></span> Griffin</td><td>1,250</td><td>30,000</td></tr>
+                                <tr><td><span class="pet-icon small unicorn"></span> Unicorn</td><td>2,500</td><td>20,000</td></tr>
+                                <tr><td><span class="pet-icon small saber-tooth"></span> Saber Tooth</td><td>3,750</td><td>10,000</td></tr>
+                                <tr><td><span class="pet-icon small tiger"></span> Tiger</td><td>3,750</td><td>10,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3 class="tier legendary">Legendary Pets (Drops from 3-1)</h3>
+                    <p class="info-note"><span class="game-icon timer"></span> Hatching time: 8 hours</p>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="pet-icon small cerberus"></span> Cerberus</td><td>12,500</td><td>100,000</td></tr>
+                                <tr><td><span class="pet-icon small kitsune"></span> Kitsune</td><td>18,750</td><td>50,000</td></tr>
+                                <tr><td><span class="pet-icon small serpent"></span> Serpent</td><td>18,750</td><td>50,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3 class="tier ultimate">Ultimate Pets (Drops from 5-1)</h3>
+                    <p class="info-note"><span class="game-icon timer"></span> Hatching time: 16 hours</p>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="pet-icon small treant"></span> Treant</td><td>31,200</td><td>750,000</td></tr>
+                                <tr><td><span class="pet-icon small elk"></span> Enchanted Elk</td><td>62,500</td><td>500,000</td></tr>
+                                <tr><td><span class="pet-icon small electry"></span> Electry</td><td>93,700</td><td>250,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3 class="tier mythic">Mythic Pets (Drops from 7-1)</h3>
+                    <p class="info-note"><span class="game-icon timer"></span> Hatching time: 1 day 8 hours (32h)</p>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="pet-icon small genie"></span> Genie</td><td>156,250</td><td>3,750,000</td></tr>
+                                <tr><td><span class="pet-icon small dragon"></span> Baby Dragon</td><td>312,500</td><td>2,500,000</td></tr>
+                                <tr><td><span class="pet-icon small spectral-tiger"></span> Spectral Tiger</td><td>468,750</td><td>1,250,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Tree Tab -->
+            <div class="tab-content" id="techtree">
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        Tech Tree Upgrade Costs
+                    </h3>
+                    <div class="data-table scrollable">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tier</th>
+                                    <th>Level</th>
+                                    <th><span class="game-icon timer"></span> Time</th>
+                                    <th><span class="game-icon potion"></span> Potions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tier-header"><td colspan="4">Tier I</td></tr>
+                                <tr><td>I</td><td>1</td><td>5m</td><td>40</td></tr>
+                                <tr><td>I</td><td>2</td><td>10m</td><td>56</td></tr>
+                                <tr><td>I</td><td>3</td><td>20m</td><td>78</td></tr>
+                                <tr><td>I</td><td>4</td><td>40m</td><td>110</td></tr>
+                                <tr><td>I</td><td>5</td><td>1h 20m</td><td>154</td></tr>
+                                <tr class="tier-header"><td colspan="4">Tier II</td></tr>
+                                <tr><td>II</td><td>1</td><td>2h 40m</td><td>215</td></tr>
+                                <tr><td>II</td><td>2</td><td>5h 20m</td><td>301</td></tr>
+                                <tr><td>II</td><td>3</td><td>10h 40m</td><td>422</td></tr>
+                                <tr><td>II</td><td>4</td><td>21h 20m</td><td>590</td></tr>
+                                <tr><td>II</td><td>5</td><td>23h 53m</td><td>826</td></tr>
+                                <tr class="tier-header"><td colspan="4">Tier III</td></tr>
+                                <tr><td>III</td><td>1</td><td>1d 2h</td><td>1,150</td></tr>
+                                <tr><td>III</td><td>2</td><td>1d 5h</td><td>1,310</td></tr>
+                                <tr><td>III</td><td>3</td><td>1d 9h</td><td>1,500</td></tr>
+                                <tr><td>III</td><td>4</td><td>1d 13h</td><td>1,710</td></tr>
+                                <tr><td>III</td><td>5</td><td>1d 18h</td><td>1,950</td></tr>
+                                <tr class="tier-header"><td colspan="4">Tier IV</td></tr>
+                                <tr><td>IV</td><td>1</td><td>1d 23h</td><td>2,220</td></tr>
+                                <tr><td>IV</td><td>2</td><td>2d 4h</td><td>2,540</td></tr>
+                                <tr><td>IV</td><td>3</td><td>2d 11h</td><td>2,890</td></tr>
+                                <tr><td>IV</td><td>4</td><td>2d 18h</td><td>3,300</td></tr>
+                                <tr><td>IV</td><td>5</td><td>3d 2h</td><td>3,760</td></tr>
+                                <tr class="tier-header"><td colspan="4">Tier V</td></tr>
+                                <tr><td>V</td><td>1</td><td>3d 11h</td><td>4,280</td></tr>
+                                <tr><td>V</td><td>2</td><td>3d 21h</td><td>4,880</td></tr>
+                                <tr><td>V</td><td>3</td><td>4d 8h</td><td>5,570</td></tr>
+                                <tr><td>V</td><td>4</td><td>4d 20h</td><td>6,350</td></tr>
+                                <tr><td>V</td><td>5</td><td>5d 10h</td><td>7,240</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="info-note">
+                        <strong>Time Formula:</strong> Base Time / (1 + Tech Tree %)<br>
+                        Speed increases by %, not time reduces by %
+                    </p>
+                </div>
+            </div>
+
+            <!-- PvP Tab -->
+            <div class="tab-content" id="pvp">
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon swords"></span>
+                        PvP Information
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <p><span class="game-icon chest-unlocked"></span> <strong>Unlocks at Stage 3-10</strong></p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon timer"></span> New season starts every <strong>Tuesday</strong> and lasts <strong>6 days</strong> (24h cooldown)</p>
+                        </div>
+                        <div class="faq-item">
+                            <p>🎟️ Challenge Tickets reset at midnight and do NOT roll over</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon swords"></span> Tickets are used <strong>win or lose</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon shield-gold"></span>
+                        PvP Ranks (100 players per league)
+                    </h3>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Promotion</th>
+                                    <th>Demotion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Unranked</td><td>Top 90 promoted</td><td>-</td></tr>
+                                <tr><td>🥉 Bronze</td><td>Top 80 promoted</td><td>-</td></tr>
+                                <tr><td>🥈 Silver</td><td>Top 50 promoted</td><td>90+ demoted</td></tr>
+                                <tr><td>🥇 Gold</td><td>Top 20 promoted</td><td>80+ demoted</td></tr>
+                                <tr><td>💎 Platinum</td><td>Top 10 promoted</td><td>70+ demoted</td></tr>
+                                <tr><td>👑 Diamond</td><td>Top 40 stay</td><td>40+ demoted</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon hammer-icon"></span>
+                        Max Substat Percentages
+                    </h3>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr><th>Stat</th><th>Per Item</th><th>Max Total*</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Attack Speed</td><td>40%</td><td>480%</td></tr>
+                                <tr><td>Block Chance</td><td>5%</td><td>60%</td></tr>
+                                <tr><td>Critical Chance</td><td>12%</td><td>144%**</td></tr>
+                                <tr><td>Critical Damage</td><td>100%</td><td>1200%</td></tr>
+                                <tr><td>Damage</td><td>15%</td><td>180%</td></tr>
+                                <tr><td>Double Chance</td><td>40%</td><td>480%**</td></tr>
+                                <tr><td>Health</td><td>15%</td><td>180%</td></tr>
+                                <tr><td>Health Regen</td><td>6%</td><td>72%</td></tr>
+                                <tr><td>Lifesteal</td><td>20%</td><td>240%</td></tr>
+                                <tr><td>Melee Damage</td><td>50%</td><td>600%</td></tr>
+                                <tr><td>Ranged Damage</td><td>15%</td><td>180%</td></tr>
+                                <tr><td>Skill Cooldown</td><td>7%</td><td>84%</td></tr>
+                                <tr><td>Skill Damage</td><td>30%</td><td>360%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="info-note">
+                        *x12 for 8 items, 3 pets & 1 mount<br>
+                        **All chance stats cap at 100%
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Tab -->
+            <div class="tab-content" id="faq">
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        Game Basics
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <h4>⏰ When does the game reset?</h4>
+                            <p>Daily reset at <strong>midnight UTC</strong>. This includes dungeon keys, challenge tickets, and war days.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>📴 What's the offline timer?</h4>
+                            <p>Base max is <strong>4 hours</strong> for idle hammer & coin collection.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>✏️ Can I change my IGN?</h4>
+                            <p>First change is <strong>free</strong>, subsequent changes cost <strong>200 gems</strong>. Names must be unique across all servers.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>🌐 How are servers assigned?</h4>
+                            <p>You're placed with players who started in the same period in your region. <strong>No server transfers.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon chest-unlocked"></span>
+                        Dungeon Unlocks
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item"><p><span class="game-icon chest-unlocked"></span> <strong>Hammer Thief</strong>: Unlocks at 2-10</p></div>
+                        <div class="faq-item"><p>👻 <strong>Ghost Town</strong>: Unlocks at 2-15</p></div>
+                        <div class="faq-item"><p><span class="game-icon swords"></span> <strong>Invasion</strong>: Unlocks at 3-1</p></div>
+                        <div class="faq-item"><p>🧟 <strong>Zombie Rush</strong>: Unlocks at 4-1</p></div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon key-orange"></span>
+                        Dungeon Keys
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <p>🔑 Keys reset at midnight and are <strong>only used if you beat the level</strong></p>
+                        </div>
+                        <div class="faq-item">
+                            <p>📊 Key rollover: 0, 1, or 2 keys → reset to 2/2. Keys over 2 remain until used.</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon star"></span> Use <strong>"Sweep Last"</strong> to auto-complete your highest level when stuck.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        Game Terms
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item"><p><strong>META</strong>: Most Effective Tactics Available</p></div>
+                        <div class="faq-item"><p><strong>IGN</strong>: In-Game Name</p></div>
+                        <div class="faq-item"><p><strong>DPS</strong>: Damage Per Second</p></div>
+                        <div class="faq-item"><p><strong>LB</strong>: Leaderboard</p></div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon hammer-icon"></span>
+                        Stat Definitions
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item"><p><strong>Attack Speed</strong>: Increases how often you attack</p></div>
+                        <div class="faq-item"><p><strong>Block Chance</strong>: Chance to block an attack</p></div>
+                        <div class="faq-item"><p><strong>Critical Chance</strong>: Chance to deal a critical hit</p></div>
+                        <div class="faq-item"><p><strong>Critical Damage</strong>: Bonus damage on critical attacks</p></div>
+                        <div class="faq-item"><p><strong>Double Chance</strong>: Chance to hit twice in a row</p></div>
+                        <div class="faq-item"><p><strong>Health Regen</strong>: Auto-heal per second, based on max HP</p></div>
+                        <div class="faq-item"><p><strong>Lifesteal</strong>: Heal per weapon attack, based on damage</p></div>
+                        <div class="faq-item"><p><strong>Skill Cooldown</strong>: Time for skills to reactivate</p></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>ForgeMaster Helper • Data from official spreadsheet (Dec 2025)</p>
+            <p style="font-size: 0.75rem; opacity: 0.6;">Created by Nienna & Hibiscus • discord.gg/forgemaster</p>
+        </footer>
+    </div>
+
+    <script src="info.js"></script>
+</body>
+
+</html>

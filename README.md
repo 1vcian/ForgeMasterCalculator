@@ -1,38 +1,36 @@
-# ForgeMaster EXP Calculator
+# ForgeMaster Calculator
 
-A simple static calculator for ForgeMaster that helps you estimate your expected EXP based on forge level and hammer count.
+A comprehensive calculator and information hub for ForgeMaster game. Includes multiple calculators and reference pages.
+
+## Pages
+
+### Forge EXP Calculator
+Calculate expected EXP based on forge level and hammer count. Set a target EXP to find recommended hammer count.
+
+### Mount Calculator
+Calculate mount summon rates and clock winders needed. Includes tech tree reduction support.
+
+### Egg Calculator
+View egg drop rates by difficulty and calculate hatching times with tech tree speed bonuses.
+
+### Game Info
+Reference pages for:
+- Clan levels and requirements
+- War rewards and tier system
+- Tech tree upgrade costs
+- Forge upgrade costs and times
+- FAQ
 
 ## Features
 
-- **Calculate EXP Mode**: Enter your forge level and number of hammers to see expected average EXP
-- **Find Hammers Mode**: Set a target EXP goal to get recommended hammer count
-- **Probability Breakdown**: See the drop rates for each equipment tier at your forge level
-- **Persistent Level**: Your selected forge level is saved for convenience
+- **PWA Support**: Install as an app on mobile or desktop
+- **Offline Mode**: Works without internet after first load
+- **Persistent Settings**: Your selections are saved locally
+- **Responsive Design**: Works on all screen sizes
 
 ## Usage
 
-Simply open `index.html` in your browser or visit the GitHub Pages link.
-
-1. Select your current Forge Level (1-35)
-2. Choose a mode:
-   - **Calculate EXP**: Enter hammer count to see expected EXP
-   - **Find Hammers**: Enter target EXP to see recommended hammer count
-3. View results and probability breakdown
-
-## EXP Values
-
-| Tier | EXP |
-|------|-----|
-| Primitive | 1 pt |
-| Medieval | 1 pt |
-| Early-Modern | 1 pt |
-| Modern | 2 pts |
-| Space | 2 pts |
-| Interstellar | 2 pts |
-| Multiverse | 3 pts |
-| Quantum | 3 pts |
-| Underworld | 3 pts |
-| Divine | 3 pts |
+Open `index.html` in your browser or deploy to any static hosting service.
 
 ## Support
 

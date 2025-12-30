@@ -1,9 +1,15 @@
-const CACHE_NAME = 'forgemaster-v1';
+const CACHE_NAME = 'forgemaster-v10';
 const urlsToCache = [
     '/',
     '/index.html',
+    '/mounts.html',
+    '/eggs.html',
+    '/info.html',
     '/styles.css',
     '/app.js',
+    '/mounts.js',
+    '/eggs.js',
+    '/info.js',
     '/icons/hammer.png',
     '/manifest.json'
 ];

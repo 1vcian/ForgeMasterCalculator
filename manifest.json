@@ -1,7 +1,7 @@
 {
-    "name": "ForgeMaster EXP Calculator",
-    "short_name": "ForgeMaster",
-    "description": "Calculate expected EXP from forging based on your forge level and hammer count",
+    "name": "ForgeMaster Helper",
+    "short_name": "FM Helper",
+    "description": "Complete helper tool for ForgeMaster game - Forge EXP calculator, Mounts, Eggs, War info, Pets, Tech Tree and more",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#0a0a0f",
