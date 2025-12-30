@@ -49,7 +49,7 @@ const expValues = {
     interstellar: 2,
     multiverse: 3,
     quantum: 3,
-    underworld: 2,
+    underworld: 3,
     divine: 3
 };
 
