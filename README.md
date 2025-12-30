@@ -31,7 +31,7 @@ Simply open `index.html` in your browser or visit the GitHub Pages link.
 | Interstellar | 2 pts |
 | Multiverse | 3 pts |
 | Quantum | 3 pts |
-| Underworld | 2 pts |
+| Underworld | 3 pts |
 | Divine | 3 pts |
 
 ## Support
