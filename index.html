@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgeMaster EXP Calculator</title>
+    <meta name="description"
+        content="Calculate expected EXP from forging based on your forge level and hammer count in ForgeMaster">
+    <meta name="theme-color" content="#f59e0b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="icons/hammer.png">
+    <link rel="apple-touch-icon" href="icons/hammer.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Animated Background -->
+        <div class="bg-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <!-- Fixed Coffee Button -->
+        <a href="https://www.buymeacoffee.com/1vcian" target="_blank" rel="noopener noreferrer" class="coffee-overlay">
+            <svg class="coffee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                <path d="M6 1v3" />
+                <path d="M10 1v3" />
+                <path d="M14 1v3" />
+            </svg>
+            <span>Buy me a coffee</span>
+        </a>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="icons/hammer.png" alt="Hammer" class="logo-icon">
+                <h1>ForgeMaster Calculator</h1>
+            </div>
+            <a href="https://github.com/1vcian/ForgeMasterCalculator" target="_blank" rel="noopener noreferrer"
+                class="github-link">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                Visit this project
+            </a>
+            <p class="subtitle">Calculate your expected EXP from forging</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Mode Toggle -->
+            <div class="mode-toggle">
+                <button class="mode-btn active" data-mode="calculate" id="calcModeBtn">
+                    <svg class="mode-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                    </svg>
+                    Calculate EXP
+                </button>
+                <button class="mode-btn" data-mode="target" id="targetModeBtn">
+                    <svg class="mode-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                    </svg>
+                    Find Hammers
+                </button>
+            </div>
+
+            <!-- Calculator Card -->
+            <div class="calculator-card">
+                <!-- Forge Level Selector -->
+                <div class="input-group">
+                    <label for="forgeLevel">
+                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 20h20" />
+                            <path d="M5 20v-4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4" />
+                            <path d="M12 14V6" />
+                            <path d="M8 6h8" />
+                            <path d="M10 6V4h4v2" />
+                        </svg>
+                        Forge Level
+                    </label>
+                    <div class="select-wrapper">
+                        <select id="forgeLevel">
+                            <!-- Options will be generated by JS -->
+                        </select>
+                        <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Hammer Count Input (Calculate Mode) -->
+                <div class="input-group" id="hammerInputGroup">
+                    <label for="hammerCount">
+                        <img src="icons/hammer.png" alt="Hammer" class="label-icon hammer-icon">
+                        Number of Hammers
+                    </label>
+                    <input type="number" id="hammerCount" min="1" max="10000" value="100"
+                        placeholder="Enter hammer count">
+                </div>
+
+                <!-- Target EXP Input (Target Mode) -->
+                <div class="input-group hidden" id="targetInputGroup">
+                    <label for="targetExp">
+                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <circle cx="12" cy="12" r="6" />
+                            <circle cx="12" cy="12" r="2" />
+                        </svg>
+                        Target EXP
+                    </label>
+                    <input type="number" id="targetExp" min="1" max="100000" value="1000"
+                        placeholder="Enter target EXP">
+                </div>
+
+                <!-- Calculate Button -->
+                <button class="calculate-btn" id="calculateBtn">
+                    <span class="btn-text">Calculate</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Results Card -->
+            <div class="results-card" id="resultsCard">
+                <h2 class="results-title">
+                    <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3v18h18" />
+                        <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+                    </svg>
+                    Results
+                </h2>
+
+                <!-- Calculate Mode Results -->
+                <div class="results-content" id="calcResults">
+                    <div class="result-item highlight">
+                        <span class="result-label">Expected Average EXP</span>
+                        <span class="result-value" id="expectedExp">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">EXP per Hammer</span>
+                        <span class="result-value" id="expPerHammer">0</span>
+                    </div>
+                </div>
+
+                <!-- Target Mode Results -->
+                <div class="results-content hidden" id="targetResults">
+                    <div class="result-item highlight">
+                        <span class="result-label">Recommended Hammers</span>
+                        <span class="result-value" id="recommendedHammers">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Expected EXP with this amount</span>
+                        <span class="result-value" id="expectedWithRecommended">0</span>
+                    </div>
+                </div>
+
+                <!-- Probability Breakdown -->
+                <div class="probability-breakdown">
+                    <h3 class="breakdown-title">
+                        <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <path d="M3 9h18" />
+                            <path d="M9 21V9" />
+                        </svg>
+                        Probability Breakdown
+                    </h3>
+                    <div class="probability-grid" id="probabilityGrid">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Card -->
+            <div class="info-card">
+                <h3>
+                    <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 16v-4" />
+                        <path d="M12 8h.01" />
+                    </svg>
+                    EXP Values
+                </h3>
+                <div class="exp-table">
+                    <div class="exp-row">
+                        <span class="tier primitive">Primitive</span>
+                        <span class="exp-value">1 pt</span>
+                    </div>
+                    <div class="exp-row">
+                        <span class="tier medieval">Medieval</span>
+                        <span class="exp-value">1 pt</span>
+                    </div>
+                    <div class="exp-row">
+                        <span class="tier early-modern">Early-Modern</span>
+                        <span class="exp-value">1 pt</span>
+                    </div>
+                    <div class="exp-row">
+                        <span class="tier modern">Modern</span>
+                        <span class="exp-value">2 pts</span>
+                    </div>
+                    <div class="exp-row">
+                        <span class="tier space">Space</span>
+                        <span class="exp-value">2 pts</span>
+                    </div>
+                    <div class="exp-row">
+                        <span class="tier interstellar">Interstellar</span>
+                        <span class="exp-value">2 pts</span>
+                    </div>
+                    <div class="exp-row">
+                        <span class="tier multiverse">Multiverse</span>
+                        <span class="exp-value">3 pts</span>
+                    </div>
+                    <div class="exp-row">
+                        <span class="tier quantum">Quantum</span>
+                        <span class="exp-value">3 pts</span>
+                    </div>
+                    <div class="exp-row">
+                        <span class="tier underworld">Underworld</span>
+                        <span class="exp-value">2 pts</span>
+                    </div>
+                    <div class="exp-row">
+                        <span class="tier divine">Divine</span>
+                        <span class="exp-value">3 pts</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>ForgeMaster EXP Calculator</p>
+
+        </footer>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
