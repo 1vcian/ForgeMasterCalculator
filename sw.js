@@ -1,10 +1,11 @@
-const CACHE_NAME = 'forgemaster-v23';
+const CACHE_NAME = 'forgemaster-v41';
 const urlsToCache = [
     '/',
     '/index.html',
     '/mounts.html',
     '/eggs.html',
     '/guide.html',
+    '/faq.html',
     '/styles.css',
     '/app.js',
     '/mounts.js',

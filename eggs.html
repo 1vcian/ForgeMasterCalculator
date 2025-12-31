@@ -15,11 +15,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=49">
 </head>
 
 <body>
     <div class="app-container">
+        <!-- Loading Screen Background -->
+        <div class="loading-screen-bg"></div>
+        
         <div class="bg-particles">
             <div class="particle"></div>
             <div class="particle"></div>
@@ -44,11 +47,17 @@
                 <img src="icons/hammer.png" alt="Hammer" class="logo-icon">
                 <h1>Egg Calculator</h1>
             </div>
-            <nav class="nav-links">
-                <a href="index.html" class="nav-link">Forge EXP</a>
-                <a href="mounts.html" class="nav-link">Mounts</a>
-                <a href="eggs.html" class="nav-link active">Eggs</a>
-                <a href="guide.html" class="nav-link">Guide</a>
+            <nav class="nav-links nav-grouped">
+                <div class="nav-group">
+                    <span class="nav-group-title">Calculators</span>
+                    <div class="nav-group-links">
+                        <a href="index.html" class="nav-link">Forge Points</a>
+                        <a href="mounts.html" class="nav-link">Mounts Points</a>
+                        <a href="eggs.html" class="nav-link active">Eggs Hatch</a>
+                        <a href="faq.html" class="nav-link">FAQ</a>
+                    </div>
+                </div>
+                <a href="guide.html" class="nav-link nav-guide-btn">📖 Guide</a>
             </nav>
             <a href="https://github.com/1vcian/ForgeMasterCalculator" target="_blank" rel="noopener noreferrer"
                 class="github-link">
@@ -159,31 +168,31 @@
                 <div class="exp-table">
                     <div class="exp-row">
                         <span class="tier common"><span class="pet-icon small snail"></span> Common</span>
-                        <span class="exp-value">50-150 <span class="game-icon swords"></span> | 400-1.2k <span class="game-icon potion"></span></span>
+                        <span class="exp-value">50-150 <span class="game-icon swords"></span> | 400-1.2k <span class="game-icon plus-health"></span></span>
                     </div>
                     <div class="exp-row">
                         <span class="tier rare"><span class="pet-icon small bear"></span> Rare</span>
-                        <span class="exp-value">250-750 <span class="game-icon swords"></span> | 2k-6k <span class="game-icon potion"></span></span>
+                        <span class="exp-value">250-750 <span class="game-icon swords"></span> | 2k-6k <span class="game-icon plus-health"></span></span>
                     </div>
                     <div class="exp-row">
                         <span class="tier epic"><span class="pet-icon small unicorn"></span> Epic</span>
-                        <span class="exp-value">1.25k-3.75k <span class="game-icon swords"></span> | 10k-30k <span class="game-icon potion"></span></span>
+                        <span class="exp-value">1.25k-3.75k <span class="game-icon swords"></span> | 10k-30k <span class="game-icon plus-health"></span></span>
                     </div>
                     <div class="exp-row">
                         <span class="tier legendary"><span class="pet-icon small cerberus"></span> Legendary</span>
-                        <span class="exp-value">12.5k-18.75k <span class="game-icon swords"></span> | 50k-100k <span class="game-icon potion"></span></span>
+                        <span class="exp-value">12.5k-18.75k <span class="game-icon swords"></span> | 50k-100k <span class="game-icon plus-health"></span></span>
                     </div>
                     <div class="exp-row">
                         <span class="tier ultimate"><span class="pet-icon small treant"></span> Ultimate</span>
-                        <span class="exp-value">31.2k-93.7k <span class="game-icon swords"></span> | 250k-750k <span class="game-icon potion"></span></span>
+                        <span class="exp-value">31.2k-93.7k <span class="game-icon swords"></span> | 250k-750k <span class="game-icon plus-health"></span></span>
                     </div>
                     <div class="exp-row">
                         <span class="tier mythic"><span class="pet-icon small genie"></span> Mythic</span>
-                        <span class="exp-value">156k-468k <span class="game-icon swords"></span> | 1.25M-3.75M <span class="game-icon potion"></span></span>
+                        <span class="exp-value">156k-468k <span class="game-icon swords"></span> | 1.25M-3.75M <span class="game-icon plus-health"></span></span>
                     </div>
                 </div>
                 <p class="info-note">
-                    <span class="game-icon swords"></span> = Damage | <span class="game-icon potion"></span> = Health<br>
+                    <span class="game-icon swords"></span> = Damage | <span class="game-icon plus-health"></span> = Health<br>
                     Stats can be improved with Tech Tree upgrades
                 </p>
             </div>

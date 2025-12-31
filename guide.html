@@ -15,11 +15,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=49">
 </head>
 
 <body>
     <div class="app-container">
+        <!-- Loading Screen Background -->
+        <div class="loading-screen-bg"></div>
+        
         <div class="bg-particles">
             <div class="particle"></div>
             <div class="particle"></div>
@@ -44,11 +47,17 @@
                 <img src="icons/hammer.png" alt="Hammer" class="logo-icon">
                 <h1>Game Guide</h1>
             </div>
-            <nav class="nav-links">
-                <a href="index.html" class="nav-link">Forge EXP</a>
-                <a href="mounts.html" class="nav-link">Mounts</a>
-                <a href="eggs.html" class="nav-link">Eggs</a>
-                <a href="guide.html" class="nav-link active">Guide</a>
+            <nav class="nav-links nav-grouped">
+                <div class="nav-group">
+                    <span class="nav-group-title">Calculators</span>
+                    <div class="nav-group-links">
+                        <a href="index.html" class="nav-link">Forge Points</a>
+                        <a href="mounts.html" class="nav-link">Mounts Points</a>
+                        <a href="eggs.html" class="nav-link">Eggs Hatch</a>
+                        <a href="faq.html" class="nav-link">FAQ</a>
+                    </div>
+                </div>
+                <a href="guide.html" class="nav-link nav-guide-btn active">📖 Guide</a>
             </nav>
             <a href="https://github.com/1vcian/ForgeMasterCalculator" target="_blank" rel="noopener noreferrer"
                 class="github-link">
@@ -64,18 +73,75 @@
         <main class="main-content">
             <!-- Tab Navigation -->
             <div class="tab-nav" id="tabNav">
-                <button class="tab-btn active" data-tab="war">War</button>
-                <button class="tab-btn" data-tab="clans">Clans</button>
-                <button class="tab-btn" data-tab="pets">Pets</button>
-                <button class="tab-btn" data-tab="mounts">Mounts</button>
-                <button class="tab-btn" data-tab="forge">Forge</button>
-                <button class="tab-btn" data-tab="techtree">Tech Tree</button>
-                <button class="tab-btn" data-tab="pvp">PvP</button>
-                <button class="tab-btn" data-tab="faq">FAQ</button>
+                <button class="tab-btn active" data-tab="unlocks"><span class="game-icon chest-unlocked"></span> Unlocks</button>
+                <button class="tab-btn" data-tab="war"><span class="game-icon swords"></span> War</button>
+                <button class="tab-btn" data-tab="clans"><span class="game-icon crown"></span> Clans</button>
+                <button class="tab-btn" data-tab="pets"><span class="egg-icon small common"></span> Pets</button>
+                <button class="tab-btn" data-tab="mounts"><span class="mount-icon small horse"></span> Mounts</button>
+                <button class="tab-btn" data-tab="forge"><span class="game-icon hammer-icon"></span> Forge</button>
+                <button class="tab-btn" data-tab="techtree"><span class="game-icon star"></span> Tech Tree</button>
+                <button class="tab-btn" data-tab="pvp"><span class="game-icon shield-gold"></span> PvP</button>
+                <button class="tab-btn" data-tab="dungeons"><span class="game-icon key-orange"></span> Dungeons</button>
+                <button class="tab-btn" data-tab="stats"><span class="game-icon swords"></span> Stats</button>
+                <button class="tab-btn" data-tab="tips"><span class="game-icon star"></span> Tips</button>
+            </div>
+
+            <!-- Unlocks Tab -->
+            <div class="tab-content active" id="unlocks">
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon chest-unlocked"></span>
+                        Game Progression Unlocks
+                    </h3>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr><th>Stage</th><th>Unlock</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>2-1</td><td><span class="game-icon coin"></span> Shop</td></tr>
+                                <tr><td>2-5</td><td><span class="game-icon star"></span> Battle Pass</td></tr>
+                                <tr><td>2-10</td><td><span class="game-icon hammer-icon"></span> Auto Forge</td></tr>
+                                <tr><td>2-10</td><td><span class="game-icon key-gray"></span> Hammer Thief Dungeon</td></tr>
+                                <tr><td>2-15</td><td><span class="game-icon key-green"></span> Ghost Town Dungeon</td></tr>
+                                <tr><td>2-15</td><td><span class="game-icon star"></span> Skills & Tech Tree I</td></tr>
+                                <tr><td>2-15</td><td><span class="game-icon swords"></span> Skill Slot 2</td></tr>
+                                <tr><td>3-1</td><td><span class="game-icon key-orange"></span> Invasion Dungeon</td></tr>
+                                <tr><td>3-1</td><td><span class="egg-icon small common"></span> Pets & Tech Tree II</td></tr>
+                                <tr><td>3-1</td><td><span class="egg-icon small common"></span> Pet Slot 1</td></tr>
+                                <tr><td>3-10</td><td><span class="game-icon shield-gold"></span> PvP League & Chat</td></tr>
+                                <tr><td>4-1</td><td><span class="game-icon key-red"></span> Zombie Rush Dungeon</td></tr>
+                                <tr><td>4-1</td><td><span class="game-icon swords"></span> Skill Slot 3 & Tech Tree III</td></tr>
+                                <tr><td>4-10</td><td><span class="egg-icon small common"></span> Pet Slot 2</td></tr>
+                                <tr><td>4-15</td><td><span class="game-icon crown"></span> Clan</td></tr>
+                                <tr><td>5-1</td><td><span class="game-icon swords"></span> Skill Slot 4</td></tr>
+                                <tr><td>5-15</td><td><span class="game-icon hammer-icon"></span> Extra Hammer Forging</td></tr>
+                                <tr><td>6-1</td><td><span class="egg-icon small common"></span> Pet Slot 3</td></tr>
+                                <tr><td>7-15</td><td><span class="game-icon hammer-icon"></span> Extra Hammer Forging II</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="info-note">With a solid setup, you can reach 4-15 in one day!</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        Early Game Tips
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <p><span class="egg-icon small common"></span> If you don't have a rare pet or rare skill yet, use a <strong>Regen (5-6%) pet</strong> — it will keep you alive long enough to push far early on.</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon hammer-icon"></span> You can <strong>equip new items</strong> and watch your progress update in the background before selling — great for testing upgrades safely.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- War Tab -->
-            <div class="tab-content active" id="war">
+            <div class="tab-content" id="war">
                 <div class="info-card">
                     <h3>
                         <span class="game-icon timer"></span>
@@ -291,10 +357,10 @@
                         <div class="war-day">
                             <h4><span class="game-icon timer"></span> Tuesday (1pt each)</h4>
                             <ul>
-                                <li>Forge Primitive/Medieval/Early-Modern: 1pt each</li>
-                                <li>Forge Modern/Space/Interstellar: 2pts each</li>
-                                <li>Forge Underworld: 2pts</li>
-                                <li>Forge Multiverse/Quantum/Divine: 3pts each</li>
+                                <li>Forge <span class="age-icon primitive"></span>Primitive / <span class="age-icon medieval"></span>Medieval / <span class="age-icon early-modern"></span>Early-Modern: 1pt each</li>
+                                <li>Forge <span class="age-icon modern"></span>Modern / <span class="age-icon space"></span>Space / <span class="age-icon interstellar"></span>Interstellar: 2pts each</li>
+                                <li>Forge <span class="age-icon underworld"></span>Underworld: 2pts</li>
+                                <li>Forge <span class="age-icon multiverse"></span>Multiverse / <span class="age-icon quantum"></span>Quantum / <span class="age-icon divine"></span>Divine: 3pts each</li>
                                 <li>Tech Tree I: 300pts | II: 7.5k | III: 20k | IV: 35k | V: 62k</li>
                                 <li>Skill Upgrades: Common 50 → Mythic 175 pts</li>
                             </ul>
@@ -339,7 +405,7 @@
                             <ul>
                                 <li><span class="game-icon swords"></span> Defeat rival clan members: 1-50pts each</li>
                                 <li><span class="game-icon star"></span> Win the all-out brawl: 1,000pts</li>
-                                <li>Start with 5 tickets, reset after 45 defeats</li>
+                                <li>Start with 5 tickets, reset after all defeats</li>
                             </ul>
                         </div>
                     </div>
@@ -400,7 +466,7 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
                             </thead>
                             <tbody>
                                 <tr><td><span class="pet-icon small snail"></span> Snail</td><td>50</td><td>1,200</td></tr>
@@ -420,7 +486,7 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
                             </thead>
                             <tbody>
                                 <tr><td><span class="pet-icon small hedgehog"></span> Hedgehog</td><td>250</td><td>6,000</td></tr>
@@ -439,7 +505,7 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
                             </thead>
                             <tbody>
                                 <tr><td><span class="pet-icon small panda"></span> Panda</td><td>1,250</td><td>30,000</td></tr>
@@ -458,7 +524,7 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
                             </thead>
                             <tbody>
                                 <tr><td><span class="pet-icon small cerberus"></span> Cerberus</td><td>12,500</td><td>100,000</td></tr>
@@ -475,7 +541,7 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
                             </thead>
                             <tbody>
                                 <tr><td><span class="pet-icon small treant"></span> Treant</td><td>31,200</td><td>750,000</td></tr>
@@ -492,7 +558,7 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon potion"></span> Health</th></tr>
+                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
                             </thead>
                             <tbody>
                                 <tr><td><span class="pet-icon small genie"></span> Genie</td><td>156,250</td><td>3,750,000</td></tr>
@@ -707,34 +773,6 @@
 
                 <div class="info-card">
                     <h3>
-                        <span class="game-icon chest-unlocked"></span>
-                        Dungeons
-                    </h3>
-                    <div class="info-list">
-                        <p><span class="game-icon key-orange"></span> <strong>Keys reset at midnight</strong> and are only used if you beat the level</p>
-                        <p><span class="game-icon timer"></span> You can "sweep last" to autocomplete your highest-completed level</p>
-                        <p><span class="game-icon star"></span> Keys over 2/2 remain until used - daily reset only refills to 2/2</p>
-                    </div>
-                    <div class="data-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Dungeon</th>
-                                    <th>Reward</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td><span class="game-icon key-gray"></span> Hammer Thief</td><td><span class="game-icon hammer-icon"></span> Hammers & <span class="game-icon coin"></span> Coins</td></tr>
-                                <tr><td><span class="game-icon key-green"></span> Ghost Town</td><td><span class="game-icon ticket-green"></span> Ability Tickets</td></tr>
-                                <tr><td><span class="game-icon key-orange"></span> Invasion</td><td><span class="egg-icon small common"></span> Eggs</td></tr>
-                                <tr><td><span class="game-icon key-red"></span> Zombie Rush</td><td><span class="game-icon potion"></span> Potions</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <h3>
                         <span class="game-icon star"></span>
                         Cost Formula
                     </h3>
@@ -750,6 +788,62 @@
 
             <!-- Tech Tree Tab -->
             <div class="tab-content" id="techtree">
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        Tech Tree Overview
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <p>The tree is split into <strong>3 main branches:</strong> Forge, Power, and Skills/Pets</p>
+                        </div>
+                        <div class="faq-item">
+                            <p>Each node can be upgraded <strong>5× per tier</strong>, for a total of <strong>25 upgrades per node</strong></p>
+                        </div>
+                        <div class="faq-item">
+                            <p>With each tier, cost and time increase, while bonus values stay the same</p>
+                        </div>
+                    </div>
+                    <p class="info-note">Push several nodes to Tier II before specializing — this gives a smoother early game power curve.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon hammer-icon"></span>
+                        Forge Tree
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item"><p><strong>Forge Timer:</strong> +4% upgrade speed per point</p></div>
+                        <div class="faq-item"><p><strong>Forge Upgrade Cost:</strong> -2% forge upgrade cost per point</p></div>
+                        <div class="faq-item"><p><strong>Equipment Sell Price:</strong> +2% revenue per sale per point</p></div>
+                        <div class="faq-item"><p><strong>Hammer Thief Hammer Bonus:</strong> +2% hammer drops per point</p></div>
+                        <div class="faq-item"><p><strong>Hammer Thief Coin Bonus:</strong> +2% coin drops per point</p></div>
+                        <div class="faq-item"><p><strong>Auto Forge:</strong> +1 additional hammer at a time (1× per tier)</p></div>
+                        <div class="faq-item"><p><strong>Free Forge Chance:</strong> +1% chance to forge for free per point</p></div>
+                        <div class="faq-item"><p><strong>Max Offline Time:</strong> +16% max offline duration per point</p></div>
+                        <div class="faq-item"><p><strong>Coin Offline Reward:</strong> +2% passive Coin gain per minute</p></div>
+                        <div class="faq-item"><p><strong>Hammer Offline Reward:</strong> +2% passive Hammer gain per minute</p></div>
+                    </div>
+                    <p class="info-note">Prioritize this tree early to speed up upgrades and boost offline progress.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon swords"></span>
+                        Power Tree
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item"><p><strong>Weapon/Glove/Necklace/Ring Mastery:</strong> +2% damage per point</p></div>
+                        <div class="faq-item"><p><strong>Helmet/Body/Shoe/Belt Mastery:</strong> +2% health per point</p></div>
+                        <div class="faq-item"><p><strong>Equipment Level Up (all 8 slots):</strong> +2 max upgrade level per point</p></div>
+                        <div class="faq-item"><p><strong>Mount Damage Mastery:</strong> +2% mount damage per point</p></div>
+                        <div class="faq-item"><p><strong>Mount Health Mastery:</strong> +2% mount health per point</p></div>
+                        <div class="faq-item"><p><strong>Mount Summon Cost:</strong> -1% Clock Winders needed per point</p></div>
+                        <div class="faq-item"><p><strong>Extra Mount Chance:</strong> +2% chance to spawn two mounts per point</p></div>
+                    </div>
+                    <p class="info-note">A late-game tree once your forge is efficient.</p>
+                </div>
+
                 <div class="info-card">
                     <h3>
                         <span class="game-icon star"></span>
@@ -1017,6 +1111,85 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- FAQ Tab -->
+            <!-- Dungeons Tab -->
+            <div class="tab-content" id="dungeons">
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon chest-unlocked"></span>
+                        Dungeon Basics
+                    </h3>
+                    <div class="info-list">
+                        <p><span class="game-icon key-orange"></span> <strong>Keys reset at midnight</strong> and are only used if you beat the level</p>
+                        <p><span class="game-icon timer"></span> You can "sweep last" to autocomplete your highest-completed level</p>
+                        <p><span class="game-icon star"></span> Keys over 2/2 remain until used - daily reset only refills to 2/2</p>
+                    </div>
+                </div>
+
+                <div class="dungeon-cards dungeon-page-cards">
+                    <div class="dungeon-card hammer-thief large">
+                        <div class="dungeon-content">
+                            <div class="dungeon-header">
+                                <span class="game-icon key-gray"></span>
+                                <span class="dungeon-name">Hammer Thief</span>
+                                <span class="dungeon-sep">—</span>
+                                <span class="dungeon-reward"><span class="game-icon hammer-icon"></span> Hammers & <span class="game-icon coin"></span> Coins</span>
+                            </div>
+                            <div class="dungeon-unlock">Unlocks at Stage 2-10</div>
+                        </div>
+                    </div>
+                    <div class="dungeon-card ghost-town large">
+                        <div class="dungeon-content">
+                            <div class="dungeon-header">
+                                <span class="game-icon key-green"></span>
+                                <span class="dungeon-name">Ghost Town</span>
+                                <span class="dungeon-sep">—</span>
+                                <span class="dungeon-reward"><span class="game-icon ticket-green"></span> Ability Tickets</span>
+                            </div>
+                            <div class="dungeon-unlock">Unlocks at Stage 2-15</div>
+                        </div>
+                    </div>
+                    <div class="dungeon-card invasion large">
+                        <div class="dungeon-content">
+                            <div class="dungeon-header">
+                                <span class="game-icon key-orange"></span>
+                                <span class="dungeon-name">Invasion</span>
+                                <span class="dungeon-sep">—</span>
+                                <span class="dungeon-reward"><span class="egg-icon small common"></span> Eggs</span>
+                            </div>
+                            <div class="dungeon-unlock">Unlocks at Stage 3-1</div>
+                        </div>
+                    </div>
+                    <div class="dungeon-card zombie-rush large">
+                        <div class="dungeon-content">
+                            <div class="dungeon-header">
+                                <span class="game-icon key-red"></span>
+                                <span class="dungeon-name">Zombie Rush</span>
+                                <span class="dungeon-sep">—</span>
+                                <span class="dungeon-reward"><span class="game-icon potion"></span> Potions</span>
+                            </div>
+                            <div class="dungeon-unlock">Unlocks at Stage 4-1</div>
+                        </div>
+                    </div>
+                    <div class="dungeon-card coming-soon-dungeon large coming-soon">
+                        <span class="coming-soon-badge">Coming Soon</span>
+                        <div class="dungeon-content">
+                            <div class="dungeon-header">
+                                <span class="game-icon key-pink"></span>
+                                <span class="dungeon-name">???</span>
+                                <span class="dungeon-sep">—</span>
+                                <span class="dungeon-reward">Unknown Rewards</span>
+                            </div>
+                            <div class="dungeon-unlock">Release TBD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Tab -->
+            <div class="tab-content" id="stats">
                 <div class="info-card">
                     <h3>
                         <span class="game-icon hammer-icon"></span>
@@ -1049,93 +1222,115 @@
                         **All chance stats cap at 100%
                     </p>
                 </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        Substat Effects
+                    </h3>
+                    <div class="faq-list">
+                        <div class="faq-item"><p><strong>Damage:</strong> Increases all weapon and skill damage</p></div>
+                        <div class="faq-item"><p><strong>Health:</strong> Increases your base health by x%</p></div>
+                        <div class="faq-item"><p><strong>Ranged Damage:</strong> Only affects ranged weapons</p></div>
+                        <div class="faq-item"><p><strong>Melee Damage:</strong> Only affects melee weapons (useless without one equipped)</p></div>
+                        <div class="faq-item"><p><strong>Skill Damage:</strong> Boosts skill power and buff skill HP and damage</p></div>
+                        <div class="faq-item"><p><strong>Health Regen:</strong> Restores HP every second, strong early on</p></div>
+                        <div class="faq-item"><p><strong>Lifesteal:</strong> Converts a percentage of weapon damage into HP (pairs with Attack Speed and Double Chance)</p></div>
+                        <div class="faq-item"><p><strong>Attack Speed:</strong> Faster attacks mean more hits and more lifesteal</p></div>
+                        <div class="faq-item"><p><strong>Double Chance:</strong> Chance for main weapon to strike twice</p></div>
+                        <div class="faq-item"><p><strong>Crit Chance:</strong> Chance to land a critical hit (base 120% damage)</p></div>
+                        <div class="faq-item"><p><strong>Crit Damage:</strong> Raises crit multiplier, combine with Crit Chance</p></div>
+                        <div class="faq-item"><p><strong>Block:</strong> Chance to block incoming hits</p></div>
+                    </div>
+                    <p class="info-note">Ranged weapons generally outperform melee unless you have specific bonuses.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon swords"></span>
+                        Recommended Builds
+                    </h3>
+                    <div class="day-section">
+                        <h4><span class="game-icon shield-gold"></span> Balanced Setup (All-Round)</h4>
+                        <ul>
+                            <li>Attack Speed 100% or more</li>
+                            <li>Lifesteal 40% or more</li>
+                            <li>Double Chance 80% or more</li>
+                            <li>Damage</li>
+                        </ul>
+                    </div>
+                    <div class="day-section">
+                        <h4><span class="game-icon star"></span> Endgame Skill Build</h4>
+                        <ul>
+                            <li>Full Skill Damage</li>
+                            <li>Great with Legendary or higher skills and cooldown reduction</li>
+                            <li><em>Fun build but gets outclassed by speed/steal/double/crit in endgame</em></li>
+                        </ul>
+                    </div>
+                    <div class="day-section">
+                        <h4><span class="game-icon swords"></span> Endgame Crit Build</h4>
+                        <ul>
+                            <li>Crit Chance and Crit Damage combo</li>
+                            <li>Best once dual-substat gear and pets are unlocked</li>
+                        </ul>
+                    </div>
+                    <p class="info-note">Experiment freely — each combo shines in different stages of progression.</p>
+                </div>
             </div>
 
-            <!-- FAQ Tab -->
-            <div class="tab-content" id="faq">
+            <!-- Tips Tab -->
+            <div class="tab-content" id="tips">
                 <div class="info-card">
                     <h3>
                         <span class="game-icon star"></span>
-                        Game Basics
+                        Quick Tips Summary
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item">
-                            <h4>⏰ When does the game reset?</h4>
-                            <p>Daily reset at <strong>midnight UTC</strong>. This includes dungeon keys, challenge tickets, and war days.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h4>📴 What's the offline timer?</h4>
-                            <p>Base max is <strong>4 hours</strong> for idle hammer & coin collection.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h4>✏️ Can I change my IGN?</h4>
-                            <p>First change is <strong>free</strong>, subsequent changes cost <strong>200 gems</strong>. Names must be unique across all servers.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h4>🌐 How are servers assigned?</h4>
-                            <p>You're placed with players who started in the same period in your region. <strong>No server transfers.</strong></p>
-                        </div>
+                        <div class="faq-item"><p><span class="game-icon star"></span> Save resources for Clan War days</p></div>
+                        <div class="faq-item"><p><span class="game-icon swords"></span> Stack Attack Speed, Lifesteal, and Double Chance</p></div>
+                        <div class="faq-item"><p><span class="game-icon swords"></span> Ranged weapons are better than Melee for most players</p></div>
+                        <div class="faq-item"><p><span class="game-icon ticket-green"></span> Save Skill Tickets until odds improve</p></div>
+                        <div class="faq-item"><p><span class="game-icon star"></span> Premium Pass is the best investment</p></div>
+                        <div class="faq-item"><p><span class="egg-icon small common"></span> Regen pets are amazing early game</p></div>
+                        <div class="faq-item"><p><span class="game-icon key-orange"></span> Always clear your Dungeons daily</p></div>
                     </div>
                 </div>
 
                 <div class="info-card">
                     <h3>
-                        <span class="game-icon chest-unlocked"></span>
-                        Dungeon Unlocks
+                        <span class="game-icon coin"></span>
+                        Smart Spending Tips
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item"><p><span class="game-icon key-gray"></span> <strong>Hammer Thief</strong>: Unlocks at 2-10</p></div>
-                        <div class="faq-item"><p><span class="game-icon key-green"></span> <strong>Ghost Town</strong>: Unlocks at 2-15</p></div>
-                        <div class="faq-item"><p><span class="game-icon key-orange"></span> <strong>Invasion</strong>: Unlocks at 3-1</p></div>
-                        <div class="faq-item"><p><span class="game-icon key-red"></span> <strong>Zombie Rush</strong>: Unlocks at 4-1</p></div>
+                        <div class="faq-item"><p><strong>Premium Pass:</strong> Best value overall</p></div>
+                        <div class="faq-item"><p><strong>Dungeon Key & Clockwinder Offers:</strong> Great for steady progress</p></div>
+                        <div class="faq-item"><p><strong>Skill Tickets:</strong> Always check skill odds before spending — wait until your desired rarity's chance increases</p></div>
                     </div>
                 </div>
 
                 <div class="info-card">
                     <h3>
-                        <span class="game-icon key-orange"></span>
-                        Dungeon Keys
+                        <span class="game-icon timer"></span>
+                        Game Limits
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item">
-                            <p>🔑 Keys reset at midnight and are <strong>only used if you beat the level</strong></p>
-                        </div>
-                        <div class="faq-item">
-                            <p>📊 Key rollover: 0, 1, or 2 keys → reset to 2/2. Keys over 2 remain until used.</p>
-                        </div>
-                        <div class="faq-item">
-                            <p><span class="game-icon star"></span> Use <strong>"Sweep Last"</strong> to auto-complete your highest level when stuck.</p>
-                        </div>
+                        <div class="faq-item"><p><span class="egg-icon small common"></span> <strong>Pet max level:</strong> 100</p></div>
+                        <div class="faq-item"><p><span class="game-icon star"></span> <strong>Skill max level:</strong> 255</p></div>
+                        <div class="faq-item"><p><span class="game-icon timer"></span> <strong>Base offline timer:</strong> 4 hours</p></div>
+                        <div class="faq-item"><p><span class="game-icon coin"></span> <strong>Kills give:</strong> 1 coin each</p></div>
+                        <div class="faq-item"><p><span class="game-icon crown"></span> <strong>Creating a clan:</strong> 150 gems</p></div>
+                        <div class="faq-item"><p><span class="game-icon star"></span> <strong>Rename (after first):</strong> 200 gems</p></div>
                     </div>
                 </div>
 
                 <div class="info-card">
                     <h3>
-                        <span class="game-icon star"></span>
-                        Game Terms
+                        <span class="mount-icon small horse"></span>
+                        Mounts Are Key
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item"><p><strong>META</strong>: Most Effective Tactics Available</p></div>
-                        <div class="faq-item"><p><strong>IGN</strong>: In-Game Name</p></div>
-                        <div class="faq-item"><p><strong>DPS</strong>: Damage Per Second</p></div>
-                        <div class="faq-item"><p><strong>LB</strong>: Leaderboard</p></div>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <h3>
-                        <span class="game-icon hammer-icon"></span>
-                        Stat Definitions
-                    </h3>
-                    <div class="faq-list">
-                        <div class="faq-item"><p><strong>Attack Speed</strong>: Increases how often you attack</p></div>
-                        <div class="faq-item"><p><strong>Block Chance</strong>: Chance to block an attack</p></div>
-                        <div class="faq-item"><p><strong>Critical Chance</strong>: Chance to deal a critical hit</p></div>
-                        <div class="faq-item"><p><strong>Critical Damage</strong>: Bonus damage on critical attacks</p></div>
-                        <div class="faq-item"><p><strong>Double Chance</strong>: Chance to hit twice in a row</p></div>
-                        <div class="faq-item"><p><strong>Health Regen</strong>: Auto-heal per second, based on max HP</p></div>
-                        <div class="faq-item"><p><strong>Lifesteal</strong>: Heal per weapon attack, based on damage</p></div>
-                        <div class="faq-item"><p><strong>Skill Cooldown</strong>: Time for skills to reactivate</p></div>
+                        <div class="faq-item"><p>Mounts can be earned from: Clan War Rewards, Weekly League Rewards, Shop Offers, Premium Pass</p></div>
+                        <div class="faq-item"><p>They're among the <strong>best long-term upgrades</strong> — invest early and consistently!</p></div>
                     </div>
                 </div>
             </div>

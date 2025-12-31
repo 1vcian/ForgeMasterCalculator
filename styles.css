@@ -926,6 +926,64 @@ body::after {
     margin: var(--spacing-md) 0;
 }
 
+.nav-links.nav-grouped {
+    gap: var(--spacing-lg);
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.nav-group-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-group-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+}
+
+.nav-standalone {
+    align-self: center;
+    margin-left: var(--spacing-sm);
+}
+
+.nav-guide-btn {
+    display: block;
+    width: auto;
+    text-align: center;
+    padding: var(--spacing-sm) var(--spacing-xl) !important;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+    color: var(--bg-primary) !important;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-sm);
+    border: none !important;
+}
+
+.nav-guide-btn:hover {
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary)) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    color: var(--bg-primary) !important;
+}
+
+.nav-guide-btn.active {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+}
+
 .nav-link {
     padding: var(--spacing-xs) var(--spacing-md);
     background: rgba(255, 255, 255, 0.05);
@@ -948,6 +1006,55 @@ body::after {
     color: white;
     font-weight: 600;
     box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+}
+
+/* ===== Navigation Sections (Calculators / Guide) ===== */
+.nav-sections {
+    display: flex;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: var(--spacing-md) 0;
+}
+
+.nav-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.nav-group-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+.nav-group-links {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Dungeon Page Cards - Larger */
+.dungeon-page-cards {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dungeon-card.large .dungeon-name {
+    font-size: 1.8rem;
+}
+
+.dungeon-card.large .dungeon-reward {
+    font-size: 1.3rem;
+}
+
+.dungeon-card.large .dungeon-unlock {
+    font-size: 1.1rem;
 }
 
 /* ===== Tab Navigation ===== */
@@ -995,6 +1102,36 @@ body::after {
 .tab-content.active {
     display: block;
     animation: fadeIn 0.3s ease-out;
+}
+
+/* ===== Guide Sections (Always Visible) ===== */
+.guide-sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.guide-section {
+    scroll-margin-top: 100px; /* Offset for fixed header when scrolling to anchor */
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.section-title .game-icon,
+.section-title .egg-icon,
+.section-title .mount-icon {
+    width: 32px;
+    height: 32px;
 }
 
 /* ===== Data Tables ===== */
@@ -1228,6 +1365,19 @@ body::after {
 @media (max-width: 640px) {
     .nav-links {
         gap: var(--spacing-xs);
+    }
+
+    .nav-links.nav-grouped {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .nav-group-links {
+        gap: 3px;
+    }
+
+    .nav-standalone {
+        margin-left: 0;
     }
 
     .nav-link {
@@ -1580,3 +1730,215 @@ th img {
 .mount-icon.small.mini-dragon { background-position: 0 -60px; }
 .mount-icon.small.hover-disk { background-position: -20px -60px; }
 .mount-icon.small.hover-board { background-position: -40px -60px; }
+
+/* Age Icons from AgeIcons.png (1024x1024, 4 columns x 3 rows, 256px each) */
+.age-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('icons/game/AgeIcons.png');
+    background-size: 80px 80px; /* 1024 * (20/256) = 80 */
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+/* Row 0: Primitive, Medieval, Early-Modern, Modern */
+.age-icon.primitive { background-position: 0 0; }
+.age-icon.medieval { background-position: -20px 0; }
+.age-icon.early-modern { background-position: -40px 0; }
+.age-icon.modern { background-position: -60px 0; }
+
+/* Row 1: Space, Interstellar, Quantum, Multiverse */
+.age-icon.space { background-position: 0 -20px; }
+.age-icon.interstellar { background-position: -20px -20px; }
+.age-icon.quantum { background-position: -40px -20px; }
+.age-icon.multiverse { background-position: -60px -20px; }
+
+/* Row 2: Divine (wings), Underworld (trident) */
+.age-icon.divine { background-position: 0 -40px; }
+.age-icon.underworld { background-position: -20px -40px; }
+
+/* ===== Dungeon Cards with Background Images ===== */
+.dungeon-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.dungeon-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 2.5 / 1; /* Slightly taller for more content space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--spacing-xl);
+    border: 2px solid var(--border-color);
+    transition: all var(--transition-normal);
+}
+
+.dungeon-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.2);
+}
+
+.dungeon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    filter: brightness(0.7);
+    transition: filter var(--transition-normal);
+}
+
+.dungeon-card:hover::before {
+    filter: brightness(0.85);
+}
+
+.dungeon-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+    z-index: 1;
+}
+
+.dungeon-card .dungeon-content {
+    position: relative;
+    z-index: 2;
+}
+
+.dungeon-card .dungeon-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.dungeon-card .dungeon-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5);
+}
+
+.dungeon-card .dungeon-sep {
+    color: rgba(255,255,255,0.5);
+    font-size: 1.2rem;
+}
+
+.dungeon-card .dungeon-reward {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+}
+
+.dungeon-card .dungeon-unlock {
+    font-size: 0.95rem;
+    color: var(--accent-primary);
+    font-weight: 600;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    margin-top: var(--spacing-xs);
+}
+
+.dungeon-card.coming-soon::before {
+    filter: brightness(0.4) grayscale(0.5);
+}
+
+.dungeon-card.coming-soon .coming-soon-badge {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    z-index: 3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Dungeon Background Images from DungeonBackgrounds (1024x1024, 3 rows x 340px each) */
+/* DungeonBackgrounds_0: Hammer Thief (Y=684), Ghost Town (Y=344), Invasion (Y=4) in Unity coords */
+/* DungeonBackgrounds_1: Zombie Rush (Y=684), Coming Soon (Y=344) */
+/* Card height is 150px, so we want to show 340px of a 1024px image = 44% height visibility */
+/* background-size: auto 450% means card height = 150px shows 1024px * (150/450) = 341px which is ~1 frame */
+
+.dungeon-card.hammer-thief::before {
+    background-image: url('icons/game/DungeonBackgrounds_0.png');
+    background-size: 100% 300%;
+    background-position: center 0%;
+}
+
+.dungeon-card.ghost-town::before {
+    background-image: url('icons/game/DungeonBackgrounds_0.png');
+    background-size: 100% 300%;
+    background-position: center 50%;
+}
+
+.dungeon-card.invasion::before {
+    background-image: url('icons/game/DungeonBackgrounds_0.png');
+    background-size: 100% 300%;
+    background-position: center 100%;
+}
+
+.dungeon-card.zombie-rush::before {
+    background-image: url('icons/game/DungeonBackgrounds_1.png');
+    background-size: 100% 300%;
+    background-position: center 0%;
+}
+
+.dungeon-card.coming-soon-dungeon::before {
+    background-image: url('icons/game/DungeonBackgrounds_1.png');
+    background-size: 100% 300%;
+    background-position: center 50%;
+}
+
+/* ===== Loading Screen Background ===== */
+.loading-screen-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('icons/game/LoadingScreen.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ===== Plus Icon (Health) ===== */
+.game-icon.plus-health {
+    background-image: url('icons/game/PlusIcon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ===== Forge/Anvil Icon ===== */
+.game-icon.forge-anvil {
+    background-image: url('icons/game/ShopResource_Hammers.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

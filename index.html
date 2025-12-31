@@ -16,11 +16,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=49">
 </head>
 
 <body>
     <div class="app-container">
+        <!-- Loading Screen Background -->
+        <div class="loading-screen-bg"></div>
+        
         <!-- Animated Background -->
         <div class="bg-particles">
             <div class="particle"></div>
@@ -48,11 +51,17 @@
                 <img src="icons/hammer.png" alt="Hammer" class="logo-icon">
                 <h1>Forge EXP Calculator</h1>
             </div>
-            <nav class="nav-links">
-                <a href="index.html" class="nav-link active">Forge EXP</a>
-                <a href="mounts.html" class="nav-link">Mounts</a>
-                <a href="eggs.html" class="nav-link">Eggs</a>
-                <a href="guide.html" class="nav-link">Guide</a>
+            <nav class="nav-links nav-grouped">
+                <div class="nav-group">
+                    <span class="nav-group-title">Calculators</span>
+                    <div class="nav-group-links">
+                        <a href="index.html" class="nav-link active">Forge Points</a>
+                        <a href="mounts.html" class="nav-link">Mounts Points</a>
+                        <a href="eggs.html" class="nav-link">Eggs Hatch</a>
+                        <a href="faq.html" class="nav-link">FAQ</a>
+                    </div>
+                </div>
+                <a href="guide.html" class="nav-link nav-guide-btn">📖 Guide</a>
             </nav>
             <a href="https://github.com/1vcian/ForgeMasterCalculator" target="_blank" rel="noopener noreferrer"
                 class="github-link">
@@ -185,42 +194,52 @@
                 </h3>
                 <div class="exp-table">
                     <div class="exp-row">
+                        <span class="age-icon primitive"></span>
                         <span class="tier primitive">Primitive</span>
                         <span class="exp-value">1 pt</span>
                     </div>
                     <div class="exp-row">
+                        <span class="age-icon medieval"></span>
                         <span class="tier medieval">Medieval</span>
                         <span class="exp-value">1 pt</span>
                     </div>
                     <div class="exp-row">
+                        <span class="age-icon early-modern"></span>
                         <span class="tier early-modern">Early-Modern</span>
                         <span class="exp-value">1 pt</span>
                     </div>
                     <div class="exp-row">
+                        <span class="age-icon modern"></span>
                         <span class="tier modern">Modern</span>
                         <span class="exp-value">2 pts</span>
                     </div>
                     <div class="exp-row">
+                        <span class="age-icon space"></span>
                         <span class="tier space">Space</span>
                         <span class="exp-value">2 pts</span>
                     </div>
                     <div class="exp-row">
+                        <span class="age-icon interstellar"></span>
                         <span class="tier interstellar">Interstellar</span>
                         <span class="exp-value">2 pts</span>
                     </div>
                     <div class="exp-row">
+                        <span class="age-icon multiverse"></span>
                         <span class="tier multiverse">Multiverse</span>
                         <span class="exp-value">3 pts</span>
                     </div>
                     <div class="exp-row">
+                        <span class="age-icon quantum"></span>
                         <span class="tier quantum">Quantum</span>
                         <span class="exp-value">3 pts</span>
                     </div>
                     <div class="exp-row">
+                        <span class="age-icon underworld"></span>
                         <span class="tier underworld">Underworld</span>
                         <span class="exp-value">3 pts</span>
                     </div>
                     <div class="exp-row">
+                        <span class="age-icon divine"></span>
                         <span class="tier divine">Divine</span>
                         <span class="exp-value">3 pts</span>
                     </div>
