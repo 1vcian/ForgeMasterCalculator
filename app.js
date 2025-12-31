@@ -1,5 +1,5 @@
 // ===== ForgeMaster EXP Calculator =====
-// Data from official Forge Master Information spreadsheet (December 2025)
+// Forge EXP Calculator - ForgeMaster Helper
 
 // Probability data for each forge level (as decimals from Excel)
 const forgeProbabilities = {

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Info - ForgeMaster Helper</title>
-    <meta name="description" content="ForgeMaster game information - Clans, War, Tech Tree, Pets, PvP and more">
+    <title>Game Guide - ForgeMaster Helper</title>
+    <meta name="description" content="ForgeMaster game guide - Clans, War, Tech Tree, Pets, PvP and more">
     <meta name="theme-color" content="#f59e0b">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -42,13 +42,13 @@
         <header class="header">
             <div class="logo">
                 <img src="icons/hammer.png" alt="Hammer" class="logo-icon">
-                <h1>Game Info</h1>
+                <h1>Game Guide</h1>
             </div>
             <nav class="nav-links">
                 <a href="index.html" class="nav-link">Forge EXP</a>
                 <a href="mounts.html" class="nav-link">Mounts</a>
                 <a href="eggs.html" class="nav-link">Eggs</a>
-                <a href="info.html" class="nav-link active">Info</a>
+                <a href="guide.html" class="nav-link active">Guide</a>
             </nav>
             <a href="https://github.com/1vcian/ForgeMasterCalculator" target="_blank" rel="noopener noreferrer"
                 class="github-link">
@@ -68,6 +68,7 @@
                 <button class="tab-btn" data-tab="clans">Clans</button>
                 <button class="tab-btn" data-tab="pets">Pets</button>
                 <button class="tab-btn" data-tab="mounts">Mounts</button>
+                <button class="tab-btn" data-tab="forge">Forge</button>
                 <button class="tab-btn" data-tab="techtree">Tech Tree</button>
                 <button class="tab-btn" data-tab="pvp">PvP</button>
                 <button class="tab-btn" data-tab="faq">FAQ</button>
@@ -309,7 +310,7 @@
                             </ul>
                         </div>
                         <div class="war-day">
-                            <h4><span class="game-icon timer"></span> Thursday (2pts)</h4>
+                            <h4><span class="game-icon timer"></span> Thursday (3pts)</h4>
                             <ul>
                                 <li>All Forge actions available</li>
                                 <li>Skill Upgrades: Common 50 → Mythic 175pts</li>
@@ -317,7 +318,7 @@
                             </ul>
                         </div>
                         <div class="war-day">
-                            <h4><span class="game-icon timer"></span> Friday (2pts)</h4>
+                            <h4><span class="game-icon timer"></span> Friday (4pts)</h4>
                             <ul>
                                 <li>Spend 1,000 Coins on Forge: 10pts</li>
                                 <li>Start/Complete Forge Upgrade: 10,000pts each</li>
@@ -326,7 +327,7 @@
                             </ul>
                         </div>
                         <div class="war-day">
-                            <h4><span class="game-icon timer"></span> Saturday (2pts)</h4>
+                            <h4><span class="game-icon timer"></span> Saturday (5pts)</h4>
                             <ul>
                                 <li>All Forge actions</li>
                                 <li>Use Dungeon Key: 1,000pts</li>
@@ -334,7 +335,7 @@
                             </ul>
                         </div>
                         <div class="war-day">
-                            <h4><span class="game-icon timer"></span> Sunday (4pts)</h4>
+                            <h4><span class="game-icon timer"></span> Sunday (2pts)</h4>
                             <ul>
                                 <li><span class="game-icon swords"></span> Defeat rival clan members: 1-50pts each</li>
                                 <li><span class="game-icon star"></span> Win the all-out brawl: 1,000pts</li>
@@ -357,7 +358,7 @@
                             <p><span class="game-icon chest-unlocked"></span> Clans unlock at <strong>Stage 4-15</strong></p>
                         </div>
                         <div class="faq-item">
-                            <p>🌐 You can only be in a clan with players on your <strong>same server</strong></p>
+                            <p><span class="game-icon star"></span> You can only be in a clan with players on your <strong>same server</strong></p>
                         </div>
                         <div class="faq-item">
                             <p>👥 Maximum <strong>50 members</strong> per clan</p>
@@ -507,154 +508,101 @@
             <div class="tab-content" id="mounts">
                 <div class="info-card">
                     <h3>
-                        <span class="mount-icon small horse"></span>
-                        Mount Boosts (Damage & Health)
-                    </h3>
-                    <div class="data-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Rarity</th>
-                                    <th>Boost</th>
-                                    <th>Unlock Level</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td><span class="mount-icon small lily-pad"></span> Common</td><td>+10%</td><td>Level 1</td></tr>
-                                <tr><td><span class="mount-icon small turtle"></span> Rare</td><td>+40%</td><td>Level 2</td></tr>
-                                <tr><td><span class="mount-icon small pig"></span> Epic</td><td>+80%</td><td>Level 10</td></tr>
-                                <tr><td><span class="mount-icon small bike"></span> Legendary</td><td>+150%</td><td>Level 18</td></tr>
-                                <tr><td><span class="mount-icon small mini-dragon"></span> Ultimate</td><td>+250%</td><td>Level 26</td></tr>
-                                <tr><td><span class="mount-icon small hover-board"></span> Mythic</td><td>+400%</td><td>Level 34</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <h3>
                         <span class="mount-icon small lily-pad"></span>
-                        Common Mounts
+                        Common Mounts (Unlock Lv.1)
                     </h3>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +10% Damage & Health | <span class="game-icon star"></span> War Points: 400</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr>
-                                    <th>Mount</th>
-                                    <th>Winders</th>
-                                </tr>
+                                <tr><th>Mount</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small brown-leaf"></span> Brown Leaf</td><td>2</td></tr>
-                                <tr><td><span class="mount-icon small lily-leaf"></span> Lily Leaf</td><td>2</td></tr>
-                                <tr><td><span class="mount-icon small lily-pad"></span> Lily Pad</td><td>2</td></tr>
+                                <tr><td><span class="mount-icon small brown-leaf"></span> Brown Leaf</td></tr>
+                                <tr><td><span class="mount-icon small lily-leaf"></span> Lily Leaf</td></tr>
+                                <tr><td><span class="mount-icon small lily-pad"></span> Lily Pad</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
                 <div class="info-card">
-                    <h3>
-                        <span class="mount-icon small turtle"></span>
-                        Rare Mounts
-                    </h3>
+                    <h3 class="tier rare">Rare Mounts (Unlock Lv.2)</h3>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +40% Damage & Health | <span class="game-icon star"></span> War Points: 600</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr>
-                                    <th>Mount</th>
-                                    <th>Winders</th>
-                                </tr>
+                                <tr><th>Mount</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small turtle"></span> Turtle</td><td>4</td></tr>
-                                <tr><td><span class="mount-icon small crab"></span> Crab</td><td>4</td></tr>
-                                <tr><td><span class="mount-icon small horse"></span> Brown Horse</td><td>4</td></tr>
-                                <tr><td><span class="mount-icon small dino"></span> Dino</td><td>4</td></tr>
+                                <tr><td><span class="mount-icon small turtle"></span> Turtle</td></tr>
+                                <tr><td><span class="mount-icon small crab"></span> Crab</td></tr>
+                                <tr><td><span class="mount-icon small horse"></span> Brown Horse</td></tr>
+                                <tr><td><span class="mount-icon small dino"></span> Dino</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
                 <div class="info-card">
-                    <h3>
-                        <span class="mount-icon small pig"></span>
-                        Epic Mounts
-                    </h3>
+                    <h3 class="tier epic">Epic Mounts (Unlock Lv.10)</h3>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +80% Damage & Health | <span class="game-icon star"></span> War Points: 900</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr>
-                                    <th>Mount</th>
-                                    <th>Winders</th>
-                                </tr>
+                                <tr><th>Mount</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small pig"></span> Pig</td><td>8</td></tr>
-                                <tr><td><span class="mount-icon small goat"></span> Goat</td><td>8</td></tr>
+                                <tr><td><span class="mount-icon small pig"></span> Pig</td></tr>
+                                <tr><td><span class="mount-icon small goat"></span> Goat</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
                 <div class="info-card">
-                    <h3>
-                        <span class="mount-icon small bike"></span>
-                        Legendary Mounts
-                    </h3>
+                    <h3 class="tier legendary">Legendary Mounts (Unlock Lv.18)</h3>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +150% Damage & Health | <span class="game-icon star"></span> War Points: 1,350</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr>
-                                    <th>Mount</th>
-                                    <th>Winders</th>
-                                </tr>
+                                <tr><th>Mount</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small bike"></span> Bike</td><td>16</td></tr>
-                                <tr><td><span class="mount-icon small bee"></span> Giant Bee</td><td>16</td></tr>
+                                <tr><td><span class="mount-icon small bike"></span> Bike</td></tr>
+                                <tr><td><span class="mount-icon small bee"></span> Giant Bee</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
                 <div class="info-card">
-                    <h3>
-                        <span class="mount-icon small mini-dragon"></span>
-                        Ultimate Mounts
-                    </h3>
+                    <h3 class="tier ultimate">Ultimate Mounts (Unlock Lv.26)</h3>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +250% Damage & Health | <span class="game-icon star"></span> War Points: 2,000</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr>
-                                    <th>Mount</th>
-                                    <th>Winders</th>
-                                </tr>
+                                <tr><th>Mount</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small mini-dragon"></span> Mini Dragon</td><td>32</td></tr>
-                                <tr><td><span class="mount-icon small droid"></span> One-Wheel Droid</td><td>32</td></tr>
+                                <tr><td><span class="mount-icon small mini-dragon"></span> Mini Dragon</td></tr>
+                                <tr><td><span class="mount-icon small droid"></span> One-Wheel Droid</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
                 <div class="info-card">
-                    <h3>
-                        <span class="mount-icon small hover-board"></span>
-                        Mythic Mounts
-                    </h3>
+                    <h3 class="tier mythic">Mythic Mounts (Unlock Lv.34)</h3>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +400% Damage & Health | <span class="game-icon star"></span> War Points: 3,000</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr>
-                                    <th>Mount</th>
-                                    <th>Winders</th>
-                                </tr>
+                                <tr><th>Mount</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small hover-board"></span> Hover Board</td><td>64</td></tr>
-                                <tr><td><span class="mount-icon small hover-disk"></span> Hover Disk</td><td>64</td></tr>
+                                <tr><td><span class="mount-icon small hover-board"></span> Hover Board</td></tr>
+                                <tr><td><span class="mount-icon small hover-disk"></span> Hover Disk</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -663,44 +611,140 @@
                 <div class="info-card">
                     <h3>
                         <span class="game-icon winder"></span>
-                        Winders per Level
+                        Mount Summon Cost
+                    </h3>
+                    <p class="info-note">
+                        <span class="game-icon winder"></span> Each summon costs <strong>50 winders</strong> (reducible via Tech Tree)
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        Mount Level Requirements
+                    </h3>
+                    <p class="info-note">Total openings needed to reach each level</p>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>2</td><td>11</td><td>32</td><td>21</td><td>62</td><td>31</td><td>92</td><td>41</td><td>370</td></tr>
+                                <tr><td>2</td><td>5</td><td>12</td><td>35</td><td>22</td><td>65</td><td>32</td><td>95</td><td>42</td><td>404</td></tr>
+                                <tr><td>3</td><td>8</td><td>13</td><td>38</td><td>23</td><td>68</td><td>33</td><td>98</td><td>43</td><td>438</td></tr>
+                                <tr><td>4</td><td>11</td><td>14</td><td>41</td><td>24</td><td>71</td><td>34</td><td>132</td><td>44</td><td>472</td></tr>
+                                <tr><td>5</td><td>14</td><td>15</td><td>44</td><td>25</td><td>74</td><td>35</td><td>166</td><td>45</td><td>506</td></tr>
+                                <tr><td>6</td><td>17</td><td>16</td><td>47</td><td>26</td><td>77</td><td>36</td><td>200</td><td>46</td><td>540</td></tr>
+                                <tr><td>7</td><td>20</td><td>17</td><td>50</td><td>27</td><td>80</td><td>37</td><td>234</td><td>47</td><td>574</td></tr>
+                                <tr><td>8</td><td>23</td><td>18</td><td>53</td><td>28</td><td>83</td><td>38</td><td>268</td><td>48</td><td>608</td></tr>
+                                <tr><td>9</td><td>26</td><td>19</td><td>56</td><td>29</td><td>86</td><td>39</td><td>302</td><td>49</td><td>642</td></tr>
+                                <tr><td>10</td><td>29</td><td>20</td><td>59</td><td>30</td><td>89</td><td>40</td><td>336</td><td>50</td><td>MAX</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forge Tab -->
+            <div class="tab-content" id="forge">
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon hammer-icon"></span>
+                        Forge Upgrade Costs (Level 1-35)
                     </h3>
                     <div class="data-table scrollable">
                         <table>
                             <thead>
                                 <tr>
                                     <th>Level</th>
-                                    <th>Winders</th>
-                                    <th>Level</th>
-                                    <th>Winders</th>
-                                    <th>Level</th>
-                                    <th>Winders</th>
+                                    <th>Cost</th>
+                                    <th>Time</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td>2</td><td>18</td><td>16</td><td>35</td><td>68</td></tr>
-                                <tr><td>2</td><td>4</td><td>19</td><td>18</td><td>36</td><td>72</td></tr>
-                                <tr><td>3</td><td>4</td><td>20</td><td>20</td><td>37</td><td>76</td></tr>
-                                <tr><td>4</td><td>4</td><td>21</td><td>22</td><td>38</td><td>80</td></tr>
-                                <tr><td>5</td><td>4</td><td>22</td><td>24</td><td>39</td><td>84</td></tr>
-                                <tr><td>6</td><td>6</td><td>23</td><td>26</td><td>40</td><td>88</td></tr>
-                                <tr><td>7</td><td>6</td><td>24</td><td>28</td><td>41</td><td>92</td></tr>
-                                <tr><td>8</td><td>6</td><td>25</td><td>30</td><td>42</td><td>96</td></tr>
-                                <tr><td>9</td><td>6</td><td>26</td><td>32</td><td>43</td><td>100</td></tr>
-                                <tr><td>10</td><td>8</td><td>27</td><td>36</td><td>44</td><td>104</td></tr>
-                                <tr><td>11</td><td>8</td><td>28</td><td>40</td><td>45</td><td>108</td></tr>
-                                <tr><td>12</td><td>8</td><td>29</td><td>44</td><td>46</td><td>112</td></tr>
-                                <tr><td>13</td><td>8</td><td>30</td><td>48</td><td>47</td><td>116</td></tr>
-                                <tr><td>14</td><td>10</td><td>31</td><td>52</td><td>48</td><td>120</td></tr>
-                                <tr><td>15</td><td>10</td><td>32</td><td>56</td><td>49</td><td>124</td></tr>
-                                <tr><td>16</td><td>12</td><td>33</td><td>60</td><td>50</td><td>128</td></tr>
-                                <tr><td>17</td><td>14</td><td>34</td><td>64</td><td></td><td></td></tr>
+                                <tr><td>1 → 2</td><td>400 x 1</td><td>5m</td></tr>
+                                <tr><td>2 → 3</td><td>700 x 1</td><td>15m</td></tr>
+                                <tr><td>3 → 4</td><td>1.5k x 1</td><td>30m</td></tr>
+                                <tr><td>4 → 5</td><td>3.5k x 1</td><td>1h</td></tr>
+                                <tr><td>5 → 6</td><td>10k x 1</td><td>1h 59m</td></tr>
+                                <tr><td>6 → 7</td><td>25k x 1</td><td>7h 33m</td></tr>
+                                <tr><td>7 → 8</td><td>50k x 1</td><td>13h 6m</td></tr>
+                                <tr><td>8 → 9</td><td>33.3k x 3</td><td>18h 39m</td></tr>
+                                <tr><td>9 → 10</td><td>50k x 3</td><td>1d 13m</td></tr>
+                                <tr><td>10 → 11</td><td>83.3k x 3</td><td>1d 11h</td></tr>
+                                <tr><td>11 → 12</td><td>112k x 3</td><td>2d 1h</td></tr>
+                                <tr><td>12 → 13</td><td>113k x 4</td><td>2d 17h</td></tr>
+                                <tr><td>13 → 14</td><td>153k x 4</td><td>3d 13h</td></tr>
+                                <tr><td>14 → 15</td><td>166k x 5</td><td>4d 11h</td></tr>
+                                <tr><td>15 → 16</td><td>224k x 5</td><td>5d 9h</td></tr>
+                                <tr><td>16 → 17</td><td>252k x 6</td><td>6d 7h</td></tr>
+                                <tr><td>17 → 18</td><td>291k x 7</td><td>7d 6h</td></tr>
+                                <tr><td>18 → 19</td><td>344k x 8</td><td>8d 4h</td></tr>
+                                <tr><td>19 → 20</td><td>413k x 9</td><td>9d 2h</td></tr>
+                                <tr><td>20 → 21</td><td>502k x 10</td><td>10d 53m</td></tr>
+                                <tr><td>21 → 22</td><td>678k x 10</td><td>10d 23h</td></tr>
+                                <tr><td>22 → 23</td><td>916k x 10</td><td>11d 21h</td></tr>
+                                <tr><td>23 → 24</td><td>1.23M x 10</td><td>12d 19h</td></tr>
+                                <tr><td>24 → 25</td><td>1.66M x 10</td><td>13d 17h</td></tr>
+                                <tr><td>25 → 26</td><td>2M x 10</td><td>14d 15h</td></tr>
+                                <tr><td>26 → 27</td><td>2.4M x 10</td><td>15d 14h</td></tr>
+                                <tr><td>27 → 28</td><td>2.88M x 10</td><td>16d 12h</td></tr>
+                                <tr><td>28 → 29</td><td>3.46M x 10</td><td>17d 10h</td></tr>
+                                <tr><td>29 → 30</td><td>4.15M x 10</td><td>18d 8h</td></tr>
+                                <tr><td>30 → 31</td><td>4.98M x 10</td><td>19d 7h</td></tr>
+                                <tr><td>31 → 32</td><td>5.98M x 10</td><td>20d 5h</td></tr>
+                                <tr><td>32 → 33</td><td>7.17M x 10</td><td>21d 3h</td></tr>
+                                <tr><td>33 → 34</td><td>8.61M x 10</td><td>22d 1h</td></tr>
+                                <tr><td>34 → 35</td><td>10.3M x 10</td><td>23d</td></tr>
                             </tbody>
                         </table>
                     </div>
                     <p class="info-note">
-                        <span class="game-icon star"></span> Tech Tree can reduce winder costs up to 50%
+                        <span class="game-icon star"></span> All values are base - can be improved via Tech Tree
                     </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon chest-unlocked"></span>
+                        Dungeons
+                    </h3>
+                    <div class="info-list">
+                        <p><span class="game-icon key-orange"></span> <strong>Keys reset at midnight</strong> and are only used if you beat the level</p>
+                        <p><span class="game-icon timer"></span> You can "sweep last" to autocomplete your highest-completed level</p>
+                        <p><span class="game-icon star"></span> Keys over 2/2 remain until used - daily reset only refills to 2/2</p>
+                    </div>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dungeon</th>
+                                    <th>Reward</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="game-icon swords"></span> Hammer Thief</td><td>Hammers</td></tr>
+                                <tr><td><span class="game-icon swords"></span> Ghost Town</td><td>Coins</td></tr>
+                                <tr><td><span class="game-icon swords"></span> Invasion</td><td>Potions</td></tr>
+                                <tr><td><span class="game-icon swords"></span> Zombie Rush</td><td>Keys</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>
+                        <span class="game-icon star"></span>
+                        Cost Formula
+                    </h3>
+                    <div class="info-list">
+                        <p><strong>Cost:</strong> Base Value × (1 - Tech Tree %)</p>
+                        <p><em>Ex: 502k × (1 - 0.28) = 361.4k with 28% reduction</em></p>
+                        <br>
+                        <p><strong>Time:</strong> Base Value ÷ (1 + Tech Tree %)</p>
+                        <p><em>Ex: 85 hours ÷ 1.3 = 65h 23m with 30% speed boost</em></p>
+                    </div>
                 </div>
             </div>
 
@@ -936,12 +980,12 @@
         </main>
 
         <footer class="footer">
-            <p>ForgeMaster Helper • Data from official spreadsheet (Dec 2025)</p>
-            <p style="font-size: 0.75rem; opacity: 0.6;">Created by Nienna & Hibiscus • discord.gg/forgemaster</p>
+            <p>ForgeMaster Helper • Last update: 31/12/2025</p>
+            <p style="font-size: 0.75rem; opacity: 0.6;">Created by <a href="https://1vcian.me" target="_blank" style="color: inherit;">Lucian Medrihan</a></p>
         </footer>
     </div>
 
-    <script src="info.js"></script>
+    <script src="guide.js"></script>
 </body>
 
 </html>

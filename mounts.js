@@ -1,5 +1,5 @@
 // ===== ForgeMaster Mount Calculator =====
-// Data from official Forge Master Information spreadsheet (December 2025)
+// Mount Calculator - ForgeMaster Helper
 
 // Complete Mount Summon Rates data (Level 1-50)
 const mountSummonRates = {
@@ -65,6 +65,19 @@ const mountBoosts = {
     mythic: { damage: 400, health: 400 }
 };
 
+// War points for mount summon/merge by rarity
+const mountWarPoints = {
+    common: 400,
+    rare: 600,
+    epic: 900,
+    legendary: 1350,
+    ultimate: 2000,
+    mythic: 3000
+};
+
+// Fixed winders cost per summon (from Excel)
+const WINDERS_PER_SUMMON = 50;
+
 // Mount unlock levels
 const mountUnlockLevels = {
     common: 1,
@@ -98,20 +111,23 @@ const tierNames = {
 // DOM Elements
 const mountLevelSelect = document.getElementById('mountLevel');
 const windersCountInput = document.getElementById('windersCount');
-const targetMountsInput = document.getElementById('targetMounts');
+const costPerMountInput = document.getElementById('costPerMount');
+const targetPointsInput = document.getElementById('targetPoints');
 const windersInputGroup = document.getElementById('windersInputGroup');
+const costInputGroup = document.getElementById('costInputGroup');
 const targetInputGroup = document.getElementById('targetInputGroup');
 const calculateBtn = document.getElementById('calculateBtn');
 const calcModeBtn = document.getElementById('calcModeBtn');
 const targetModeBtn = document.getElementById('targetModeBtn');
 const calcResults = document.getElementById('calcResults');
 const targetResults = document.getElementById('targetResults');
+const expectedPointsEl = document.getElementById('expectedPoints');
+const pointsPerMountEl = document.getElementById('pointsPerMount');
 const expectedMountsEl = document.getElementById('expectedMounts');
-const windersPerMountEl = document.getElementById('windersPerMount');
-const recommendedWindersEl = document.getElementById('recommendedWinders');
-const expectedWithRecommendedEl = document.getElementById('expectedWithRecommended');
+const mountsNeededEl = document.getElementById('mountsNeeded');
+const windersForTargetEl = document.getElementById('windersForTarget');
+const pointsPerMountTargetEl = document.getElementById('pointsPerMountTarget');
 const probabilityGrid = document.getElementById('probabilityGrid');
-const techTreeReduction = document.getElementById('techTreeReduction');
 
 let currentMode = 'calculate';
 
@@ -162,13 +178,13 @@ function setupEventListeners() {
         calculate();
     });
     windersCountInput.addEventListener('input', debounce(calculate, 300));
-    targetMountsInput.addEventListener('input', debounce(calculate, 300));
-    techTreeReduction.addEventListener('input', debounce(calculate, 300));
+    costPerMountInput.addEventListener('input', debounce(calculate, 300));
+    targetPointsInput.addEventListener('input', debounce(calculate, 300));
 
     windersCountInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') calculate();
     });
-    targetMountsInput.addEventListener('keypress', (e) => {
+    targetPointsInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') calculate();
     });
 }
@@ -189,22 +205,39 @@ function switchMode(mode) {
     currentMode = mode;
     calcModeBtn.classList.toggle('active', mode === 'calculate');
     targetModeBtn.classList.toggle('active', mode === 'target');
+    
+    // Toggle input visibility
     windersInputGroup.classList.toggle('hidden', mode !== 'calculate');
     targetInputGroup.classList.toggle('hidden', mode !== 'target');
+    
+    // Toggle results visibility
     calcResults.classList.toggle('hidden', mode !== 'calculate');
     targetResults.classList.toggle('hidden', mode !== 'target');
+    
     calculateBtn.querySelector('.btn-text').textContent =
         mode === 'calculate' ? 'Calculate' : 'Find Winders';
     calculate();
 }
 
-function getAdjustedWindersNeeded(level) {
+function getCostPerMount() {
+    return parseInt(costPerMountInput.value) || WINDERS_PER_SUMMON;
+}
+
+// Calculate expected points per mount based on probabilities
+function getExpectedPointsPerMount(level) {
     const rates = mountSummonRates[level];
     if (!rates) return 0;
-
-    const baseNeeded = rates.needed === 'MAX' ? 642 : rates.needed;
-    const reduction = parseFloat(techTreeReduction.value) || 0;
-    return Math.ceil(baseNeeded * (1 - reduction / 100));
+    
+    let expectedPoints = 0;
+    const tiers = ['common', 'rare', 'epic', 'legendary', 'ultimate', 'mythic'];
+    
+    for (const tier of tiers) {
+        if (rates[tier]) {
+            expectedPoints += rates[tier] * mountWarPoints[tier];
+        }
+    }
+    
+    return expectedPoints;
 }
 
 function calculate() {
@@ -212,21 +245,25 @@ function calculate() {
     const rates = mountSummonRates[level];
     if (!rates) return;
 
-    const windersNeeded = getAdjustedWindersNeeded(level);
+    const costPerMount = getCostPerMount();
+    const pointsPerMount = getExpectedPointsPerMount(level);
 
     if (currentMode === 'calculate') {
         const windersCount = parseInt(windersCountInput.value) || 0;
-        const expectedMounts = windersCount / windersNeeded;
+        const expectedMounts = Math.floor(windersCount / costPerMount);
+        const expectedPoints = expectedMounts * pointsPerMount;
 
+        expectedPointsEl.textContent = formatNumber(expectedPoints);
+        pointsPerMountEl.textContent = formatNumber(pointsPerMount);
         expectedMountsEl.textContent = formatNumber(expectedMounts);
-        windersPerMountEl.textContent = windersNeeded;
     } else {
-        const targetMounts = parseInt(targetMountsInput.value) || 0;
-        const recommendedWinders = Math.ceil(targetMounts * windersNeeded);
-        const expectedWithWinders = recommendedWinders / windersNeeded;
+        const targetPoints = parseInt(targetPointsInput.value) || 0;
+        const mountsNeeded = Math.ceil(targetPoints / pointsPerMount);
+        const windersForTarget = mountsNeeded * costPerMount;
 
-        recommendedWindersEl.textContent = formatNumber(recommendedWinders);
-        expectedWithRecommendedEl.textContent = formatNumber(expectedWithWinders);
+        windersForTargetEl.textContent = formatNumber(windersForTarget);
+        mountsNeededEl.textContent = formatNumber(mountsNeeded);
+        pointsPerMountTargetEl.textContent = formatNumber(pointsPerMount);
     }
 
     updateProbabilityBreakdown(level);
@@ -267,9 +304,15 @@ function updateProbabilityBreakdown(level) {
             const valueSpan = document.createElement('span');
             valueSpan.className = 'prob-value';
             valueSpan.textContent = `${(rates[tier] * 100).toFixed(2)}%`;
+            
+            // Add war points info
+            const warPtsSpan = document.createElement('span');
+            warPtsSpan.className = 'prob-war-pts';
+            warPtsSpan.textContent = `${mountWarPoints[tier].toLocaleString()} pts`;
 
             item.appendChild(tierSpan);
             item.appendChild(valueSpan);
+            item.appendChild(warPtsSpan);
             probabilityGrid.appendChild(item);
         }
     }

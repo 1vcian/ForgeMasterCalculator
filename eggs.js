@@ -1,5 +1,5 @@
 // ===== ForgeMaster Egg Calculator =====
-// Data from official Forge Master Information spreadsheet (December 2025)
+// Eggs Calculator - ForgeMaster Helper
 
 // Complete Egg Drop Rates by difficulty (1-1 to 10-10)
 const eggDropRates = {

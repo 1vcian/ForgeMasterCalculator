@@ -677,6 +677,12 @@ body::after {
     font-family: 'Courier New', monospace;
 }
 
+.prob-war-pts {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
 /* ===== Info Card ===== */
 .info-card {
     background: var(--bg-card);

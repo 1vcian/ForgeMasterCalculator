@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mount Calculator - ForgeMaster Helper</title>
-    <meta name="description" content="Calculate mount summon rates and clock winders needed in ForgeMaster">
+    <title>Mount Points Calculator - ForgeMaster Helper</title>
+    <meta name="description" content="Calculate expected war points from mount summons in ForgeMaster">
     <meta name="theme-color" content="#f59e0b">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -48,7 +48,7 @@
                 <a href="index.html" class="nav-link">Forge EXP</a>
                 <a href="mounts.html" class="nav-link active">Mounts</a>
                 <a href="eggs.html" class="nav-link">Eggs</a>
-                <a href="info.html" class="nav-link">Info</a>
+                <a href="guide.html" class="nav-link">Guide</a>
             </nav>
             <a href="https://github.com/1vcian/ForgeMasterCalculator" target="_blank" rel="noopener noreferrer"
                 class="github-link">
@@ -58,36 +58,25 @@
                 </svg>
                 Visit project
             </a>
-            <p class="subtitle">Calculate summon rates & winders needed</p>
+            <p class="subtitle">Calculate expected war points from mounts</p>
         </header>
 
         <main class="main-content">
             <div class="mode-toggle">
                 <button class="mode-btn active" data-mode="calculate" id="calcModeBtn">
-                    <svg class="mode-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 6v6l4 2" />
-                    </svg>
-                    Calculate Mounts
+                    <span class="game-icon winder"></span>
+                    Calculate Points
                 </button>
                 <button class="mode-btn" data-mode="target" id="targetModeBtn">
-                    <svg class="mode-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10" />
-                        <circle cx="12" cy="12" r="6" />
-                        <circle cx="12" cy="12" r="2" />
-                    </svg>
-                    Find Winders
+                    <span class="game-icon star"></span>
+                    Target Points
                 </button>
             </div>
 
             <div class="calculator-card">
                 <div class="input-group">
                     <label for="mountLevel">
-                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                            <path d="M2 17l10 5 10-5" />
-                            <path d="M2 12l10 5 10-5" />
-                        </svg>
+                        <span class="mount-icon small horse"></span>
                         Mount Level (1-50)
                     </label>
                     <div class="select-wrapper">
@@ -99,43 +88,31 @@
                     </div>
                 </div>
 
-                <div class="input-group">
-                    <label for="techTreeReduction">
-                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2v4" />
-                            <path d="M12 18v4" />
-                            <path d="M4.93 4.93l2.83 2.83" />
-                            <path d="M16.24 16.24l2.83 2.83" />
-                            <path d="M2 12h4" />
-                            <path d="M18 12h4" />
-                            <path d="M4.93 19.07l2.83-2.83" />
-                            <path d="M16.24 7.76l2.83-2.83" />
-                        </svg>
-                        Tech Tree Winder Reduction (%)
-                    </label>
-                    <input type="number" id="techTreeReduction" min="0" max="50" value="0" placeholder="0">
-                </div>
-
                 <div class="input-group" id="windersInputGroup">
                     <label for="windersCount">
                         <span class="game-icon winder"></span>
-                        Number of Clock Winders
+                        Number of Winders
                     </label>
-                    <input type="number" id="windersCount" min="1" max="100000" value="100"
+                    <input type="number" id="windersCount" min="1" max="1000000" value="2500"
                         placeholder="Enter winders count">
                 </div>
 
                 <div class="input-group hidden" id="targetInputGroup">
-                    <label for="targetMounts">
-                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <circle cx="12" cy="12" r="6" />
-                            <circle cx="12" cy="12" r="2" />
-                        </svg>
-                        Target Mounts
+                    <label for="targetPoints">
+                        <span class="game-icon star"></span>
+                        Target War Points
                     </label>
-                    <input type="number" id="targetMounts" min="1" max="10000" value="10"
-                        placeholder="Enter target mounts">
+                    <input type="number" id="targetPoints" min="1" max="10000000" value="100000"
+                        placeholder="Enter target points">
+                </div>
+
+                <div class="input-group" id="costInputGroup">
+                    <label for="costPerMount">
+                        <span class="game-icon winder"></span>
+                        Cost per Mount (Winders)
+                    </label>
+                    <input type="number" id="costPerMount" min="1" max="100" value="50"
+                        placeholder="Default: 50">
                 </div>
 
                 <button class="calculate-btn" id="calculateBtn">
@@ -157,23 +134,31 @@
 
                 <div class="results-content" id="calcResults">
                     <div class="result-item highlight">
+                        <span class="result-label">Expected War Points</span>
+                        <span class="result-value" id="expectedPoints">0</span>
+                    </div>
+                    <div class="result-item">
                         <span class="result-label">Expected Mounts</span>
                         <span class="result-value" id="expectedMounts">0</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Winders per Mount</span>
-                        <span class="result-value" id="windersPerMount">0</span>
+                        <span class="result-label">Points per Mount (avg)</span>
+                        <span class="result-value" id="pointsPerMount">0</span>
                     </div>
                 </div>
 
                 <div class="results-content hidden" id="targetResults">
                     <div class="result-item highlight">
-                        <span class="result-label">Recommended Winders</span>
-                        <span class="result-value" id="recommendedWinders">0</span>
+                        <span class="result-label">Winders Needed</span>
+                        <span class="result-value" id="windersForTarget">0</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Expected Mounts</span>
-                        <span class="result-value" id="expectedWithRecommended">0</span>
+                        <span class="result-label">Mounts Needed</span>
+                        <span class="result-value" id="mountsNeeded">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Points per Mount (avg)</span>
+                        <span class="result-value" id="pointsPerMountTarget">0</span>
                     </div>
                 </div>
 
@@ -192,76 +177,95 @@
 
             <div class="info-card">
                 <h3>
-                    <span class="mount-icon small horse"></span>
-                    Mount Boosts (Damage & Health)
+                    <span class="mount-icon small lily-pad"></span>
+                    Common Mounts (Unlock Lv.1)
                 </h3>
+                <p class="info-note"><span class="game-icon swords"></span> +10% | <span class="game-icon star"></span> 400 pts</p>
                 <div class="exp-table">
-                    <div class="exp-row">
-                        <span class="tier common"><span class="mount-icon small lily-pad"></span> Common</span>
-                        <span class="exp-value">+10% | Unlocks Lv.1</span>
-                    </div>
-                    <div class="exp-row">
-                        <span class="tier rare"><span class="mount-icon small turtle-mount"></span> Rare</span>
-                        <span class="exp-value">+40% | Unlocks Lv.2</span>
-                    </div>
-                    <div class="exp-row">
-                        <span class="tier epic"><span class="mount-icon small pig"></span> Epic</span>
-                        <span class="exp-value">+80% | Unlocks Lv.10</span>
-                    </div>
-                    <div class="exp-row">
-                        <span class="tier legendary"><span class="mount-icon small bee"></span> Legendary</span>
-                        <span class="exp-value">+150% | Unlocks Lv.18</span>
-                    </div>
-                    <div class="exp-row">
-                        <span class="tier ultimate"><span class="mount-icon small droid"></span> Ultimate</span>
-                        <span class="exp-value">+250% | Unlocks Lv.26</span>
-                    </div>
-                    <div class="exp-row">
-                        <span class="tier mythic"><span class="mount-icon small hover-disk"></span> Mythic</span>
-                        <span class="exp-value">+400% | Unlocks Lv.34</span>
-                    </div>
+                    <div class="exp-row"><span class="mount-icon small brown-leaf"></span> Brown Leaf</div>
+                    <div class="exp-row"><span class="mount-icon small lily-leaf"></span> Lily Leaf</div>
+                    <div class="exp-row"><span class="mount-icon small lily-pad"></span> Lily Pad</div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3 class="tier rare">Rare Mounts (Unlock Lv.2)</h3>
+                <p class="info-note"><span class="game-icon swords"></span> +40% | <span class="game-icon star"></span> 600 pts</p>
+                <div class="exp-table">
+                    <div class="exp-row"><span class="mount-icon small turtle"></span> Turtle</div>
+                    <div class="exp-row"><span class="mount-icon small crab"></span> Crab</div>
+                    <div class="exp-row"><span class="mount-icon small horse"></span> Brown Horse</div>
+                    <div class="exp-row"><span class="mount-icon small dino"></span> Dino</div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3 class="tier epic">Epic Mounts (Unlock Lv.10)</h3>
+                <p class="info-note"><span class="game-icon swords"></span> +80% | <span class="game-icon star"></span> 900 pts</p>
+                <div class="exp-table">
+                    <div class="exp-row"><span class="mount-icon small pig"></span> Pig</div>
+                    <div class="exp-row"><span class="mount-icon small goat"></span> Goat</div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3 class="tier legendary">Legendary Mounts (Unlock Lv.18)</h3>
+                <p class="info-note"><span class="game-icon swords"></span> +150% | <span class="game-icon star"></span> 1,350 pts</p>
+                <div class="exp-table">
+                    <div class="exp-row"><span class="mount-icon small bike"></span> Bike</div>
+                    <div class="exp-row"><span class="mount-icon small bee"></span> Giant Bee</div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3 class="tier ultimate">Ultimate Mounts (Unlock Lv.26)</h3>
+                <p class="info-note"><span class="game-icon swords"></span> +250% | <span class="game-icon star"></span> 2,000 pts</p>
+                <div class="exp-table">
+                    <div class="exp-row"><span class="mount-icon small mini-dragon"></span> Mini Dragon</div>
+                    <div class="exp-row"><span class="mount-icon small droid"></span> One-Wheel Droid</div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3 class="tier mythic">Mythic Mounts (Unlock Lv.34)</h3>
+                <p class="info-note"><span class="game-icon swords"></span> +400% | <span class="game-icon star"></span> 3,000 pts</p>
+                <div class="exp-table">
+                    <div class="exp-row"><span class="mount-icon small hover-board"></span> Hover Board</div>
+                    <div class="exp-row"><span class="mount-icon small hover-disk"></span> Hover Disk</div>
                 </div>
             </div>
 
             <div class="info-card">
                 <h3>
-                    <span class="mount-icon small dino"></span>
-                    Available Mounts
+                    <span class="game-icon star"></span>
+                    Mount Level Requirements
                 </h3>
-                <div class="exp-table">
-                    <div class="exp-row">
-                        <span class="tier common"><span class="mount-icon small leaf"></span> Common</span>
-                        <span class="exp-value">Brown Leaf, Lily Leaf, Lily Pad</span>
-                    </div>
-                    <div class="exp-row">
-                        <span class="tier rare"><span class="mount-icon small horse"></span> Rare</span>
-                        <span class="exp-value">Turtle, Crab, Brown Horse, Dino</span>
-                    </div>
-                    <div class="exp-row">
-                        <span class="tier epic"><span class="mount-icon small goat"></span> Epic</span>
-                        <span class="exp-value">Pig, Goat</span>
-                    </div>
-                    <div class="exp-row">
-                        <span class="tier legendary"><span class="mount-icon small bike"></span> Legendary</span>
-                        <span class="exp-value">Bike, Giant Bee</span>
-                    </div>
-                    <div class="exp-row">
-                        <span class="tier ultimate"><span class="mount-icon small ufo"></span> Ultimate</span>
-                        <span class="exp-value">Mini Dragon, One-Wheel Droid</span>
-                    </div>
-                    <div class="exp-row">
-                        <span class="tier mythic"><span class="mount-icon small hover-board"></span> Mythic</span>
-                        <span class="exp-value">Hover Board, Hover Disk</span>
-                    </div>
+                <p class="info-note">Total openings needed to reach each level</p>
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>2</td><td>11</td><td>32</td><td>21</td><td>62</td><td>31</td><td>92</td><td>41</td><td>370</td></tr>
+                            <tr><td>2</td><td>5</td><td>12</td><td>35</td><td>22</td><td>65</td><td>32</td><td>95</td><td>42</td><td>404</td></tr>
+                            <tr><td>3</td><td>8</td><td>13</td><td>38</td><td>23</td><td>68</td><td>33</td><td>98</td><td>43</td><td>438</td></tr>
+                            <tr><td>4</td><td>11</td><td>14</td><td>41</td><td>24</td><td>71</td><td>34</td><td>132</td><td>44</td><td>472</td></tr>
+                            <tr><td>5</td><td>14</td><td>15</td><td>44</td><td>25</td><td>74</td><td>35</td><td>166</td><td>45</td><td>506</td></tr>
+                            <tr><td>6</td><td>17</td><td>16</td><td>47</td><td>26</td><td>77</td><td>36</td><td>200</td><td>46</td><td>540</td></tr>
+                            <tr><td>7</td><td>20</td><td>17</td><td>50</td><td>27</td><td>80</td><td>37</td><td>234</td><td>47</td><td>574</td></tr>
+                            <tr><td>8</td><td>23</td><td>18</td><td>53</td><td>28</td><td>83</td><td>38</td><td>268</td><td>48</td><td>608</td></tr>
+                            <tr><td>9</td><td>26</td><td>19</td><td>56</td><td>29</td><td>86</td><td>39</td><td>302</td><td>49</td><td>642</td></tr>
+                            <tr><td>10</td><td>29</td><td>20</td><td>59</td><td>30</td><td>89</td><td>40</td><td>336</td><td>50</td><td>MAX</td></tr>
+                        </tbody>
+                    </table>
                 </div>
-                <p class="info-note">
-                    <span class="game-icon winder"></span> You can decrease winders needed and increase double summon chance in the Tech Tree
-                </p>
             </div>
         </main>
 
         <footer class="footer">
-            <p>ForgeMaster Helper • Data updated Dec 2025</p>
+            <p>ForgeMaster Helper • Last update: 31/12/2025</p>
+            <p style="font-size: 0.75rem; opacity: 0.6;">Created by <a href="https://1vcian.me" target="_blank" style="color: inherit;">Lucian Medrihan</a></p>
         </footer>
     </div>
 
