@@ -110,13 +110,14 @@ const tierNames = {
 
 // DOM Elements
 const mountLevelSelect = document.getElementById('mountLevel');
+const freeSummonPercentInput = document.getElementById('freeSummonPercent');
 const windersCountInput = document.getElementById('windersCount');
 const costPerMountInput = document.getElementById('costPerMount');
 const targetPointsInput = document.getElementById('targetPoints');
 const windersInputGroup = document.getElementById('windersInputGroup');
 const costInputGroup = document.getElementById('costInputGroup');
 const targetInputGroup = document.getElementById('targetInputGroup');
-const calculateBtn = document.getElementById('calculateBtn');
+
 const calcModeBtn = document.getElementById('calcModeBtn');
 const targetModeBtn = document.getElementById('targetModeBtn');
 const calcResults = document.getElementById('calcResults');
@@ -171,12 +172,13 @@ function registerServiceWorker() {
 function setupEventListeners() {
     calcModeBtn.addEventListener('click', () => switchMode('calculate'));
     targetModeBtn.addEventListener('click', () => switchMode('target'));
-    calculateBtn.addEventListener('click', calculate);
+
 
     mountLevelSelect.addEventListener('change', () => {
         saveLevelToStorage(mountLevelSelect.value);
         calculate();
     });
+    freeSummonPercentInput.addEventListener('input', debounce(calculate, 300));
     windersCountInput.addEventListener('input', debounce(calculate, 300));
     costPerMountInput.addEventListener('input', debounce(calculate, 300));
     targetPointsInput.addEventListener('input', debounce(calculate, 300));
@@ -205,17 +207,16 @@ function switchMode(mode) {
     currentMode = mode;
     calcModeBtn.classList.toggle('active', mode === 'calculate');
     targetModeBtn.classList.toggle('active', mode === 'target');
-    
+
     // Toggle input visibility
     windersInputGroup.classList.toggle('hidden', mode !== 'calculate');
     targetInputGroup.classList.toggle('hidden', mode !== 'target');
-    
+
     // Toggle results visibility
     calcResults.classList.toggle('hidden', mode !== 'calculate');
     targetResults.classList.toggle('hidden', mode !== 'target');
-    
-    calculateBtn.querySelector('.btn-text').textContent =
-        mode === 'calculate' ? 'Calculate' : 'Find Winders';
+
+
     calculate();
 }
 
@@ -227,16 +228,16 @@ function getCostPerMount() {
 function getExpectedPointsPerMount(level) {
     const rates = mountSummonRates[level];
     if (!rates) return 0;
-    
+
     let expectedPoints = 0;
     const tiers = ['common', 'rare', 'epic', 'legendary', 'ultimate', 'mythic'];
-    
+
     for (const tier of tiers) {
         if (rates[tier]) {
             expectedPoints += rates[tier] * mountWarPoints[tier];
         }
     }
-    
+
     return expectedPoints;
 }
 
@@ -247,10 +248,13 @@ function calculate() {
 
     const costPerMount = getCostPerMount();
     const pointsPerMount = getExpectedPointsPerMount(level);
+    const freeSummonPercent = parseFloat(freeSummonPercentInput.value) || 0;
+    const freeMultiplier = 1 / (1 - (freeSummonPercent / 100));
 
     if (currentMode === 'calculate') {
         const windersCount = parseInt(windersCountInput.value) || 0;
-        const expectedMounts = Math.floor(windersCount / costPerMount);
+        const effectiveWinders = windersCount * freeMultiplier;
+        const expectedMounts = Math.floor(effectiveWinders / costPerMount);
         const expectedPoints = expectedMounts * pointsPerMount;
 
         expectedPointsEl.textContent = formatNumber(expectedPoints);
@@ -260,8 +264,9 @@ function calculate() {
         const targetPoints = parseInt(targetPointsInput.value) || 0;
         const mountsNeeded = Math.ceil(targetPoints / pointsPerMount);
         const windersForTarget = mountsNeeded * costPerMount;
+        const actualWindersNeeded = Math.ceil(windersForTarget / freeMultiplier);
 
-        windersForTargetEl.textContent = formatNumber(windersForTarget);
+        windersForTargetEl.textContent = formatNumber(actualWindersNeeded);
         mountsNeededEl.textContent = formatNumber(mountsNeeded);
         pointsPerMountTargetEl.textContent = formatNumber(pointsPerMount);
     }
@@ -294,7 +299,7 @@ function updateProbabilityBreakdown(level) {
 
             const tierSpan = document.createElement('span');
             tierSpan.className = `prob-tier tier ${tier}`;
-            
+
             // Add mount icon
             const mountIcon = document.createElement('span');
             mountIcon.className = `mount-icon small ${mountTierIcons[tier]}`;
@@ -304,7 +309,7 @@ function updateProbabilityBreakdown(level) {
             const valueSpan = document.createElement('span');
             valueSpan.className = 'prob-value';
             valueSpan.textContent = `${(rates[tier] * 100).toFixed(2)}%`;
-            
+
             // Add war points info
             const warPtsSpan = document.createElement('span');
             warPtsSpan.className = 'prob-war-pts';

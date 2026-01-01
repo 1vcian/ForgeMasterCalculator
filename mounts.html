@@ -22,7 +22,7 @@
     <div class="app-container">
         <!-- Loading Screen Background -->
         <div class="loading-screen-bg"></div>
-        
+
         <div class="bg-particles">
             <div class="particle"></div>
             <div class="particle"></div>
@@ -53,6 +53,7 @@
                     <div class="nav-group-links">
                         <a href="index.html" class="nav-link">Forge Points</a>
                         <a href="mounts.html" class="nav-link active">Mounts Points</a>
+                        <a href="skills.html" class="nav-link">Skills Points</a>
                         <a href="eggs.html" class="nav-link">Eggs Hatch</a>
                         <a href="faq.html" class="nav-link">FAQ</a>
                     </div>
@@ -97,6 +98,16 @@
                     </div>
                 </div>
 
+                <!-- Free Summon Percentage -->
+                <div class="input-group">
+                    <label for="freeSummonPercent">
+                        <span class="game-icon star"></span>
+                        Free Summon % (0-100)
+                    </label>
+                    <input type="number" id="freeSummonPercent" min="0" max="100" value="0"
+                        placeholder="Enter free summon percentage">
+                </div>
+
                 <div class="input-group" id="windersInputGroup">
                     <label for="windersCount">
                         <span class="game-icon winder"></span>
@@ -120,16 +131,10 @@
                         <span class="game-icon winder"></span>
                         Cost per Mount (Winders)
                     </label>
-                    <input type="number" id="costPerMount" min="1" max="100" value="50"
-                        placeholder="Default: 50">
+                    <input type="number" id="costPerMount" min="1" max="100" value="50" placeholder="Default: 50">
                 </div>
 
-                <button class="calculate-btn" id="calculateBtn">
-                    <span class="btn-text">Calculate</span>
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                    </svg>
-                </button>
+
             </div>
 
             <div class="results-card" id="resultsCard">
@@ -189,7 +194,8 @@
                     <span class="mount-icon small lily-pad"></span>
                     Common Mounts (Unlock Lv.1)
                 </h3>
-                <p class="info-note"><span class="game-icon swords"></span> +10% | <span class="game-icon star"></span> 400 pts</p>
+                <p class="info-note"><span class="game-icon swords"></span> +10% | <span class="game-icon star"></span>
+                    400 pts</p>
                 <div class="exp-table">
                     <div class="exp-row"><span class="mount-icon small brown-leaf"></span> Brown Leaf</div>
                     <div class="exp-row"><span class="mount-icon small lily-leaf"></span> Lily Leaf</div>
@@ -199,7 +205,8 @@
 
             <div class="info-card">
                 <h3 class="tier rare">Rare Mounts (Unlock Lv.2)</h3>
-                <p class="info-note"><span class="game-icon swords"></span> +40% | <span class="game-icon star"></span> 600 pts</p>
+                <p class="info-note"><span class="game-icon swords"></span> +40% | <span class="game-icon star"></span>
+                    600 pts</p>
                 <div class="exp-table">
                     <div class="exp-row"><span class="mount-icon small turtle"></span> Turtle</div>
                     <div class="exp-row"><span class="mount-icon small crab"></span> Crab</div>
@@ -210,7 +217,8 @@
 
             <div class="info-card">
                 <h3 class="tier epic">Epic Mounts (Unlock Lv.10)</h3>
-                <p class="info-note"><span class="game-icon swords"></span> +80% | <span class="game-icon star"></span> 900 pts</p>
+                <p class="info-note"><span class="game-icon swords"></span> +80% | <span class="game-icon star"></span>
+                    900 pts</p>
                 <div class="exp-table">
                     <div class="exp-row"><span class="mount-icon small pig"></span> Pig</div>
                     <div class="exp-row"><span class="mount-icon small goat"></span> Goat</div>
@@ -219,7 +227,8 @@
 
             <div class="info-card">
                 <h3 class="tier legendary">Legendary Mounts (Unlock Lv.18)</h3>
-                <p class="info-note"><span class="game-icon swords"></span> +150% | <span class="game-icon star"></span> 1,350 pts</p>
+                <p class="info-note"><span class="game-icon swords"></span> +150% | <span class="game-icon star"></span>
+                    1,350 pts</p>
                 <div class="exp-table">
                     <div class="exp-row"><span class="mount-icon small bike"></span> Bike</div>
                     <div class="exp-row"><span class="mount-icon small bee"></span> Giant Bee</div>
@@ -228,7 +237,8 @@
 
             <div class="info-card">
                 <h3 class="tier ultimate">Ultimate Mounts (Unlock Lv.26)</h3>
-                <p class="info-note"><span class="game-icon swords"></span> +250% | <span class="game-icon star"></span> 2,000 pts</p>
+                <p class="info-note"><span class="game-icon swords"></span> +250% | <span class="game-icon star"></span>
+                    2,000 pts</p>
                 <div class="exp-table">
                     <div class="exp-row"><span class="mount-icon small mini-dragon"></span> Mini Dragon</div>
                     <div class="exp-row"><span class="mount-icon small droid"></span> One-Wheel Droid</div>
@@ -237,7 +247,8 @@
 
             <div class="info-card">
                 <h3 class="tier mythic">Mythic Mounts (Unlock Lv.34)</h3>
-                <p class="info-note"><span class="game-icon swords"></span> +400% | <span class="game-icon star"></span> 3,000 pts</p>
+                <p class="info-note"><span class="game-icon swords"></span> +400% | <span class="game-icon star"></span>
+                    3,000 pts</p>
                 <div class="exp-table">
                     <div class="exp-row"><span class="mount-icon small hover-board"></span> Hover Board</div>
                     <div class="exp-row"><span class="mount-icon small hover-disk"></span> Hover Disk</div>
@@ -253,19 +264,140 @@
                 <div class="data-table">
                     <table>
                         <thead>
-                            <tr><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th></tr>
+                            <tr>
+                                <th>Lv</th>
+                                <th>Opens</th>
+                                <th>Lv</th>
+                                <th>Opens</th>
+                                <th>Lv</th>
+                                <th>Opens</th>
+                                <th>Lv</th>
+                                <th>Opens</th>
+                                <th>Lv</th>
+                                <th>Opens</th>
+                            </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1</td><td>2</td><td>11</td><td>32</td><td>21</td><td>62</td><td>31</td><td>92</td><td>41</td><td>370</td></tr>
-                            <tr><td>2</td><td>5</td><td>12</td><td>35</td><td>22</td><td>65</td><td>32</td><td>95</td><td>42</td><td>404</td></tr>
-                            <tr><td>3</td><td>8</td><td>13</td><td>38</td><td>23</td><td>68</td><td>33</td><td>98</td><td>43</td><td>438</td></tr>
-                            <tr><td>4</td><td>11</td><td>14</td><td>41</td><td>24</td><td>71</td><td>34</td><td>132</td><td>44</td><td>472</td></tr>
-                            <tr><td>5</td><td>14</td><td>15</td><td>44</td><td>25</td><td>74</td><td>35</td><td>166</td><td>45</td><td>506</td></tr>
-                            <tr><td>6</td><td>17</td><td>16</td><td>47</td><td>26</td><td>77</td><td>36</td><td>200</td><td>46</td><td>540</td></tr>
-                            <tr><td>7</td><td>20</td><td>17</td><td>50</td><td>27</td><td>80</td><td>37</td><td>234</td><td>47</td><td>574</td></tr>
-                            <tr><td>8</td><td>23</td><td>18</td><td>53</td><td>28</td><td>83</td><td>38</td><td>268</td><td>48</td><td>608</td></tr>
-                            <tr><td>9</td><td>26</td><td>19</td><td>56</td><td>29</td><td>86</td><td>39</td><td>302</td><td>49</td><td>642</td></tr>
-                            <tr><td>10</td><td>29</td><td>20</td><td>59</td><td>30</td><td>89</td><td>40</td><td>336</td><td>50</td><td>MAX</td></tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>11</td>
+                                <td>32</td>
+                                <td>21</td>
+                                <td>62</td>
+                                <td>31</td>
+                                <td>92</td>
+                                <td>41</td>
+                                <td>370</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>12</td>
+                                <td>35</td>
+                                <td>22</td>
+                                <td>65</td>
+                                <td>32</td>
+                                <td>95</td>
+                                <td>42</td>
+                                <td>404</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>8</td>
+                                <td>13</td>
+                                <td>38</td>
+                                <td>23</td>
+                                <td>68</td>
+                                <td>33</td>
+                                <td>98</td>
+                                <td>43</td>
+                                <td>438</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>11</td>
+                                <td>14</td>
+                                <td>41</td>
+                                <td>24</td>
+                                <td>71</td>
+                                <td>34</td>
+                                <td>132</td>
+                                <td>44</td>
+                                <td>472</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>14</td>
+                                <td>15</td>
+                                <td>44</td>
+                                <td>25</td>
+                                <td>74</td>
+                                <td>35</td>
+                                <td>166</td>
+                                <td>45</td>
+                                <td>506</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>17</td>
+                                <td>16</td>
+                                <td>47</td>
+                                <td>26</td>
+                                <td>77</td>
+                                <td>36</td>
+                                <td>200</td>
+                                <td>46</td>
+                                <td>540</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>20</td>
+                                <td>17</td>
+                                <td>50</td>
+                                <td>27</td>
+                                <td>80</td>
+                                <td>37</td>
+                                <td>234</td>
+                                <td>47</td>
+                                <td>574</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>23</td>
+                                <td>18</td>
+                                <td>53</td>
+                                <td>28</td>
+                                <td>83</td>
+                                <td>38</td>
+                                <td>268</td>
+                                <td>48</td>
+                                <td>608</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>26</td>
+                                <td>19</td>
+                                <td>56</td>
+                                <td>29</td>
+                                <td>86</td>
+                                <td>39</td>
+                                <td>302</td>
+                                <td>49</td>
+                                <td>642</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>29</td>
+                                <td>20</td>
+                                <td>59</td>
+                                <td>30</td>
+                                <td>89</td>
+                                <td>40</td>
+                                <td>336</td>
+                                <td>50</td>
+                                <td>MAX</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -274,7 +406,8 @@
 
         <footer class="footer">
             <p>ForgeMaster Helper • Last update: 31/12/2025</p>
-            <p style="font-size: 0.75rem; opacity: 0.6;">Created by <a href="https://1vcian.me" target="_blank" style="color: inherit;">Lucian Medrihan</a></p>
+            <p style="font-size: 0.75rem; opacity: 0.6;">Created by <a href="https://1vcian.me" target="_blank"
+                    style="color: inherit;">Lucian Medrihan</a></p>
         </footer>
     </div>
 

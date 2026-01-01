@@ -95,7 +95,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
         radial-gradient(ellipse 60% 40% at 100% 100%, rgba(239, 68, 68, 0.1) 0%, transparent 40%),
         radial-gradient(ellipse 40% 30% at 0% 100%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
@@ -111,7 +111,7 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
+    background-image:
         linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -695,9 +695,17 @@ body::after {
     transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
 }
 
-.info-card:nth-child(2) { animation-delay: 0.4s; }
-.info-card:nth-child(3) { animation-delay: 0.5s; }
-.info-card:nth-child(4) { animation-delay: 0.6s; }
+.info-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.info-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.info-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
 
 .info-card:hover {
     transform: translateY(-2px);
@@ -869,9 +877,12 @@ body::after {
 }
 
 @keyframes glow {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: var(--shadow-md);
     }
+
     50% {
         box-shadow: var(--shadow-md), 0 0 30px rgba(245, 158, 11, 0.2);
     }
@@ -881,6 +892,7 @@ body::after {
     0% {
         background-position: -200% 0;
     }
+
     100% {
         background-position: 200% 0;
     }
@@ -964,23 +976,27 @@ body::after {
     width: auto;
     text-align: center;
     padding: var(--spacing-sm) var(--spacing-xl) !important;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
-    color: var(--bg-primary) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-secondary) !important;
     font-weight: 600;
     font-size: 1rem;
-    border-radius: var(--radius-md);
+    border-radius: var(--spacing-md);
     margin-top: var(--spacing-sm);
-    border: none !important;
+    border: 1px solid var(--border-color) !important;
+    transition: all var(--transition-normal);
 }
 
 .nav-guide-btn:hover {
-    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary)) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
-    color: var(--bg-primary) !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+    color: var(--text-primary) !important;
 }
 
 .nav-guide-btn.active {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+    color: var(--bg-primary) !important;
+    border-color: var(--accent-primary) !important;
     box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
 }
 
@@ -1112,7 +1128,8 @@ body::after {
 }
 
 .guide-section {
-    scroll-margin-top: 100px; /* Offset for fixed header when scrolling to anchor */
+    scroll-margin-top: 100px;
+    /* Offset for fixed header when scrolling to anchor */
 }
 
 .section-title {
@@ -1329,12 +1346,27 @@ body::after {
     gap: var(--spacing-sm);
 }
 
-.info-card h3.tier.common { color: var(--tier-common); }
-.info-card h3.tier.rare { color: var(--tier-rare); }
-.info-card h3.tier.epic { color: var(--tier-epic); }
-.info-card h3.tier.legendary { color: var(--tier-legendary); }
-.info-card h3.tier.ultimate { color: var(--tier-ultimate); }
-.info-card h3.tier.mythic { 
+.info-card h3.tier.common {
+    color: var(--tier-common);
+}
+
+.info-card h3.tier.rare {
+    color: var(--tier-rare);
+}
+
+.info-card h3.tier.epic {
+    color: var(--tier-epic);
+}
+
+.info-card h3.tier.legendary {
+    color: var(--tier-legendary);
+}
+
+.info-card h3.tier.ultimate {
+    color: var(--tier-ultimate);
+}
+
+.info-card h3.tier.mythic {
     background: linear-gradient(135deg, #ef4444, #f59e0b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1413,7 +1445,8 @@ body::after {
     width: 20px;
     height: 20px;
     background-image: url('icons/game/Icons.png');
-    background-size: 160px 160px; /* 1024/6.4 = 160, scales 128px icons to 20px */
+    background-size: 160px 160px;
+    /* 1024/6.4 = 160, scales 128px icons to 20px */
     background-repeat: no-repeat;
     vertical-align: middle;
     flex-shrink: 0;
@@ -1421,43 +1454,132 @@ body::after {
 
 /* Icon positions (8 columns x 4 rows, scaled to 20px each from 128px originals) */
 /* Row 0 */
-.game-icon.crown { background-position: 0 0; }
-.game-icon.hammer-icon { background-position: -20px 0; }
-.game-icon.arrow-down { background-position: -40px 0; }
-.game-icon.arrow-up { background-position: -60px 0; }
-.game-icon.swords { background-position: -80px 0; }
-.game-icon.play { background-position: -100px 0; }
-.game-icon.gem-pink { background-position: -120px 0; }
-.game-icon.ticket-green { background-position: -140px 0; }
+.game-icon.crown {
+    background-position: 0 0;
+}
+
+.game-icon.hammer-icon {
+    background-position: -20px 0;
+}
+
+.game-icon.arrow-down {
+    background-position: -40px 0;
+}
+
+.game-icon.arrow-up {
+    background-position: -60px 0;
+}
+
+.game-icon.swords {
+    background-position: -80px 0;
+}
+
+.game-icon.play {
+    background-position: -100px 0;
+}
+
+.game-icon.gem-pink {
+    background-position: -120px 0;
+}
+
+.game-icon.ticket-green {
+    background-position: -140px 0;
+}
 
 /* Row 1 */
-.game-icon.potion { background-position: 0 -20px; }
-.game-icon.key-gray { background-position: -20px -20px; }
-.game-icon.key-green { background-position: -40px -20px; }
-.game-icon.key-orange { background-position: -60px -20px; }
-.game-icon.key-red { background-position: -80px -20px; }
-.game-icon.key-pink { background-position: -100px -20px; }
-.game-icon.egg { background-position: -120px -20px; }
-.game-icon.ticket-purple { background-position: -140px -20px; }
+.game-icon.potion {
+    background-position: 0 -20px;
+}
+
+.game-icon.key-gray {
+    background-position: -20px -20px;
+}
+
+.game-icon.key-green {
+    background-position: -40px -20px;
+}
+
+.game-icon.key-orange {
+    background-position: -60px -20px;
+}
+
+.game-icon.key-red {
+    background-position: -80px -20px;
+}
+
+.game-icon.key-pink {
+    background-position: -100px -20px;
+}
+
+.game-icon.egg {
+    background-position: -120px -20px;
+}
+
+.game-icon.ticket-purple {
+    background-position: -140px -20px;
+}
 
 /* Row 2 */
-.game-icon.male { background-position: 0 -40px; }
-.game-icon.female { background-position: -20px -40px; }
-.game-icon.star { background-position: -40px -40px; }
-.game-icon.shield-bronze { background-position: -60px -40px; }
-.game-icon.shield-silver { background-position: -80px -40px; }
-.game-icon.shield-gold { background-position: -100px -40px; }
-.game-icon.badge-blue { background-position: -120px -40px; }
-.game-icon.badge-purple { background-position: -140px -40px; }
+.game-icon.male {
+    background-position: 0 -40px;
+}
+
+.game-icon.female {
+    background-position: -20px -40px;
+}
+
+.game-icon.star {
+    background-position: -40px -40px;
+}
+
+.game-icon.shield-bronze {
+    background-position: -60px -40px;
+}
+
+.game-icon.shield-silver {
+    background-position: -80px -40px;
+}
+
+.game-icon.shield-gold {
+    background-position: -100px -40px;
+}
+
+.game-icon.badge-blue {
+    background-position: -120px -40px;
+}
+
+.game-icon.badge-purple {
+    background-position: -140px -40px;
+}
 
 /* Row 3 */
-.game-icon.chest-blue { background-position: 0 -60px; }
-.game-icon.chest-green { background-position: -20px -60px; }
-.game-icon.chest-locked { background-position: -40px -60px; }
-.game-icon.chest-unlocked { background-position: -60px -60px; }
-.game-icon.winder { background-position: -80px -60px; }
-.game-icon.timer { background-position: -100px -60px; }
-.game-icon.ticket-red { background-position: -120px -60px; }
+.game-icon.chest-blue {
+    background-position: 0 -60px;
+}
+
+.game-icon.chest-green {
+    background-position: -20px -60px;
+}
+
+.game-icon.chest-locked {
+    background-position: -40px -60px;
+}
+
+.game-icon.chest-unlocked {
+    background-position: -60px -60px;
+}
+
+.game-icon.winder {
+    background-position: -80px -60px;
+}
+
+.game-icon.timer {
+    background-position: -100px -60px;
+}
+
+.game-icon.ticket-red {
+    background-position: -120px -60px;
+}
 
 /* Standalone Game Icons */
 .game-icon-img {
@@ -1520,7 +1642,8 @@ th img {
     width: 24px;
     height: 24px;
     background-image: url('icons/game/Eggs.png');
-    background-size: 96px 96px; /* 1024 / (256/24) = 96, scales 256px icons to 24px */
+    background-size: 96px 96px;
+    /* 1024 / (256/24) = 96, scales 256px icons to 24px */
     background-repeat: no-repeat;
     vertical-align: middle;
     flex-shrink: 0;
@@ -1540,30 +1663,80 @@ th img {
 
 /* Egg positions (4 columns x 2 rows, scaled to 24px from 256px originals) */
 /* Row 0: Common, Rare, Epic, Legendary */
-.egg-icon.common { background-position: 0 0; }
-.egg-icon.rare { background-position: -24px 0; }
-.egg-icon.epic { background-position: -48px 0; }
-.egg-icon.legendary { background-position: -72px 0; }
+.egg-icon.common {
+    background-position: 0 0;
+}
+
+.egg-icon.rare {
+    background-position: -24px 0;
+}
+
+.egg-icon.epic {
+    background-position: -48px 0;
+}
+
+.egg-icon.legendary {
+    background-position: -72px 0;
+}
 
 /* Row 1: Ultimate, Mythic */
-.egg-icon.ultimate { background-position: 0 -24px; }
-.egg-icon.mythic { background-position: -24px -24px; }
+.egg-icon.ultimate {
+    background-position: 0 -24px;
+}
+
+.egg-icon.mythic {
+    background-position: -24px -24px;
+}
 
 /* Small egg icon positions (20px) */
-.egg-icon.small.common { background-position: 0 0; }
-.egg-icon.small.rare { background-position: -20px 0; }
-.egg-icon.small.epic { background-position: -40px 0; }
-.egg-icon.small.legendary { background-position: -60px 0; }
-.egg-icon.small.ultimate { background-position: 0 -20px; }
-.egg-icon.small.mythic { background-position: -20px -20px; }
+.egg-icon.small.common {
+    background-position: 0 0;
+}
+
+.egg-icon.small.rare {
+    background-position: -20px 0;
+}
+
+.egg-icon.small.epic {
+    background-position: -40px 0;
+}
+
+.egg-icon.small.legendary {
+    background-position: -60px 0;
+}
+
+.egg-icon.small.ultimate {
+    background-position: 0 -20px;
+}
+
+.egg-icon.small.mythic {
+    background-position: -20px -20px;
+}
 
 /* Tiny egg icon positions (18px) */
-.egg-icon.tiny.common { background-position: 0 0; }
-.egg-icon.tiny.rare { background-position: -18px 0; }
-.egg-icon.tiny.epic { background-position: -36px 0; }
-.egg-icon.tiny.legendary { background-position: -54px 0; }
-.egg-icon.tiny.ultimate { background-position: 0 -18px; }
-.egg-icon.tiny.mythic { background-position: -18px -18px; }
+.egg-icon.tiny.common {
+    background-position: 0 0;
+}
+
+.egg-icon.tiny.rare {
+    background-position: -18px 0;
+}
+
+.egg-icon.tiny.epic {
+    background-position: -36px 0;
+}
+
+.egg-icon.tiny.legendary {
+    background-position: -54px 0;
+}
+
+.egg-icon.tiny.ultimate {
+    background-position: 0 -18px;
+}
+
+.egg-icon.tiny.mythic {
+    background-position: -18px -18px;
+}
 
 /* ===== Pet Icons Sprite (Pets.png - 2048x2048, 8 columns x 8 rows, 256px each) ===== */
 .pet-icon {
@@ -1571,7 +1744,8 @@ th img {
     width: 24px;
     height: 24px;
     background-image: url('icons/game/Pets.png');
-    background-size: 192px 192px; /* 2048 * (24/256) = 192 */
+    background-size: 192px 192px;
+    /* 2048 * (24/256) = 192 */
     background-repeat: no-repeat;
     vertical-align: middle;
     flex-shrink: 0;
@@ -1580,80 +1754,236 @@ th img {
 .pet-icon.small {
     width: 20px;
     height: 20px;
-    background-size: 160px 160px; /* 2048 * (20/256) = 160 */
+    background-size: 160px 160px;
+    /* 2048 * (20/256) = 160 */
 }
 
 /* Pet positions - 8 columns, each icon = 24px after scaling */
 /* Row 0: Panda, Chicken, Serpent, Cerberus, Fox/Kitsune, Electry, Dog, Cat */
-.pet-icon.panda { background-position: 0 0; }
-.pet-icon.chicken { background-position: -24px 0; }
-.pet-icon.serpent { background-position: -48px 0; }
-.pet-icon.cerberus { background-position: -72px 0; }
-.pet-icon.fox { background-position: -96px 0; }
-.pet-icon.kitsune { background-position: -96px 0; }
-.pet-icon.electry { background-position: -120px 0; }
-.pet-icon.dog { background-position: -144px 0; }
-.pet-icon.cat { background-position: -168px 0; }
+.pet-icon.panda {
+    background-position: 0 0;
+}
+
+.pet-icon.chicken {
+    background-position: -24px 0;
+}
+
+.pet-icon.serpent {
+    background-position: -48px 0;
+}
+
+.pet-icon.cerberus {
+    background-position: -72px 0;
+}
+
+.pet-icon.fox {
+    background-position: -96px 0;
+}
+
+.pet-icon.kitsune {
+    background-position: -96px 0;
+}
+
+.pet-icon.electry {
+    background-position: -120px 0;
+}
+
+.pet-icon.dog {
+    background-position: -144px 0;
+}
+
+.pet-icon.cat {
+    background-position: -168px 0;
+}
 
 /* Row 1: Snail, Mouse, Turtle, Hedgehog, Bear, Ostrich, Spider, Scorpion */
-.pet-icon.snail { background-position: 0 -24px; }
-.pet-icon.mouse { background-position: -24px -24px; }
-.pet-icon.turtle { background-position: -48px -24px; }
-.pet-icon.hedgehog { background-position: -72px -24px; }
-.pet-icon.bear { background-position: -96px -24px; }
-.pet-icon.ostrich { background-position: -120px -24px; }
-.pet-icon.spider { background-position: -144px -24px; }
-.pet-icon.scorpion { background-position: -168px -24px; }
+.pet-icon.snail {
+    background-position: 0 -24px;
+}
+
+.pet-icon.mouse {
+    background-position: -24px -24px;
+}
+
+.pet-icon.turtle {
+    background-position: -48px -24px;
+}
+
+.pet-icon.hedgehog {
+    background-position: -72px -24px;
+}
+
+.pet-icon.bear {
+    background-position: -96px -24px;
+}
+
+.pet-icon.ostrich {
+    background-position: -120px -24px;
+}
+
+.pet-icon.spider {
+    background-position: -144px -24px;
+}
+
+.pet-icon.scorpion {
+    background-position: -168px -24px;
+}
 
 /* Row 2: Griffin, Horse, Unicorn, Tiger, Treant, Elk, Dragon, Genie */
-.pet-icon.griffin { background-position: 0 -48px; }
-.pet-icon.horse { background-position: -24px -48px; }
-.pet-icon.unicorn { background-position: -48px -48px; }
-.pet-icon.tiger { background-position: -72px -48px; }
-.pet-icon.saber-tooth { background-position: -72px -48px; }
-.pet-icon.treant { background-position: -96px -48px; }
-.pet-icon.elk { background-position: -120px -48px; }
-.pet-icon.dragon { background-position: -144px -48px; }
-.pet-icon.genie { background-position: -168px -48px; }
+.pet-icon.griffin {
+    background-position: 0 -48px;
+}
+
+.pet-icon.horse {
+    background-position: -24px -48px;
+}
+
+.pet-icon.unicorn {
+    background-position: -48px -48px;
+}
+
+.pet-icon.tiger {
+    background-position: -72px -48px;
+}
+
+.pet-icon.saber-tooth {
+    background-position: -72px -48px;
+}
+
+.pet-icon.treant {
+    background-position: -96px -48px;
+}
+
+.pet-icon.elk {
+    background-position: -120px -48px;
+}
+
+.pet-icon.dragon {
+    background-position: -144px -48px;
+}
+
+.pet-icon.genie {
+    background-position: -168px -48px;
+}
 
 /* Row 3: Spectral Tiger */
-.pet-icon.spectral-tiger { background-position: 0 -72px; }
+.pet-icon.spectral-tiger {
+    background-position: 0 -72px;
+}
 
 /* Small pet icons (20px) - 8 columns, each icon = 20px after scaling */
 /* Row 0: Panda, Chicken, Serpent, Cerberus, Fox/Kitsune, Electry, Dog, Cat */
-.pet-icon.small.panda { background-position: 0 0; }
-.pet-icon.small.chicken { background-position: -20px 0; }
-.pet-icon.small.serpent { background-position: -40px 0; }
-.pet-icon.small.cerberus { background-position: -60px 0; }
-.pet-icon.small.fox { background-position: -80px 0; }
-.pet-icon.small.kitsune { background-position: -80px 0; }
-.pet-icon.small.electry { background-position: -100px 0; }
-.pet-icon.small.dog { background-position: -120px 0; }
-.pet-icon.small.cat { background-position: -140px 0; }
+.pet-icon.small.panda {
+    background-position: 0 0;
+}
+
+.pet-icon.small.chicken {
+    background-position: -20px 0;
+}
+
+.pet-icon.small.serpent {
+    background-position: -40px 0;
+}
+
+.pet-icon.small.cerberus {
+    background-position: -60px 0;
+}
+
+.pet-icon.small.fox {
+    background-position: -80px 0;
+}
+
+.pet-icon.small.kitsune {
+    background-position: -80px 0;
+}
+
+.pet-icon.small.electry {
+    background-position: -100px 0;
+}
+
+.pet-icon.small.dog {
+    background-position: -120px 0;
+}
+
+.pet-icon.small.cat {
+    background-position: -140px 0;
+}
 
 /* Row 1: Snail, Mouse, Turtle, Hedgehog, Bear, Ostrich, Spider, Scorpion */
-.pet-icon.small.snail { background-position: 0 -20px; }
-.pet-icon.small.mouse { background-position: -20px -20px; }
-.pet-icon.small.turtle { background-position: -40px -20px; }
-.pet-icon.small.hedgehog { background-position: -60px -20px; }
-.pet-icon.small.bear { background-position: -80px -20px; }
-.pet-icon.small.ostrich { background-position: -100px -20px; }
-.pet-icon.small.spider { background-position: -120px -20px; }
-.pet-icon.small.scorpion { background-position: -140px -20px; }
+.pet-icon.small.snail {
+    background-position: 0 -20px;
+}
+
+.pet-icon.small.mouse {
+    background-position: -20px -20px;
+}
+
+.pet-icon.small.turtle {
+    background-position: -40px -20px;
+}
+
+.pet-icon.small.hedgehog {
+    background-position: -60px -20px;
+}
+
+.pet-icon.small.bear {
+    background-position: -80px -20px;
+}
+
+.pet-icon.small.ostrich {
+    background-position: -100px -20px;
+}
+
+.pet-icon.small.spider {
+    background-position: -120px -20px;
+}
+
+.pet-icon.small.scorpion {
+    background-position: -140px -20px;
+}
 
 /* Row 2: Griffin, Horse, Unicorn, Tiger/Saber-tooth, Treant, Elk, Dragon, Genie */
-.pet-icon.small.griffin { background-position: 0 -40px; }
-.pet-icon.small.horse { background-position: -20px -40px; }
-.pet-icon.small.unicorn { background-position: -40px -40px; }
-.pet-icon.small.tiger { background-position: -60px -40px; }
-.pet-icon.small.saber-tooth { background-position: -60px -40px; } /* Same sprite as tiger */
-.pet-icon.small.treant { background-position: -80px -40px; }
-.pet-icon.small.elk { background-position: -100px -40px; }
-.pet-icon.small.dragon { background-position: -120px -40px; }
-.pet-icon.small.genie { background-position: -140px -40px; }
+.pet-icon.small.griffin {
+    background-position: 0 -40px;
+}
+
+.pet-icon.small.horse {
+    background-position: -20px -40px;
+}
+
+.pet-icon.small.unicorn {
+    background-position: -40px -40px;
+}
+
+.pet-icon.small.tiger {
+    background-position: -60px -40px;
+}
+
+.pet-icon.small.saber-tooth {
+    background-position: -60px -40px;
+}
+
+/* Same sprite as tiger */
+.pet-icon.small.treant {
+    background-position: -80px -40px;
+}
+
+.pet-icon.small.elk {
+    background-position: -100px -40px;
+}
+
+.pet-icon.small.dragon {
+    background-position: -120px -40px;
+}
+
+.pet-icon.small.genie {
+    background-position: -140px -40px;
+}
 
 /* Row 3: Spectral Tiger */
-.pet-icon.small.spectral-tiger { background-position: 0 -60px; }
+.pet-icon.small.spectral-tiger {
+    background-position: 0 -60px;
+}
 
 /* ===== Mount Icons Sprite (MountIcons.png - 1024x1024, 4 columns x 4 rows, 256px each) ===== */
 .mount-icon {
@@ -1661,7 +1991,8 @@ th img {
     width: 24px;
     height: 24px;
     background-image: url('icons/game/MountIcons.png');
-    background-size: 96px 96px; /* 1024 * (24/256) = 96 */
+    background-size: 96px 96px;
+    /* 1024 * (24/256) = 96 */
     background-repeat: no-repeat;
     vertical-align: middle;
     flex-shrink: 0;
@@ -1670,66 +2001,179 @@ th img {
 .mount-icon.small {
     width: 20px;
     height: 20px;
-    background-size: 80px 80px; /* 1024 * (20/256) = 80 */
+    background-size: 80px 80px;
+    /* 1024 * (20/256) = 80 */
 }
 
 /* Mount positions - 4 columns x 4 rows in MountIcons.png (1024x1024, 256px each) scaled to 24px */
 /* Row 0: LilyPad(0), BrownHorse(1), Dino(2), LilyLeaf(3) */
-.mount-icon.lily-pad { background-position: 0 0; }
-.mount-icon.horse { background-position: -24px 0; }
-.mount-icon.brown-horse { background-position: -24px 0; }
-.mount-icon.dino { background-position: -48px 0; }
-.mount-icon.lily-leaf { background-position: -72px 0; }
+.mount-icon.lily-pad {
+    background-position: 0 0;
+}
+
+.mount-icon.horse {
+    background-position: -24px 0;
+}
+
+.mount-icon.brown-horse {
+    background-position: -24px 0;
+}
+
+.mount-icon.dino {
+    background-position: -48px 0;
+}
+
+.mount-icon.lily-leaf {
+    background-position: -72px 0;
+}
 
 /* Row 1: BrownLeaf(0), Crab(1), Turtle(2), Pig(3) */
-.mount-icon.brown-leaf { background-position: 0 -24px; }
-.mount-icon.crab { background-position: -24px -24px; }
-.mount-icon.shrimp { background-position: -24px -24px; }
-.mount-icon.turtle-mount { background-position: -48px -24px; }
-.mount-icon.turtle { background-position: -48px -24px; }
-.mount-icon.pig { background-position: -72px -24px; }
+.mount-icon.brown-leaf {
+    background-position: 0 -24px;
+}
+
+.mount-icon.crab {
+    background-position: -24px -24px;
+}
+
+.mount-icon.shrimp {
+    background-position: -24px -24px;
+}
+
+.mount-icon.turtle-mount {
+    background-position: -48px -24px;
+}
+
+.mount-icon.turtle {
+    background-position: -48px -24px;
+}
+
+.mount-icon.pig {
+    background-position: -72px -24px;
+}
 
 /* Row 2: Goat(0), Bike(1), GiantBee(2), Droid(3) */
-.mount-icon.goat { background-position: 0 -48px; }
-.mount-icon.bike { background-position: -24px -48px; }
-.mount-icon.bee { background-position: -48px -48px; }
-.mount-icon.giant-bee { background-position: -48px -48px; }
-.mount-icon.droid { background-position: -72px -48px; }
-.mount-icon.one-wheel-droid { background-position: -72px -48px; }
+.mount-icon.goat {
+    background-position: 0 -48px;
+}
+
+.mount-icon.bike {
+    background-position: -24px -48px;
+}
+
+.mount-icon.bee {
+    background-position: -48px -48px;
+}
+
+.mount-icon.giant-bee {
+    background-position: -48px -48px;
+}
+
+.mount-icon.droid {
+    background-position: -72px -48px;
+}
+
+.mount-icon.one-wheel-droid {
+    background-position: -72px -48px;
+}
 
 /* Row 3: MiniDragon(0), HoverDisk(1), HoverBoard(2) */
-.mount-icon.mini-dragon { background-position: 0 -72px; }
-.mount-icon.hover-disk { background-position: -24px -72px; }
-.mount-icon.hover-board { background-position: -48px -72px; }
+.mount-icon.mini-dragon {
+    background-position: 0 -72px;
+}
+
+.mount-icon.hover-disk {
+    background-position: -24px -72px;
+}
+
+.mount-icon.hover-board {
+    background-position: -48px -72px;
+}
 
 /* Small mount icons (20px) - same layout scaled */
 /* Row 0: LilyPad(0), BrownHorse(1), Dino(2), LilyLeaf(3) */
-.mount-icon.small.lily-pad { background-position: 0 0; }
-.mount-icon.small.horse { background-position: -20px 0; }
-.mount-icon.small.brown-horse { background-position: -20px 0; }
-.mount-icon.small.dino { background-position: -40px 0; }
-.mount-icon.small.lily-leaf { background-position: -60px 0; }
+.mount-icon.small.lily-pad {
+    background-position: 0 0;
+}
+
+.mount-icon.small.horse {
+    background-position: -20px 0;
+}
+
+.mount-icon.small.brown-horse {
+    background-position: -20px 0;
+}
+
+.mount-icon.small.dino {
+    background-position: -40px 0;
+}
+
+.mount-icon.small.lily-leaf {
+    background-position: -60px 0;
+}
 
 /* Row 1: BrownLeaf(0), Crab(1), Turtle(2), Pig(3) */
-.mount-icon.small.brown-leaf { background-position: 0 -20px; }
-.mount-icon.small.crab { background-position: -20px -20px; }
-.mount-icon.small.shrimp { background-position: -20px -20px; }
-.mount-icon.small.turtle-mount { background-position: -40px -20px; }
-.mount-icon.small.turtle { background-position: -40px -20px; }
-.mount-icon.small.pig { background-position: -60px -20px; }
+.mount-icon.small.brown-leaf {
+    background-position: 0 -20px;
+}
+
+.mount-icon.small.crab {
+    background-position: -20px -20px;
+}
+
+.mount-icon.small.shrimp {
+    background-position: -20px -20px;
+}
+
+.mount-icon.small.turtle-mount {
+    background-position: -40px -20px;
+}
+
+.mount-icon.small.turtle {
+    background-position: -40px -20px;
+}
+
+.mount-icon.small.pig {
+    background-position: -60px -20px;
+}
 
 /* Row 2: Goat(0), Bike(1), GiantBee(2), Droid(3) */
-.mount-icon.small.goat { background-position: 0 -40px; }
-.mount-icon.small.bike { background-position: -20px -40px; }
-.mount-icon.small.bee { background-position: -40px -40px; }
-.mount-icon.small.giant-bee { background-position: -40px -40px; }
-.mount-icon.small.droid { background-position: -60px -40px; }
-.mount-icon.small.one-wheel-droid { background-position: -60px -40px; }
+.mount-icon.small.goat {
+    background-position: 0 -40px;
+}
+
+.mount-icon.small.bike {
+    background-position: -20px -40px;
+}
+
+.mount-icon.small.bee {
+    background-position: -40px -40px;
+}
+
+.mount-icon.small.giant-bee {
+    background-position: -40px -40px;
+}
+
+.mount-icon.small.droid {
+    background-position: -60px -40px;
+}
+
+.mount-icon.small.one-wheel-droid {
+    background-position: -60px -40px;
+}
 
 /* Row 3: MiniDragon(0), HoverDisk(1), HoverBoard(2) */
-.mount-icon.small.mini-dragon { background-position: 0 -60px; }
-.mount-icon.small.hover-disk { background-position: -20px -60px; }
-.mount-icon.small.hover-board { background-position: -40px -60px; }
+.mount-icon.small.mini-dragon {
+    background-position: 0 -60px;
+}
+
+.mount-icon.small.hover-disk {
+    background-position: -20px -60px;
+}
+
+.mount-icon.small.hover-board {
+    background-position: -40px -60px;
+}
 
 /* Age Icons from AgeIcons.png (1024x1024, 4 columns x 3 rows, 256px each) */
 .age-icon {
@@ -1737,27 +2181,55 @@ th img {
     width: 20px;
     height: 20px;
     background-image: url('icons/game/AgeIcons.png');
-    background-size: 80px 80px; /* 1024 * (20/256) = 80 */
+    background-size: 80px 80px;
+    /* 1024 * (20/256) = 80 */
     background-repeat: no-repeat;
     vertical-align: middle;
     margin-right: 4px;
 }
 
 /* Row 0: Primitive, Medieval, Early-Modern, Modern */
-.age-icon.primitive { background-position: 0 0; }
-.age-icon.medieval { background-position: -20px 0; }
-.age-icon.early-modern { background-position: -40px 0; }
-.age-icon.modern { background-position: -60px 0; }
+.age-icon.primitive {
+    background-position: 0 0;
+}
+
+.age-icon.medieval {
+    background-position: -20px 0;
+}
+
+.age-icon.early-modern {
+    background-position: -40px 0;
+}
+
+.age-icon.modern {
+    background-position: -60px 0;
+}
 
 /* Row 1: Space, Interstellar, Quantum, Multiverse */
-.age-icon.space { background-position: 0 -20px; }
-.age-icon.interstellar { background-position: -20px -20px; }
-.age-icon.quantum { background-position: -40px -20px; }
-.age-icon.multiverse { background-position: -60px -20px; }
+.age-icon.space {
+    background-position: 0 -20px;
+}
+
+.age-icon.interstellar {
+    background-position: -20px -20px;
+}
+
+.age-icon.quantum {
+    background-position: -40px -20px;
+}
+
+.age-icon.multiverse {
+    background-position: -60px -20px;
+}
 
 /* Row 2: Divine (wings), Underworld (trident) */
-.age-icon.divine { background-position: 0 -40px; }
-.age-icon.underworld { background-position: -20px -40px; }
+.age-icon.divine {
+    background-position: 0 -40px;
+}
+
+.age-icon.underworld {
+    background-position: -20px -40px;
+}
 
 /* ===== Dungeon Cards with Background Images ===== */
 .dungeon-cards {
@@ -1772,7 +2244,8 @@ th img {
     border-radius: var(--radius-lg);
     overflow: hidden;
     width: 100%;
-    aspect-ratio: 2.5 / 1; /* Slightly taller for more content space */
+    aspect-ratio: 2.5 / 1;
+    /* Slightly taller for more content space */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1812,7 +2285,7 @@ th img {
     left: 0;
     right: 0;
     height: 80%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
     z-index: 1;
 }
 
@@ -1832,11 +2305,11 @@ th img {
     font-size: 1.6rem;
     font-weight: 700;
     color: white;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .dungeon-card .dungeon-sep {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 1.2rem;
 }
 
@@ -1845,15 +2318,15 @@ th img {
     align-items: center;
     gap: var(--spacing-xs);
     font-size: 1.1rem;
-    color: rgba(255,255,255,0.9);
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 .dungeon-card .dungeon-unlock {
     font-size: 0.95rem;
     color: var(--accent-primary);
     font-weight: 600;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
     margin-top: var(--spacing-xs);
 }
 

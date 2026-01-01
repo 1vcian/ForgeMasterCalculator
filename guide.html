@@ -22,7 +22,7 @@
     <div class="app-container">
         <!-- Loading Screen Background -->
         <div class="loading-screen-bg"></div>
-        
+
         <div class="bg-particles">
             <div class="particle"></div>
             <div class="particle"></div>
@@ -53,6 +53,7 @@
                     <div class="nav-group-links">
                         <a href="index.html" class="nav-link">Forge Points</a>
                         <a href="mounts.html" class="nav-link">Mounts Points</a>
+                        <a href="skills.html" class="nav-link">Skills Points</a>
                         <a href="eggs.html" class="nav-link">Eggs Hatch</a>
                         <a href="faq.html" class="nav-link">FAQ</a>
                     </div>
@@ -73,7 +74,8 @@
         <main class="main-content">
             <!-- Tab Navigation -->
             <div class="tab-nav" id="tabNav">
-                <button class="tab-btn active" data-tab="unlocks"><span class="game-icon chest-unlocked"></span> Unlocks</button>
+                <button class="tab-btn active" data-tab="unlocks"><span class="game-icon chest-unlocked"></span>
+                    Unlocks</button>
                 <button class="tab-btn" data-tab="war"><span class="game-icon swords"></span> War</button>
                 <button class="tab-btn" data-tab="clans"><span class="game-icon crown"></span> Clans</button>
                 <button class="tab-btn" data-tab="pets"><span class="egg-icon small common"></span> Pets</button>
@@ -96,28 +98,88 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Stage</th><th>Unlock</th></tr>
+                                <tr>
+                                    <th>Stage</th>
+                                    <th>Unlock</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td>2-1</td><td><span class="game-icon coin"></span> Shop</td></tr>
-                                <tr><td>2-5</td><td><span class="game-icon star"></span> Battle Pass</td></tr>
-                                <tr><td>2-10</td><td><span class="game-icon hammer-icon"></span> Auto Forge</td></tr>
-                                <tr><td>2-10</td><td><span class="game-icon key-gray"></span> Hammer Thief Dungeon</td></tr>
-                                <tr><td>2-15</td><td><span class="game-icon key-green"></span> Ghost Town Dungeon</td></tr>
-                                <tr><td>2-15</td><td><span class="game-icon star"></span> Skills & Tech Tree I</td></tr>
-                                <tr><td>2-15</td><td><span class="game-icon swords"></span> Skill Slot 2</td></tr>
-                                <tr><td>3-1</td><td><span class="game-icon key-orange"></span> Invasion Dungeon</td></tr>
-                                <tr><td>3-1</td><td><span class="egg-icon small common"></span> Pets & Tech Tree II</td></tr>
-                                <tr><td>3-1</td><td><span class="egg-icon small common"></span> Pet Slot 1</td></tr>
-                                <tr><td>3-10</td><td><span class="game-icon shield-gold"></span> PvP League & Chat</td></tr>
-                                <tr><td>4-1</td><td><span class="game-icon key-red"></span> Zombie Rush Dungeon</td></tr>
-                                <tr><td>4-1</td><td><span class="game-icon swords"></span> Skill Slot 3 & Tech Tree III</td></tr>
-                                <tr><td>4-10</td><td><span class="egg-icon small common"></span> Pet Slot 2</td></tr>
-                                <tr><td>4-15</td><td><span class="game-icon crown"></span> Clan</td></tr>
-                                <tr><td>5-1</td><td><span class="game-icon swords"></span> Skill Slot 4</td></tr>
-                                <tr><td>5-15</td><td><span class="game-icon hammer-icon"></span> Extra Hammer Forging</td></tr>
-                                <tr><td>6-1</td><td><span class="egg-icon small common"></span> Pet Slot 3</td></tr>
-                                <tr><td>7-15</td><td><span class="game-icon hammer-icon"></span> Extra Hammer Forging II</td></tr>
+                                <tr>
+                                    <td>2-1</td>
+                                    <td><span class="game-icon coin"></span> Shop</td>
+                                </tr>
+                                <tr>
+                                    <td>2-5</td>
+                                    <td><span class="game-icon star"></span> Battle Pass</td>
+                                </tr>
+                                <tr>
+                                    <td>2-10</td>
+                                    <td><span class="game-icon hammer-icon"></span> Auto Forge</td>
+                                </tr>
+                                <tr>
+                                    <td>2-10</td>
+                                    <td><span class="game-icon key-gray"></span> Hammer Thief Dungeon</td>
+                                </tr>
+                                <tr>
+                                    <td>2-15</td>
+                                    <td><span class="game-icon key-green"></span> Ghost Town Dungeon</td>
+                                </tr>
+                                <tr>
+                                    <td>2-15</td>
+                                    <td><span class="game-icon star"></span> Skills & Tech Tree I</td>
+                                </tr>
+                                <tr>
+                                    <td>2-15</td>
+                                    <td><span class="game-icon swords"></span> Skill Slot 2</td>
+                                </tr>
+                                <tr>
+                                    <td>3-1</td>
+                                    <td><span class="game-icon key-orange"></span> Invasion Dungeon</td>
+                                </tr>
+                                <tr>
+                                    <td>3-1</td>
+                                    <td><span class="egg-icon small common"></span> Pets & Tech Tree II</td>
+                                </tr>
+                                <tr>
+                                    <td>3-1</td>
+                                    <td><span class="egg-icon small common"></span> Pet Slot 1</td>
+                                </tr>
+                                <tr>
+                                    <td>3-10</td>
+                                    <td><span class="game-icon shield-gold"></span> PvP League & Chat</td>
+                                </tr>
+                                <tr>
+                                    <td>4-1</td>
+                                    <td><span class="game-icon key-red"></span> Zombie Rush Dungeon</td>
+                                </tr>
+                                <tr>
+                                    <td>4-1</td>
+                                    <td><span class="game-icon swords"></span> Skill Slot 3 & Tech Tree III</td>
+                                </tr>
+                                <tr>
+                                    <td>4-10</td>
+                                    <td><span class="egg-icon small common"></span> Pet Slot 2</td>
+                                </tr>
+                                <tr>
+                                    <td>4-15</td>
+                                    <td><span class="game-icon crown"></span> Clan</td>
+                                </tr>
+                                <tr>
+                                    <td>5-1</td>
+                                    <td><span class="game-icon swords"></span> Skill Slot 4</td>
+                                </tr>
+                                <tr>
+                                    <td>5-15</td>
+                                    <td><span class="game-icon hammer-icon"></span> Extra Hammer Forging</td>
+                                </tr>
+                                <tr>
+                                    <td>6-1</td>
+                                    <td><span class="egg-icon small common"></span> Pet Slot 3</td>
+                                </tr>
+                                <tr>
+                                    <td>7-15</td>
+                                    <td><span class="game-icon hammer-icon"></span> Extra Hammer Forging II</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -131,10 +193,14 @@
                     </h3>
                     <div class="faq-list">
                         <div class="faq-item">
-                            <p><span class="egg-icon small common"></span> If you don't have a rare pet or rare skill yet, use a <strong>Regen (5-6%) pet</strong> — it will keep you alive long enough to push far early on.</p>
+                            <p><span class="egg-icon small common"></span> If you don't have a rare pet or rare skill
+                                yet, use a <strong>Regen (5-6%) pet</strong> — it will keep you alive long enough to
+                                push far early on.</p>
                         </div>
                         <div class="faq-item">
-                            <p><span class="game-icon hammer-icon"></span> You can <strong>equip new items</strong> and watch your progress update in the background before selling — great for testing upgrades safely.</p>
+                            <p><span class="game-icon hammer-icon"></span> You can <strong>equip new items</strong> and
+                                watch your progress update in the background before selling — great for testing upgrades
+                                safely.</p>
                         </div>
                     </div>
                 </div>
@@ -149,7 +215,8 @@
                     </h3>
                     <div class="faq-list">
                         <div class="faq-item">
-                            <p><span class="game-icon timer"></span> Wars start every <strong>Tuesday (UTC)</strong> and last for <strong>6 days</strong>, with a 24-hour cooldown period.</p>
+                            <p><span class="game-icon timer"></span> Wars start every <strong>Tuesday (UTC)</strong> and
+                                last for <strong>6 days</strong>, with a 24-hour cooldown period.</p>
                         </div>
                     </div>
                 </div>
@@ -293,10 +360,10 @@
                     </div>
                     <p class="info-note">
                         <strong>Loss Penalties:</strong> Tier-S: -5 pts | Tier-A: -3 pts | Tier-B: -1 pt<br>
-                        <span class="game-icon hammer-icon"></span> = Hammers | 
-                        <span class="game-icon crown"></span> = Coins | 
+                        <span class="game-icon hammer-icon"></span> = Hammers |
+                        <span class="game-icon crown"></span> = Coins |
                         <span class="game-icon ticket-green"></span> = Green Tickets |
-                        <span class="game-icon key-orange"></span> = Egg Keys | 
+                        <span class="game-icon key-orange"></span> = Egg Keys |
                         <span class="game-icon potion"></span> = Potions |
                         <span class="game-icon winder"></span> = Winders
                     </p>
@@ -321,27 +388,139 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td>10k</td><td>100</td><td>60</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr><td>20k</td><td>-</td><td>-</td><td>-</td><td>5k</td><td>70</td><td>35</td></tr>
-                                <tr><td>50k</td><td>140</td><td>84</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr><td>75k</td><td>-</td><td>-</td><td>-</td><td>7k</td><td>98</td><td>50</td></tr>
-                                <tr><td>100k</td><td>200</td><td>118</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr><td>150k</td><td>-</td><td>-</td><td>-</td><td>9.8k</td><td>137</td><td>70</td></tr>
-                                <tr><td>200k</td><td>280</td><td>165</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr><td>250k</td><td>-</td><td>-</td><td>-</td><td>13.7k</td><td>192</td><td>100</td></tr>
-                                <tr><td>300k</td><td>380</td><td>230</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr><td>350k</td><td>-</td><td>-</td><td>-</td><td>19k</td><td>269</td><td>140</td></tr>
-                                <tr><td>400k</td><td>550</td><td>323</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr><td>450k</td><td>-</td><td>-</td><td>-</td><td>27k</td><td>376</td><td>190</td></tr>
-                                <tr><td>500k</td><td>750</td><td>452</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr class="total-row"><td><strong>Total</strong></td><td>2.4k</td><td>1,432</td><td>7</td><td>81.5k</td><td>1,142</td><td>585</td></tr>
+                                <tr>
+                                    <td>10k</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>1</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>20k</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>5k</td>
+                                    <td>70</td>
+                                    <td>35</td>
+                                </tr>
+                                <tr>
+                                    <td>50k</td>
+                                    <td>140</td>
+                                    <td>84</td>
+                                    <td>1</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>75k</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>7k</td>
+                                    <td>98</td>
+                                    <td>50</td>
+                                </tr>
+                                <tr>
+                                    <td>100k</td>
+                                    <td>200</td>
+                                    <td>118</td>
+                                    <td>1</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>150k</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>9.8k</td>
+                                    <td>137</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>200k</td>
+                                    <td>280</td>
+                                    <td>165</td>
+                                    <td>1</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>250k</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>13.7k</td>
+                                    <td>192</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>300k</td>
+                                    <td>380</td>
+                                    <td>230</td>
+                                    <td>1</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>350k</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>19k</td>
+                                    <td>269</td>
+                                    <td>140</td>
+                                </tr>
+                                <tr>
+                                    <td>400k</td>
+                                    <td>550</td>
+                                    <td>323</td>
+                                    <td>1</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>450k</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>27k</td>
+                                    <td>376</td>
+                                    <td>190</td>
+                                </tr>
+                                <tr>
+                                    <td>500k</td>
+                                    <td>750</td>
+                                    <td>452</td>
+                                    <td>1</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>Total</strong></td>
+                                    <td>2.4k</td>
+                                    <td>1,432</td>
+                                    <td>7</td>
+                                    <td>81.5k</td>
+                                    <td>1,142</td>
+                                    <td>585</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <p class="info-note">
-                        <span class="game-icon hammer-icon"></span> = Hammer | 
-                        <span class="game-icon ticket-green"></span> = Green Ticket | 
-                        <span class="game-icon key-orange"></span> = Egg Key | 
+                        <span class="game-icon hammer-icon"></span> = Hammer |
+                        <span class="game-icon ticket-green"></span> = Green Ticket |
+                        <span class="game-icon key-orange"></span> = Egg Key |
                         <span class="game-icon crown"></span> = Coin |
                         <span class="game-icon potion"></span> = Potion |
                         <span class="game-icon winder"></span> = Winder
@@ -357,10 +536,16 @@
                         <div class="war-day">
                             <h4><span class="game-icon timer"></span> Tuesday (1pt each)</h4>
                             <ul>
-                                <li>Forge <span class="age-icon primitive"></span>Primitive / <span class="age-icon medieval"></span>Medieval / <span class="age-icon early-modern"></span>Early-Modern: 1pt each</li>
-                                <li>Forge <span class="age-icon modern"></span>Modern / <span class="age-icon space"></span>Space / <span class="age-icon interstellar"></span>Interstellar: 2pts each</li>
+                                <li>Forge <span class="age-icon primitive"></span>Primitive / <span
+                                        class="age-icon medieval"></span>Medieval / <span
+                                        class="age-icon early-modern"></span>Early-Modern: 1pt each</li>
+                                <li>Forge <span class="age-icon modern"></span>Modern / <span
+                                        class="age-icon space"></span>Space / <span
+                                        class="age-icon interstellar"></span>Interstellar: 2pts each</li>
                                 <li>Forge <span class="age-icon underworld"></span>Underworld: 2pts</li>
-                                <li>Forge <span class="age-icon multiverse"></span>Multiverse / <span class="age-icon quantum"></span>Quantum / <span class="age-icon divine"></span>Divine: 3pts each</li>
+                                <li>Forge <span class="age-icon multiverse"></span>Multiverse / <span
+                                        class="age-icon quantum"></span>Quantum / <span
+                                        class="age-icon divine"></span>Divine: 3pts each</li>
                                 <li>Tech Tree I: 300pts | II: 7.5k | III: 20k | IV: 35k | V: 62k</li>
                                 <li>Skill Upgrades: Common 50 → Mythic 175 pts</li>
                             </ul>
@@ -421,16 +606,20 @@
                     </h3>
                     <div class="faq-list">
                         <div class="faq-item">
-                            <p><span class="game-icon chest-unlocked"></span> Clans unlock at <strong>Stage 4-15</strong></p>
+                            <p><span class="game-icon chest-unlocked"></span> Clans unlock at <strong>Stage
+                                    4-15</strong></p>
                         </div>
                         <div class="faq-item">
-                            <p><span class="game-icon star"></span> You can only be in a clan with players on your <strong>same server</strong></p>
+                            <p><span class="game-icon star"></span> You can only be in a clan with players on your
+                                <strong>same server</strong>
+                            </p>
                         </div>
                         <div class="faq-item">
                             <p>👥 Maximum <strong>50 members</strong> per clan</p>
                         </div>
                         <div class="faq-item">
-                            <p>⏰ <strong>24-hour cooldown</strong> after leaving/being kicked before joining a new clan</p>
+                            <p>⏰ <strong>24-hour cooldown</strong> after leaving/being kicked before joining a new clan
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -466,15 +655,43 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
+                                <tr>
+                                    <th>Pet</th>
+                                    <th><span class="game-icon swords"></span> Damage</th>
+                                    <th><span class="game-icon plus-health"></span> Health</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="pet-icon small snail"></span> Snail</td><td>50</td><td>1,200</td></tr>
-                                <tr><td><span class="pet-icon small turtle"></span> Turtle</td><td>50</td><td>1,200</td></tr>
-                                <tr><td><span class="pet-icon small mouse"></span> Mouse</td><td>100</td><td>800</td></tr>
-                                <tr><td><span class="pet-icon small chicken"></span> Chicken</td><td>100</td><td>800</td></tr>
-                                <tr><td><span class="pet-icon small cat"></span> Cat</td><td>100</td><td>800</td></tr>
-                                <tr><td><span class="pet-icon small dog"></span> Dog</td><td>150</td><td>400</td></tr>
+                                <tr>
+                                    <td><span class="pet-icon small snail"></span> Snail</td>
+                                    <td>50</td>
+                                    <td>1,200</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small turtle"></span> Turtle</td>
+                                    <td>50</td>
+                                    <td>1,200</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small mouse"></span> Mouse</td>
+                                    <td>100</td>
+                                    <td>800</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small chicken"></span> Chicken</td>
+                                    <td>100</td>
+                                    <td>800</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small cat"></span> Cat</td>
+                                    <td>100</td>
+                                    <td>800</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small dog"></span> Dog</td>
+                                    <td>150</td>
+                                    <td>400</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -486,14 +703,38 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
+                                <tr>
+                                    <th>Pet</th>
+                                    <th><span class="game-icon swords"></span> Damage</th>
+                                    <th><span class="game-icon plus-health"></span> Health</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="pet-icon small hedgehog"></span> Hedgehog</td><td>250</td><td>6,000</td></tr>
-                                <tr><td><span class="pet-icon small bear"></span> Bear</td><td>250</td><td>6,000</td></tr>
-                                <tr><td><span class="pet-icon small ostrich"></span> Ostrich</td><td>500</td><td>4,000</td></tr>
-                                <tr><td><span class="pet-icon small scorpion"></span> Scorpion</td><td>750</td><td>2,000</td></tr>
-                                <tr><td><span class="pet-icon small spider"></span> Spider</td><td>750</td><td>2,000</td></tr>
+                                <tr>
+                                    <td><span class="pet-icon small hedgehog"></span> Hedgehog</td>
+                                    <td>250</td>
+                                    <td>6,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small bear"></span> Bear</td>
+                                    <td>250</td>
+                                    <td>6,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small ostrich"></span> Ostrich</td>
+                                    <td>500</td>
+                                    <td>4,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small scorpion"></span> Scorpion</td>
+                                    <td>750</td>
+                                    <td>2,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small spider"></span> Spider</td>
+                                    <td>750</td>
+                                    <td>2,000</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -505,14 +746,38 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
+                                <tr>
+                                    <th>Pet</th>
+                                    <th><span class="game-icon swords"></span> Damage</th>
+                                    <th><span class="game-icon plus-health"></span> Health</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="pet-icon small panda"></span> Panda</td><td>1,250</td><td>30,000</td></tr>
-                                <tr><td><span class="pet-icon small griffin"></span> Griffin</td><td>1,250</td><td>30,000</td></tr>
-                                <tr><td><span class="pet-icon small unicorn"></span> Unicorn</td><td>2,500</td><td>20,000</td></tr>
-                                <tr><td><span class="pet-icon small saber-tooth"></span> Saber Tooth</td><td>3,750</td><td>10,000</td></tr>
-                                <tr><td><span class="pet-icon small tiger"></span> Tiger</td><td>3,750</td><td>10,000</td></tr>
+                                <tr>
+                                    <td><span class="pet-icon small panda"></span> Panda</td>
+                                    <td>1,250</td>
+                                    <td>30,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small griffin"></span> Griffin</td>
+                                    <td>1,250</td>
+                                    <td>30,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small unicorn"></span> Unicorn</td>
+                                    <td>2,500</td>
+                                    <td>20,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small saber-tooth"></span> Saber Tooth</td>
+                                    <td>3,750</td>
+                                    <td>10,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small tiger"></span> Tiger</td>
+                                    <td>3,750</td>
+                                    <td>10,000</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -524,12 +789,28 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
+                                <tr>
+                                    <th>Pet</th>
+                                    <th><span class="game-icon swords"></span> Damage</th>
+                                    <th><span class="game-icon plus-health"></span> Health</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="pet-icon small cerberus"></span> Cerberus</td><td>12,500</td><td>100,000</td></tr>
-                                <tr><td><span class="pet-icon small kitsune"></span> Kitsune</td><td>18,750</td><td>50,000</td></tr>
-                                <tr><td><span class="pet-icon small serpent"></span> Serpent</td><td>18,750</td><td>50,000</td></tr>
+                                <tr>
+                                    <td><span class="pet-icon small cerberus"></span> Cerberus</td>
+                                    <td>12,500</td>
+                                    <td>100,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small kitsune"></span> Kitsune</td>
+                                    <td>18,750</td>
+                                    <td>50,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small serpent"></span> Serpent</td>
+                                    <td>18,750</td>
+                                    <td>50,000</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -541,12 +822,28 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
+                                <tr>
+                                    <th>Pet</th>
+                                    <th><span class="game-icon swords"></span> Damage</th>
+                                    <th><span class="game-icon plus-health"></span> Health</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="pet-icon small treant"></span> Treant</td><td>31,200</td><td>750,000</td></tr>
-                                <tr><td><span class="pet-icon small elk"></span> Enchanted Elk</td><td>62,500</td><td>500,000</td></tr>
-                                <tr><td><span class="pet-icon small electry"></span> Electry</td><td>93,700</td><td>250,000</td></tr>
+                                <tr>
+                                    <td><span class="pet-icon small treant"></span> Treant</td>
+                                    <td>31,200</td>
+                                    <td>750,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small elk"></span> Enchanted Elk</td>
+                                    <td>62,500</td>
+                                    <td>500,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small electry"></span> Electry</td>
+                                    <td>93,700</td>
+                                    <td>250,000</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -558,12 +855,28 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Pet</th><th><span class="game-icon swords"></span> Damage</th><th><span class="game-icon plus-health"></span> Health</th></tr>
+                                <tr>
+                                    <th>Pet</th>
+                                    <th><span class="game-icon swords"></span> Damage</th>
+                                    <th><span class="game-icon plus-health"></span> Health</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="pet-icon small genie"></span> Genie</td><td>156,250</td><td>3,750,000</td></tr>
-                                <tr><td><span class="pet-icon small dragon"></span> Baby Dragon</td><td>312,500</td><td>2,500,000</td></tr>
-                                <tr><td><span class="pet-icon small spectral-tiger"></span> Spectral Tiger</td><td>468,750</td><td>1,250,000</td></tr>
+                                <tr>
+                                    <td><span class="pet-icon small genie"></span> Genie</td>
+                                    <td>156,250</td>
+                                    <td>3,750,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small dragon"></span> Baby Dragon</td>
+                                    <td>312,500</td>
+                                    <td>2,500,000</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pet-icon small spectral-tiger"></span> Spectral Tiger</td>
+                                    <td>468,750</td>
+                                    <td>1,250,000</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -577,16 +890,25 @@
                         <span class="mount-icon small lily-pad"></span>
                         Common Mounts (Unlock Lv.1)
                     </h3>
-                    <p class="info-note"><span class="game-icon swords"></span> Boost: +10% Damage & Health | <span class="game-icon star"></span> War Points: 400</p>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +10% Damage & Health | <span
+                            class="game-icon star"></span> War Points: 400</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Mount</th></tr>
+                                <tr>
+                                    <th>Mount</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small brown-leaf"></span> Brown Leaf</td></tr>
-                                <tr><td><span class="mount-icon small lily-leaf"></span> Lily Leaf</td></tr>
-                                <tr><td><span class="mount-icon small lily-pad"></span> Lily Pad</td></tr>
+                                <tr>
+                                    <td><span class="mount-icon small brown-leaf"></span> Brown Leaf</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="mount-icon small lily-leaf"></span> Lily Leaf</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="mount-icon small lily-pad"></span> Lily Pad</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -594,17 +916,28 @@
 
                 <div class="info-card">
                     <h3 class="tier rare">Rare Mounts (Unlock Lv.2)</h3>
-                    <p class="info-note"><span class="game-icon swords"></span> Boost: +40% Damage & Health | <span class="game-icon star"></span> War Points: 600</p>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +40% Damage & Health | <span
+                            class="game-icon star"></span> War Points: 600</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Mount</th></tr>
+                                <tr>
+                                    <th>Mount</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small turtle"></span> Turtle</td></tr>
-                                <tr><td><span class="mount-icon small crab"></span> Crab</td></tr>
-                                <tr><td><span class="mount-icon small horse"></span> Brown Horse</td></tr>
-                                <tr><td><span class="mount-icon small dino"></span> Dino</td></tr>
+                                <tr>
+                                    <td><span class="mount-icon small turtle"></span> Turtle</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="mount-icon small crab"></span> Crab</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="mount-icon small horse"></span> Brown Horse</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="mount-icon small dino"></span> Dino</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -612,15 +945,22 @@
 
                 <div class="info-card">
                     <h3 class="tier epic">Epic Mounts (Unlock Lv.10)</h3>
-                    <p class="info-note"><span class="game-icon swords"></span> Boost: +80% Damage & Health | <span class="game-icon star"></span> War Points: 900</p>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +80% Damage & Health | <span
+                            class="game-icon star"></span> War Points: 900</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Mount</th></tr>
+                                <tr>
+                                    <th>Mount</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small pig"></span> Pig</td></tr>
-                                <tr><td><span class="mount-icon small goat"></span> Goat</td></tr>
+                                <tr>
+                                    <td><span class="mount-icon small pig"></span> Pig</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="mount-icon small goat"></span> Goat</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -628,15 +968,22 @@
 
                 <div class="info-card">
                     <h3 class="tier legendary">Legendary Mounts (Unlock Lv.18)</h3>
-                    <p class="info-note"><span class="game-icon swords"></span> Boost: +150% Damage & Health | <span class="game-icon star"></span> War Points: 1,350</p>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +150% Damage & Health | <span
+                            class="game-icon star"></span> War Points: 1,350</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Mount</th></tr>
+                                <tr>
+                                    <th>Mount</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small bike"></span> Bike</td></tr>
-                                <tr><td><span class="mount-icon small bee"></span> Giant Bee</td></tr>
+                                <tr>
+                                    <td><span class="mount-icon small bike"></span> Bike</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="mount-icon small bee"></span> Giant Bee</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -644,15 +991,22 @@
 
                 <div class="info-card">
                     <h3 class="tier ultimate">Ultimate Mounts (Unlock Lv.26)</h3>
-                    <p class="info-note"><span class="game-icon swords"></span> Boost: +250% Damage & Health | <span class="game-icon star"></span> War Points: 2,000</p>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +250% Damage & Health | <span
+                            class="game-icon star"></span> War Points: 2,000</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Mount</th></tr>
+                                <tr>
+                                    <th>Mount</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small mini-dragon"></span> Mini Dragon</td></tr>
-                                <tr><td><span class="mount-icon small droid"></span> One-Wheel Droid</td></tr>
+                                <tr>
+                                    <td><span class="mount-icon small mini-dragon"></span> Mini Dragon</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="mount-icon small droid"></span> One-Wheel Droid</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -660,15 +1014,22 @@
 
                 <div class="info-card">
                     <h3 class="tier mythic">Mythic Mounts (Unlock Lv.34)</h3>
-                    <p class="info-note"><span class="game-icon swords"></span> Boost: +400% Damage & Health | <span class="game-icon star"></span> War Points: 3,000</p>
+                    <p class="info-note"><span class="game-icon swords"></span> Boost: +400% Damage & Health | <span
+                            class="game-icon star"></span> War Points: 3,000</p>
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Mount</th></tr>
+                                <tr>
+                                    <th>Mount</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="mount-icon small hover-board"></span> Hover Board</td></tr>
-                                <tr><td><span class="mount-icon small hover-disk"></span> Hover Disk</td></tr>
+                                <tr>
+                                    <td><span class="mount-icon small hover-board"></span> Hover Board</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="mount-icon small hover-disk"></span> Hover Disk</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -680,7 +1041,8 @@
                         Mount Summon Cost
                     </h3>
                     <p class="info-note">
-                        <span class="game-icon winder"></span> Each summon costs <strong>50 winders</strong> (reducible via Tech Tree)
+                        <span class="game-icon winder"></span> Each summon costs <strong>50 winders</strong> (reducible
+                        via Tech Tree)
                     </p>
                 </div>
 
@@ -693,19 +1055,140 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th><th>Lv</th><th>Opens</th></tr>
+                                <tr>
+                                    <th>Lv</th>
+                                    <th>Opens</th>
+                                    <th>Lv</th>
+                                    <th>Opens</th>
+                                    <th>Lv</th>
+                                    <th>Opens</th>
+                                    <th>Lv</th>
+                                    <th>Opens</th>
+                                    <th>Lv</th>
+                                    <th>Opens</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td>2</td><td>11</td><td>32</td><td>21</td><td>62</td><td>31</td><td>92</td><td>41</td><td>370</td></tr>
-                                <tr><td>2</td><td>5</td><td>12</td><td>35</td><td>22</td><td>65</td><td>32</td><td>95</td><td>42</td><td>404</td></tr>
-                                <tr><td>3</td><td>8</td><td>13</td><td>38</td><td>23</td><td>68</td><td>33</td><td>98</td><td>43</td><td>438</td></tr>
-                                <tr><td>4</td><td>11</td><td>14</td><td>41</td><td>24</td><td>71</td><td>34</td><td>132</td><td>44</td><td>472</td></tr>
-                                <tr><td>5</td><td>14</td><td>15</td><td>44</td><td>25</td><td>74</td><td>35</td><td>166</td><td>45</td><td>506</td></tr>
-                                <tr><td>6</td><td>17</td><td>16</td><td>47</td><td>26</td><td>77</td><td>36</td><td>200</td><td>46</td><td>540</td></tr>
-                                <tr><td>7</td><td>20</td><td>17</td><td>50</td><td>27</td><td>80</td><td>37</td><td>234</td><td>47</td><td>574</td></tr>
-                                <tr><td>8</td><td>23</td><td>18</td><td>53</td><td>28</td><td>83</td><td>38</td><td>268</td><td>48</td><td>608</td></tr>
-                                <tr><td>9</td><td>26</td><td>19</td><td>56</td><td>29</td><td>86</td><td>39</td><td>302</td><td>49</td><td>642</td></tr>
-                                <tr><td>10</td><td>29</td><td>20</td><td>59</td><td>30</td><td>89</td><td>40</td><td>336</td><td>50</td><td>MAX</td></tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>11</td>
+                                    <td>32</td>
+                                    <td>21</td>
+                                    <td>62</td>
+                                    <td>31</td>
+                                    <td>92</td>
+                                    <td>41</td>
+                                    <td>370</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>5</td>
+                                    <td>12</td>
+                                    <td>35</td>
+                                    <td>22</td>
+                                    <td>65</td>
+                                    <td>32</td>
+                                    <td>95</td>
+                                    <td>42</td>
+                                    <td>404</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>8</td>
+                                    <td>13</td>
+                                    <td>38</td>
+                                    <td>23</td>
+                                    <td>68</td>
+                                    <td>33</td>
+                                    <td>98</td>
+                                    <td>43</td>
+                                    <td>438</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>11</td>
+                                    <td>14</td>
+                                    <td>41</td>
+                                    <td>24</td>
+                                    <td>71</td>
+                                    <td>34</td>
+                                    <td>132</td>
+                                    <td>44</td>
+                                    <td>472</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>14</td>
+                                    <td>15</td>
+                                    <td>44</td>
+                                    <td>25</td>
+                                    <td>74</td>
+                                    <td>35</td>
+                                    <td>166</td>
+                                    <td>45</td>
+                                    <td>506</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>17</td>
+                                    <td>16</td>
+                                    <td>47</td>
+                                    <td>26</td>
+                                    <td>77</td>
+                                    <td>36</td>
+                                    <td>200</td>
+                                    <td>46</td>
+                                    <td>540</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>20</td>
+                                    <td>17</td>
+                                    <td>50</td>
+                                    <td>27</td>
+                                    <td>80</td>
+                                    <td>37</td>
+                                    <td>234</td>
+                                    <td>47</td>
+                                    <td>574</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>23</td>
+                                    <td>18</td>
+                                    <td>53</td>
+                                    <td>28</td>
+                                    <td>83</td>
+                                    <td>38</td>
+                                    <td>268</td>
+                                    <td>48</td>
+                                    <td>608</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>26</td>
+                                    <td>19</td>
+                                    <td>56</td>
+                                    <td>29</td>
+                                    <td>86</td>
+                                    <td>39</td>
+                                    <td>302</td>
+                                    <td>49</td>
+                                    <td>642</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>29</td>
+                                    <td>20</td>
+                                    <td>59</td>
+                                    <td>30</td>
+                                    <td>89</td>
+                                    <td>40</td>
+                                    <td>336</td>
+                                    <td>50</td>
+                                    <td>MAX</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -729,40 +1212,176 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td>1 → 2</td><td>400 x 1</td><td>5m</td></tr>
-                                <tr><td>2 → 3</td><td>700 x 1</td><td>15m</td></tr>
-                                <tr><td>3 → 4</td><td>1.5k x 1</td><td>30m</td></tr>
-                                <tr><td>4 → 5</td><td>3.5k x 1</td><td>1h</td></tr>
-                                <tr><td>5 → 6</td><td>10k x 1</td><td>1h 59m</td></tr>
-                                <tr><td>6 → 7</td><td>25k x 1</td><td>7h 33m</td></tr>
-                                <tr><td>7 → 8</td><td>50k x 1</td><td>13h 6m</td></tr>
-                                <tr><td>8 → 9</td><td>33.3k x 3</td><td>18h 39m</td></tr>
-                                <tr><td>9 → 10</td><td>50k x 3</td><td>1d 13m</td></tr>
-                                <tr><td>10 → 11</td><td>83.3k x 3</td><td>1d 11h</td></tr>
-                                <tr><td>11 → 12</td><td>112k x 3</td><td>2d 1h</td></tr>
-                                <tr><td>12 → 13</td><td>113k x 4</td><td>2d 17h</td></tr>
-                                <tr><td>13 → 14</td><td>153k x 4</td><td>3d 13h</td></tr>
-                                <tr><td>14 → 15</td><td>166k x 5</td><td>4d 11h</td></tr>
-                                <tr><td>15 → 16</td><td>224k x 5</td><td>5d 9h</td></tr>
-                                <tr><td>16 → 17</td><td>252k x 6</td><td>6d 7h</td></tr>
-                                <tr><td>17 → 18</td><td>291k x 7</td><td>7d 6h</td></tr>
-                                <tr><td>18 → 19</td><td>344k x 8</td><td>8d 4h</td></tr>
-                                <tr><td>19 → 20</td><td>413k x 9</td><td>9d 2h</td></tr>
-                                <tr><td>20 → 21</td><td>502k x 10</td><td>10d 53m</td></tr>
-                                <tr><td>21 → 22</td><td>678k x 10</td><td>10d 23h</td></tr>
-                                <tr><td>22 → 23</td><td>916k x 10</td><td>11d 21h</td></tr>
-                                <tr><td>23 → 24</td><td>1.23M x 10</td><td>12d 19h</td></tr>
-                                <tr><td>24 → 25</td><td>1.66M x 10</td><td>13d 17h</td></tr>
-                                <tr><td>25 → 26</td><td>2M x 10</td><td>14d 15h</td></tr>
-                                <tr><td>26 → 27</td><td>2.4M x 10</td><td>15d 14h</td></tr>
-                                <tr><td>27 → 28</td><td>2.88M x 10</td><td>16d 12h</td></tr>
-                                <tr><td>28 → 29</td><td>3.46M x 10</td><td>17d 10h</td></tr>
-                                <tr><td>29 → 30</td><td>4.15M x 10</td><td>18d 8h</td></tr>
-                                <tr><td>30 → 31</td><td>4.98M x 10</td><td>19d 7h</td></tr>
-                                <tr><td>31 → 32</td><td>5.98M x 10</td><td>20d 5h</td></tr>
-                                <tr><td>32 → 33</td><td>7.17M x 10</td><td>21d 3h</td></tr>
-                                <tr><td>33 → 34</td><td>8.61M x 10</td><td>22d 1h</td></tr>
-                                <tr><td>34 → 35</td><td>10.3M x 10</td><td>23d</td></tr>
+                                <tr>
+                                    <td>1 → 2</td>
+                                    <td>400 x 1</td>
+                                    <td>5m</td>
+                                </tr>
+                                <tr>
+                                    <td>2 → 3</td>
+                                    <td>700 x 1</td>
+                                    <td>15m</td>
+                                </tr>
+                                <tr>
+                                    <td>3 → 4</td>
+                                    <td>1.5k x 1</td>
+                                    <td>30m</td>
+                                </tr>
+                                <tr>
+                                    <td>4 → 5</td>
+                                    <td>3.5k x 1</td>
+                                    <td>1h</td>
+                                </tr>
+                                <tr>
+                                    <td>5 → 6</td>
+                                    <td>10k x 1</td>
+                                    <td>1h 59m</td>
+                                </tr>
+                                <tr>
+                                    <td>6 → 7</td>
+                                    <td>25k x 1</td>
+                                    <td>7h 33m</td>
+                                </tr>
+                                <tr>
+                                    <td>7 → 8</td>
+                                    <td>50k x 1</td>
+                                    <td>13h 6m</td>
+                                </tr>
+                                <tr>
+                                    <td>8 → 9</td>
+                                    <td>33.3k x 3</td>
+                                    <td>18h 39m</td>
+                                </tr>
+                                <tr>
+                                    <td>9 → 10</td>
+                                    <td>50k x 3</td>
+                                    <td>1d 13m</td>
+                                </tr>
+                                <tr>
+                                    <td>10 → 11</td>
+                                    <td>83.3k x 3</td>
+                                    <td>1d 11h</td>
+                                </tr>
+                                <tr>
+                                    <td>11 → 12</td>
+                                    <td>112k x 3</td>
+                                    <td>2d 1h</td>
+                                </tr>
+                                <tr>
+                                    <td>12 → 13</td>
+                                    <td>113k x 4</td>
+                                    <td>2d 17h</td>
+                                </tr>
+                                <tr>
+                                    <td>13 → 14</td>
+                                    <td>153k x 4</td>
+                                    <td>3d 13h</td>
+                                </tr>
+                                <tr>
+                                    <td>14 → 15</td>
+                                    <td>166k x 5</td>
+                                    <td>4d 11h</td>
+                                </tr>
+                                <tr>
+                                    <td>15 → 16</td>
+                                    <td>224k x 5</td>
+                                    <td>5d 9h</td>
+                                </tr>
+                                <tr>
+                                    <td>16 → 17</td>
+                                    <td>252k x 6</td>
+                                    <td>6d 7h</td>
+                                </tr>
+                                <tr>
+                                    <td>17 → 18</td>
+                                    <td>291k x 7</td>
+                                    <td>7d 6h</td>
+                                </tr>
+                                <tr>
+                                    <td>18 → 19</td>
+                                    <td>344k x 8</td>
+                                    <td>8d 4h</td>
+                                </tr>
+                                <tr>
+                                    <td>19 → 20</td>
+                                    <td>413k x 9</td>
+                                    <td>9d 2h</td>
+                                </tr>
+                                <tr>
+                                    <td>20 → 21</td>
+                                    <td>502k x 10</td>
+                                    <td>10d 53m</td>
+                                </tr>
+                                <tr>
+                                    <td>21 → 22</td>
+                                    <td>678k x 10</td>
+                                    <td>10d 23h</td>
+                                </tr>
+                                <tr>
+                                    <td>22 → 23</td>
+                                    <td>916k x 10</td>
+                                    <td>11d 21h</td>
+                                </tr>
+                                <tr>
+                                    <td>23 → 24</td>
+                                    <td>1.23M x 10</td>
+                                    <td>12d 19h</td>
+                                </tr>
+                                <tr>
+                                    <td>24 → 25</td>
+                                    <td>1.66M x 10</td>
+                                    <td>13d 17h</td>
+                                </tr>
+                                <tr>
+                                    <td>25 → 26</td>
+                                    <td>2M x 10</td>
+                                    <td>14d 15h</td>
+                                </tr>
+                                <tr>
+                                    <td>26 → 27</td>
+                                    <td>2.4M x 10</td>
+                                    <td>15d 14h</td>
+                                </tr>
+                                <tr>
+                                    <td>27 → 28</td>
+                                    <td>2.88M x 10</td>
+                                    <td>16d 12h</td>
+                                </tr>
+                                <tr>
+                                    <td>28 → 29</td>
+                                    <td>3.46M x 10</td>
+                                    <td>17d 10h</td>
+                                </tr>
+                                <tr>
+                                    <td>29 → 30</td>
+                                    <td>4.15M x 10</td>
+                                    <td>18d 8h</td>
+                                </tr>
+                                <tr>
+                                    <td>30 → 31</td>
+                                    <td>4.98M x 10</td>
+                                    <td>19d 7h</td>
+                                </tr>
+                                <tr>
+                                    <td>31 → 32</td>
+                                    <td>5.98M x 10</td>
+                                    <td>20d 5h</td>
+                                </tr>
+                                <tr>
+                                    <td>32 → 33</td>
+                                    <td>7.17M x 10</td>
+                                    <td>21d 3h</td>
+                                </tr>
+                                <tr>
+                                    <td>33 → 34</td>
+                                    <td>8.61M x 10</td>
+                                    <td>22d 1h</td>
+                                </tr>
+                                <tr>
+                                    <td>34 → 35</td>
+                                    <td>10.3M x 10</td>
+                                    <td>23d</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -795,16 +1414,19 @@
                     </h3>
                     <div class="faq-list">
                         <div class="faq-item">
-                            <p>The tree is split into <strong>3 main branches:</strong> Forge, Power, and Skills/Pets</p>
+                            <p>The tree is split into <strong>3 main branches:</strong> Forge, Power, and Skills/Pets
+                            </p>
                         </div>
                         <div class="faq-item">
-                            <p>Each node can be upgraded <strong>5× per tier</strong>, for a total of <strong>25 upgrades per node</strong></p>
+                            <p>Each node can be upgraded <strong>5× per tier</strong>, for a total of <strong>25
+                                    upgrades per node</strong></p>
                         </div>
                         <div class="faq-item">
                             <p>With each tier, cost and time increase, while bonus values stay the same</p>
                         </div>
                     </div>
-                    <p class="info-note">Push several nodes to Tier II before specializing — this gives a smoother early game power curve.</p>
+                    <p class="info-note">Push several nodes to Tier II before specializing — this gives a smoother early
+                        game power curve.</p>
                 </div>
 
                 <div class="info-card">
@@ -813,16 +1435,36 @@
                         Forge Tree
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item"><p><strong>Forge Timer:</strong> +4% upgrade speed per point</p></div>
-                        <div class="faq-item"><p><strong>Forge Upgrade Cost:</strong> -2% forge upgrade cost per point</p></div>
-                        <div class="faq-item"><p><strong>Equipment Sell Price:</strong> +2% revenue per sale per point</p></div>
-                        <div class="faq-item"><p><strong>Hammer Thief Hammer Bonus:</strong> +2% hammer drops per point</p></div>
-                        <div class="faq-item"><p><strong>Hammer Thief Coin Bonus:</strong> +2% coin drops per point</p></div>
-                        <div class="faq-item"><p><strong>Auto Forge:</strong> +1 additional hammer at a time (1× per tier)</p></div>
-                        <div class="faq-item"><p><strong>Free Forge Chance:</strong> +1% chance to forge for free per point</p></div>
-                        <div class="faq-item"><p><strong>Max Offline Time:</strong> +16% max offline duration per point</p></div>
-                        <div class="faq-item"><p><strong>Coin Offline Reward:</strong> +2% passive Coin gain per minute</p></div>
-                        <div class="faq-item"><p><strong>Hammer Offline Reward:</strong> +2% passive Hammer gain per minute</p></div>
+                        <div class="faq-item">
+                            <p><strong>Forge Timer:</strong> +4% upgrade speed per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Forge Upgrade Cost:</strong> -2% forge upgrade cost per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Equipment Sell Price:</strong> +2% revenue per sale per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Hammer Thief Hammer Bonus:</strong> +2% hammer drops per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Hammer Thief Coin Bonus:</strong> +2% coin drops per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Auto Forge:</strong> +1 additional hammer at a time (1× per tier)</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Free Forge Chance:</strong> +1% chance to forge for free per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Max Offline Time:</strong> +16% max offline duration per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Coin Offline Reward:</strong> +2% passive Coin gain per minute</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Hammer Offline Reward:</strong> +2% passive Hammer gain per minute</p>
+                        </div>
                     </div>
                     <p class="info-note">Prioritize this tree early to speed up upgrades and boost offline progress.</p>
                 </div>
@@ -833,13 +1475,27 @@
                         Power Tree
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item"><p><strong>Weapon/Glove/Necklace/Ring Mastery:</strong> +2% damage per point</p></div>
-                        <div class="faq-item"><p><strong>Helmet/Body/Shoe/Belt Mastery:</strong> +2% health per point</p></div>
-                        <div class="faq-item"><p><strong>Equipment Level Up (all 8 slots):</strong> +2 max upgrade level per point</p></div>
-                        <div class="faq-item"><p><strong>Mount Damage Mastery:</strong> +2% mount damage per point</p></div>
-                        <div class="faq-item"><p><strong>Mount Health Mastery:</strong> +2% mount health per point</p></div>
-                        <div class="faq-item"><p><strong>Mount Summon Cost:</strong> -1% Clock Winders needed per point</p></div>
-                        <div class="faq-item"><p><strong>Extra Mount Chance:</strong> +2% chance to spawn two mounts per point</p></div>
+                        <div class="faq-item">
+                            <p><strong>Weapon/Glove/Necklace/Ring Mastery:</strong> +2% damage per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Helmet/Body/Shoe/Belt Mastery:</strong> +2% health per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Equipment Level Up (all 8 slots):</strong> +2 max upgrade level per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Mount Damage Mastery:</strong> +2% mount damage per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Mount Health Mastery:</strong> +2% mount health per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Mount Summon Cost:</strong> -1% Clock Winders needed per point</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Extra Mount Chance:</strong> +2% chance to spawn two mounts per point</p>
+                        </div>
                     </div>
                     <p class="info-note">A late-game tree once your forge is efficient.</p>
                 </div>
@@ -860,36 +1516,171 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="tier-header"><td colspan="4">Tier I</td></tr>
-                                <tr><td>I</td><td>1</td><td>5m</td><td>40</td></tr>
-                                <tr><td>I</td><td>2</td><td>10m</td><td>56</td></tr>
-                                <tr><td>I</td><td>3</td><td>20m</td><td>78</td></tr>
-                                <tr><td>I</td><td>4</td><td>40m</td><td>110</td></tr>
-                                <tr><td>I</td><td>5</td><td>1h 20m</td><td>154</td></tr>
-                                <tr class="tier-header"><td colspan="4">Tier II</td></tr>
-                                <tr><td>II</td><td>1</td><td>2h 40m</td><td>215</td></tr>
-                                <tr><td>II</td><td>2</td><td>5h 20m</td><td>301</td></tr>
-                                <tr><td>II</td><td>3</td><td>10h 40m</td><td>422</td></tr>
-                                <tr><td>II</td><td>4</td><td>21h 20m</td><td>590</td></tr>
-                                <tr><td>II</td><td>5</td><td>23h 53m</td><td>826</td></tr>
-                                <tr class="tier-header"><td colspan="4">Tier III</td></tr>
-                                <tr><td>III</td><td>1</td><td>1d 2h</td><td>1,150</td></tr>
-                                <tr><td>III</td><td>2</td><td>1d 5h</td><td>1,310</td></tr>
-                                <tr><td>III</td><td>3</td><td>1d 9h</td><td>1,500</td></tr>
-                                <tr><td>III</td><td>4</td><td>1d 13h</td><td>1,710</td></tr>
-                                <tr><td>III</td><td>5</td><td>1d 18h</td><td>1,950</td></tr>
-                                <tr class="tier-header"><td colspan="4">Tier IV</td></tr>
-                                <tr><td>IV</td><td>1</td><td>1d 23h</td><td>2,220</td></tr>
-                                <tr><td>IV</td><td>2</td><td>2d 4h</td><td>2,540</td></tr>
-                                <tr><td>IV</td><td>3</td><td>2d 11h</td><td>2,890</td></tr>
-                                <tr><td>IV</td><td>4</td><td>2d 18h</td><td>3,300</td></tr>
-                                <tr><td>IV</td><td>5</td><td>3d 2h</td><td>3,760</td></tr>
-                                <tr class="tier-header"><td colspan="4">Tier V</td></tr>
-                                <tr><td>V</td><td>1</td><td>3d 11h</td><td>4,280</td></tr>
-                                <tr><td>V</td><td>2</td><td>3d 21h</td><td>4,880</td></tr>
-                                <tr><td>V</td><td>3</td><td>4d 8h</td><td>5,570</td></tr>
-                                <tr><td>V</td><td>4</td><td>4d 20h</td><td>6,350</td></tr>
-                                <tr><td>V</td><td>5</td><td>5d 10h</td><td>7,240</td></tr>
+                                <tr class="tier-header">
+                                    <td colspan="4">Tier I</td>
+                                </tr>
+                                <tr>
+                                    <td>I</td>
+                                    <td>1</td>
+                                    <td>5m</td>
+                                    <td>40</td>
+                                </tr>
+                                <tr>
+                                    <td>I</td>
+                                    <td>2</td>
+                                    <td>10m</td>
+                                    <td>56</td>
+                                </tr>
+                                <tr>
+                                    <td>I</td>
+                                    <td>3</td>
+                                    <td>20m</td>
+                                    <td>78</td>
+                                </tr>
+                                <tr>
+                                    <td>I</td>
+                                    <td>4</td>
+                                    <td>40m</td>
+                                    <td>110</td>
+                                </tr>
+                                <tr>
+                                    <td>I</td>
+                                    <td>5</td>
+                                    <td>1h 20m</td>
+                                    <td>154</td>
+                                </tr>
+                                <tr class="tier-header">
+                                    <td colspan="4">Tier II</td>
+                                </tr>
+                                <tr>
+                                    <td>II</td>
+                                    <td>1</td>
+                                    <td>2h 40m</td>
+                                    <td>215</td>
+                                </tr>
+                                <tr>
+                                    <td>II</td>
+                                    <td>2</td>
+                                    <td>5h 20m</td>
+                                    <td>301</td>
+                                </tr>
+                                <tr>
+                                    <td>II</td>
+                                    <td>3</td>
+                                    <td>10h 40m</td>
+                                    <td>422</td>
+                                </tr>
+                                <tr>
+                                    <td>II</td>
+                                    <td>4</td>
+                                    <td>21h 20m</td>
+                                    <td>590</td>
+                                </tr>
+                                <tr>
+                                    <td>II</td>
+                                    <td>5</td>
+                                    <td>23h 53m</td>
+                                    <td>826</td>
+                                </tr>
+                                <tr class="tier-header">
+                                    <td colspan="4">Tier III</td>
+                                </tr>
+                                <tr>
+                                    <td>III</td>
+                                    <td>1</td>
+                                    <td>1d 2h</td>
+                                    <td>1,150</td>
+                                </tr>
+                                <tr>
+                                    <td>III</td>
+                                    <td>2</td>
+                                    <td>1d 5h</td>
+                                    <td>1,310</td>
+                                </tr>
+                                <tr>
+                                    <td>III</td>
+                                    <td>3</td>
+                                    <td>1d 9h</td>
+                                    <td>1,500</td>
+                                </tr>
+                                <tr>
+                                    <td>III</td>
+                                    <td>4</td>
+                                    <td>1d 13h</td>
+                                    <td>1,710</td>
+                                </tr>
+                                <tr>
+                                    <td>III</td>
+                                    <td>5</td>
+                                    <td>1d 18h</td>
+                                    <td>1,950</td>
+                                </tr>
+                                <tr class="tier-header">
+                                    <td colspan="4">Tier IV</td>
+                                </tr>
+                                <tr>
+                                    <td>IV</td>
+                                    <td>1</td>
+                                    <td>1d 23h</td>
+                                    <td>2,220</td>
+                                </tr>
+                                <tr>
+                                    <td>IV</td>
+                                    <td>2</td>
+                                    <td>2d 4h</td>
+                                    <td>2,540</td>
+                                </tr>
+                                <tr>
+                                    <td>IV</td>
+                                    <td>3</td>
+                                    <td>2d 11h</td>
+                                    <td>2,890</td>
+                                </tr>
+                                <tr>
+                                    <td>IV</td>
+                                    <td>4</td>
+                                    <td>2d 18h</td>
+                                    <td>3,300</td>
+                                </tr>
+                                <tr>
+                                    <td>IV</td>
+                                    <td>5</td>
+                                    <td>3d 2h</td>
+                                    <td>3,760</td>
+                                </tr>
+                                <tr class="tier-header">
+                                    <td colspan="4">Tier V</td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td>1</td>
+                                    <td>3d 11h</td>
+                                    <td>4,280</td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td>2</td>
+                                    <td>3d 21h</td>
+                                    <td>4,880</td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td>3</td>
+                                    <td>4d 8h</td>
+                                    <td>5,570</td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td>4</td>
+                                    <td>4d 20h</td>
+                                    <td>6,350</td>
+                                </tr>
+                                <tr>
+                                    <td>V</td>
+                                    <td>5</td>
+                                    <td>5d 10h</td>
+                                    <td>7,240</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -912,10 +1703,12 @@
                             <p><span class="game-icon chest-unlocked"></span> <strong>Unlocks at Stage 3-10</strong></p>
                         </div>
                         <div class="faq-item">
-                            <p><span class="game-icon timer"></span> New season starts every <strong>Tuesday</strong> and lasts <strong>6 days</strong> (24h cooldown)</p>
+                            <p><span class="game-icon timer"></span> New season starts every <strong>Tuesday</strong>
+                                and lasts <strong>6 days</strong> (24h cooldown)</p>
                         </div>
                         <div class="faq-item">
-                            <p><span class="game-icon ticket-red"></span> Challenge Tickets reset at midnight and do NOT roll over</p>
+                            <p><span class="game-icon ticket-red"></span> Challenge Tickets reset at midnight and do NOT
+                                roll over</p>
                         </div>
                         <div class="faq-item">
                             <p><span class="game-icon swords"></span> Tickets are used <strong>win or lose</strong></p>
@@ -938,12 +1731,36 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td>Unranked</td><td>Top 90 promoted</td><td>-</td></tr>
-                                <tr><td><span class="game-icon shield-bronze"></span> Bronze</td><td>Top 80 promoted</td><td>-</td></tr>
-                                <tr><td><span class="game-icon shield-silver"></span> Silver</td><td>Top 50 promoted</td><td>90+ demoted</td></tr>
-                                <tr><td><span class="game-icon shield-gold"></span> Gold</td><td>Top 20 promoted</td><td>80+ demoted</td></tr>
-                                <tr><td><span class="game-icon badge-blue"></span> Platinum</td><td>Top 10 promoted</td><td>70+ demoted</td></tr>
-                                <tr><td><span class="game-icon badge-purple"></span> Diamond</td><td>1-35 stay</td><td>36+ demoted</td></tr>
+                                <tr>
+                                    <td>Unranked</td>
+                                    <td>Top 90 promoted</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon shield-bronze"></span> Bronze</td>
+                                    <td>Top 80 promoted</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon shield-silver"></span> Silver</td>
+                                    <td>Top 50 promoted</td>
+                                    <td>90+ demoted</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon shield-gold"></span> Gold</td>
+                                    <td>Top 20 promoted</td>
+                                    <td>80+ demoted</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon badge-blue"></span> Platinum</td>
+                                    <td>Top 10 promoted</td>
+                                    <td>70+ demoted</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon badge-purple"></span> Diamond</td>
+                                    <td>1-35 stay</td>
+                                    <td>36+ demoted</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -961,16 +1778,83 @@
                             <thead>
                                 <tr>
                                     <th>Reward</th>
-                                    <th>1st</th><th>2nd</th><th>3rd</th><th>4-5</th><th>6-10</th><th>11-20</th><th>21-50</th><th>51-100</th>
+                                    <th>1st</th>
+                                    <th>2nd</th>
+                                    <th>3rd</th>
+                                    <th>4-5</th>
+                                    <th>6-10</th>
+                                    <th>11-20</th>
+                                    <th>21-50</th>
+                                    <th>51-100</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="game-icon hammer-icon"></span></td><td>2.62k</td><td>2.1k</td><td>1.68k</td><td>1.34k</td><td>1.07k</td><td>860</td><td>688</td><td>551</td></tr>
-                                <tr><td><span class="game-icon coin"></span></td><td>131k</td><td>105k</td><td>84k</td><td>67.2k</td><td>53.7k</td><td>43k</td><td>34.4k</td><td>27.5k</td></tr>
-                                <tr><td><span class="game-icon ticket-green"></span></td><td>3.15k</td><td>2.52k</td><td>2.01k</td><td>1.61k</td><td>1.29k</td><td>1.03k</td><td>826</td><td>661</td></tr>
-                                <tr><td><span class="game-icon key-orange"></span></td><td>11</td><td>8</td><td>7</td><td>5</td><td>4</td><td>3</td><td>3</td><td>2</td></tr>
-                                <tr><td><span class="game-icon potion"></span></td><td>2.62k</td><td>2.1k</td><td>1.68k</td><td>1.34k</td><td>1.07k</td><td>860</td><td>688</td><td>551</td></tr>
-                                <tr><td><span class="game-icon winder"></span></td><td>1.05k</td><td>840</td><td>672</td><td>538</td><td>430</td><td>344</td><td>275</td><td>220</td></tr>
+                                <tr>
+                                    <td><span class="game-icon hammer-icon"></span></td>
+                                    <td>2.62k</td>
+                                    <td>2.1k</td>
+                                    <td>1.68k</td>
+                                    <td>1.34k</td>
+                                    <td>1.07k</td>
+                                    <td>860</td>
+                                    <td>688</td>
+                                    <td>551</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon coin"></span></td>
+                                    <td>131k</td>
+                                    <td>105k</td>
+                                    <td>84k</td>
+                                    <td>67.2k</td>
+                                    <td>53.7k</td>
+                                    <td>43k</td>
+                                    <td>34.4k</td>
+                                    <td>27.5k</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon ticket-green"></span></td>
+                                    <td>3.15k</td>
+                                    <td>2.52k</td>
+                                    <td>2.01k</td>
+                                    <td>1.61k</td>
+                                    <td>1.29k</td>
+                                    <td>1.03k</td>
+                                    <td>826</td>
+                                    <td>661</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon key-orange"></span></td>
+                                    <td>11</td>
+                                    <td>8</td>
+                                    <td>7</td>
+                                    <td>5</td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon potion"></span></td>
+                                    <td>2.62k</td>
+                                    <td>2.1k</td>
+                                    <td>1.68k</td>
+                                    <td>1.34k</td>
+                                    <td>1.07k</td>
+                                    <td>860</td>
+                                    <td>688</td>
+                                    <td>551</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon winder"></span></td>
+                                    <td>1.05k</td>
+                                    <td>840</td>
+                                    <td>672</td>
+                                    <td>538</td>
+                                    <td>430</td>
+                                    <td>344</td>
+                                    <td>275</td>
+                                    <td>220</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -988,16 +1872,83 @@
                             <thead>
                                 <tr>
                                     <th>Reward</th>
-                                    <th>1st</th><th>2nd</th><th>3rd</th><th>4-5</th><th>6-10</th><th>11-20</th><th>21-50</th><th>51-100</th>
+                                    <th>1st</th>
+                                    <th>2nd</th>
+                                    <th>3rd</th>
+                                    <th>4-5</th>
+                                    <th>6-10</th>
+                                    <th>11-20</th>
+                                    <th>21-50</th>
+                                    <th>51-100</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="game-icon hammer-icon"></span></td><td>1.75k</td><td>1.4k</td><td>1.12k</td><td>896</td><td>717</td><td>573</td><td>459</td><td>367</td></tr>
-                                <tr><td><span class="game-icon coin"></span></td><td>87.5k</td><td>70k</td><td>56k</td><td>44.8k</td><td>35.8k</td><td>28.6k</td><td>22.9k</td><td>18.3k</td></tr>
-                                <tr><td><span class="game-icon ticket-green"></span></td><td>2.1k</td><td>1.68k</td><td>1.34k</td><td>1.07k</td><td>860</td><td>688</td><td>551</td><td>440</td></tr>
-                                <tr><td><span class="game-icon key-orange"></span></td><td>7</td><td>6</td><td>4</td><td>4</td><td>3</td><td>2</td><td>2</td><td>1</td></tr>
-                                <tr><td><span class="game-icon potion"></span></td><td>1.75k</td><td>1.4k</td><td>1.12k</td><td>896</td><td>717</td><td>573</td><td>459</td><td>367</td></tr>
-                                <tr><td><span class="game-icon winder"></span></td><td>700</td><td>560</td><td>448</td><td>358</td><td>287</td><td>229</td><td>184</td><td>147</td></tr>
+                                <tr>
+                                    <td><span class="game-icon hammer-icon"></span></td>
+                                    <td>1.75k</td>
+                                    <td>1.4k</td>
+                                    <td>1.12k</td>
+                                    <td>896</td>
+                                    <td>717</td>
+                                    <td>573</td>
+                                    <td>459</td>
+                                    <td>367</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon coin"></span></td>
+                                    <td>87.5k</td>
+                                    <td>70k</td>
+                                    <td>56k</td>
+                                    <td>44.8k</td>
+                                    <td>35.8k</td>
+                                    <td>28.6k</td>
+                                    <td>22.9k</td>
+                                    <td>18.3k</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon ticket-green"></span></td>
+                                    <td>2.1k</td>
+                                    <td>1.68k</td>
+                                    <td>1.34k</td>
+                                    <td>1.07k</td>
+                                    <td>860</td>
+                                    <td>688</td>
+                                    <td>551</td>
+                                    <td>440</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon key-orange"></span></td>
+                                    <td>7</td>
+                                    <td>6</td>
+                                    <td>4</td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon potion"></span></td>
+                                    <td>1.75k</td>
+                                    <td>1.4k</td>
+                                    <td>1.12k</td>
+                                    <td>896</td>
+                                    <td>717</td>
+                                    <td>573</td>
+                                    <td>459</td>
+                                    <td>367</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon winder"></span></td>
+                                    <td>700</td>
+                                    <td>560</td>
+                                    <td>448</td>
+                                    <td>358</td>
+                                    <td>287</td>
+                                    <td>229</td>
+                                    <td>184</td>
+                                    <td>147</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -1015,16 +1966,83 @@
                             <thead>
                                 <tr>
                                     <th>Reward</th>
-                                    <th>1st</th><th>2nd</th><th>3rd</th><th>4-5</th><th>6-10</th><th>11-20</th><th>21-50</th><th>51-100</th>
+                                    <th>1st</th>
+                                    <th>2nd</th>
+                                    <th>3rd</th>
+                                    <th>4-5</th>
+                                    <th>6-10</th>
+                                    <th>11-20</th>
+                                    <th>21-50</th>
+                                    <th>51-100</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="game-icon hammer-icon"></span></td><td>1.22k</td><td>980</td><td>784</td><td>627</td><td>502</td><td>401</td><td>321</td><td>257</td></tr>
-                                <tr><td><span class="game-icon coin"></span></td><td>61.2k</td><td>49k</td><td>39.2k</td><td>31.3k</td><td>25k</td><td>20k</td><td>16k</td><td>12.8k</td></tr>
-                                <tr><td><span class="game-icon ticket-green"></span></td><td>1.47k</td><td>1.17k</td><td>941</td><td>753</td><td>502</td><td>482</td><td>385</td><td>308</td></tr>
-                                <tr><td><span class="game-icon key-orange"></span></td><td>5</td><td>4</td><td>3</td><td>2</td><td>2</td><td>2</td><td>1</td><td>1</td></tr>
-                                <tr><td><span class="game-icon potion"></span></td><td>1.22k</td><td>980</td><td>784</td><td>627</td><td>502</td><td>401</td><td>321</td><td>257</td></tr>
-                                <tr><td><span class="game-icon winder"></span></td><td>490</td><td>392</td><td>314</td><td>251</td><td>201</td><td>161</td><td>128</td><td>-</td></tr>
+                                <tr>
+                                    <td><span class="game-icon hammer-icon"></span></td>
+                                    <td>1.22k</td>
+                                    <td>980</td>
+                                    <td>784</td>
+                                    <td>627</td>
+                                    <td>502</td>
+                                    <td>401</td>
+                                    <td>321</td>
+                                    <td>257</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon coin"></span></td>
+                                    <td>61.2k</td>
+                                    <td>49k</td>
+                                    <td>39.2k</td>
+                                    <td>31.3k</td>
+                                    <td>25k</td>
+                                    <td>20k</td>
+                                    <td>16k</td>
+                                    <td>12.8k</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon ticket-green"></span></td>
+                                    <td>1.47k</td>
+                                    <td>1.17k</td>
+                                    <td>941</td>
+                                    <td>753</td>
+                                    <td>502</td>
+                                    <td>482</td>
+                                    <td>385</td>
+                                    <td>308</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon key-orange"></span></td>
+                                    <td>5</td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon potion"></span></td>
+                                    <td>1.22k</td>
+                                    <td>980</td>
+                                    <td>784</td>
+                                    <td>627</td>
+                                    <td>502</td>
+                                    <td>401</td>
+                                    <td>321</td>
+                                    <td>257</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon winder"></span></td>
+                                    <td>490</td>
+                                    <td>392</td>
+                                    <td>314</td>
+                                    <td>251</td>
+                                    <td>201</td>
+                                    <td>161</td>
+                                    <td>128</td>
+                                    <td>-</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -1042,16 +2060,83 @@
                             <thead>
                                 <tr>
                                     <th>Reward</th>
-                                    <th>1st</th><th>2nd</th><th>3rd</th><th>4-5</th><th>6-10</th><th>11-20</th><th>21-50</th><th>51-100</th>
+                                    <th>1st</th>
+                                    <th>2nd</th>
+                                    <th>3rd</th>
+                                    <th>4-5</th>
+                                    <th>6-10</th>
+                                    <th>11-20</th>
+                                    <th>21-50</th>
+                                    <th>51-100</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="game-icon hammer-icon"></span></td><td>700</td><td>550</td><td>450</td><td>350</td><td>290</td><td>230</td><td>190</td><td>150</td></tr>
-                                <tr><td><span class="game-icon coin"></span></td><td>35k</td><td>28k</td><td>22.4k</td><td>17.9k</td><td>14.3k</td><td>11.4k</td><td>9.17k</td><td>7.34k</td></tr>
-                                <tr><td><span class="game-icon ticket-green"></span></td><td>840</td><td>672</td><td>538</td><td>430</td><td>344</td><td>275</td><td>220</td><td>176</td></tr>
-                                <tr><td><span class="game-icon key-orange"></span></td><td>3</td><td>2</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-                                <tr><td><span class="game-icon potion"></span></td><td>700</td><td>560</td><td>448</td><td>358</td><td>287</td><td>229</td><td>184</td><td>147</td></tr>
-                                <tr><td><span class="game-icon winder"></span></td><td>280</td><td>230</td><td>180</td><td>150</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr>
+                                    <td><span class="game-icon hammer-icon"></span></td>
+                                    <td>700</td>
+                                    <td>550</td>
+                                    <td>450</td>
+                                    <td>350</td>
+                                    <td>290</td>
+                                    <td>230</td>
+                                    <td>190</td>
+                                    <td>150</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon coin"></span></td>
+                                    <td>35k</td>
+                                    <td>28k</td>
+                                    <td>22.4k</td>
+                                    <td>17.9k</td>
+                                    <td>14.3k</td>
+                                    <td>11.4k</td>
+                                    <td>9.17k</td>
+                                    <td>7.34k</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon ticket-green"></span></td>
+                                    <td>840</td>
+                                    <td>672</td>
+                                    <td>538</td>
+                                    <td>430</td>
+                                    <td>344</td>
+                                    <td>275</td>
+                                    <td>220</td>
+                                    <td>176</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon key-orange"></span></td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon potion"></span></td>
+                                    <td>700</td>
+                                    <td>560</td>
+                                    <td>448</td>
+                                    <td>358</td>
+                                    <td>287</td>
+                                    <td>229</td>
+                                    <td>184</td>
+                                    <td>147</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon winder"></span></td>
+                                    <td>280</td>
+                                    <td>230</td>
+                                    <td>180</td>
+                                    <td>150</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -1069,16 +2154,83 @@
                             <thead>
                                 <tr>
                                     <th>Reward</th>
-                                    <th>1st</th><th>2nd</th><th>3rd</th><th>4-5</th><th>6-10</th><th>11-20</th><th>21-50</th><th>51-100</th>
+                                    <th>1st</th>
+                                    <th>2nd</th>
+                                    <th>3rd</th>
+                                    <th>4-5</th>
+                                    <th>6-10</th>
+                                    <th>11-20</th>
+                                    <th>21-50</th>
+                                    <th>51-100</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="game-icon hammer-icon"></span></td><td>350</td><td>280</td><td>220</td><td>180</td><td>140</td><td>110</td><td>90</td><td>70</td></tr>
-                                <tr><td><span class="game-icon coin"></span></td><td>17.5k</td><td>14k</td><td>11.2k</td><td>9k</td><td>7.1k</td><td>5.7k</td><td>4.5k</td><td>3.6k</td></tr>
-                                <tr><td><span class="game-icon ticket-green"></span></td><td>420</td><td>330</td><td>270</td><td>210</td><td>170</td><td>130</td><td>110</td><td>90</td></tr>
-                                <tr><td><span class="game-icon key-orange"></span></td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr><td><span class="game-icon potion"></span></td><td>350</td><td>280</td><td>220</td><td>180</td><td>140</td><td>110</td><td>90</td><td>70</td></tr>
-                                <tr><td><span class="game-icon winder"></span></td><td>70</td><td>20</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr>
+                                    <td><span class="game-icon hammer-icon"></span></td>
+                                    <td>350</td>
+                                    <td>280</td>
+                                    <td>220</td>
+                                    <td>180</td>
+                                    <td>140</td>
+                                    <td>110</td>
+                                    <td>90</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon coin"></span></td>
+                                    <td>17.5k</td>
+                                    <td>14k</td>
+                                    <td>11.2k</td>
+                                    <td>9k</td>
+                                    <td>7.1k</td>
+                                    <td>5.7k</td>
+                                    <td>4.5k</td>
+                                    <td>3.6k</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon ticket-green"></span></td>
+                                    <td>420</td>
+                                    <td>330</td>
+                                    <td>270</td>
+                                    <td>210</td>
+                                    <td>170</td>
+                                    <td>130</td>
+                                    <td>110</td>
+                                    <td>90</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon key-orange"></span></td>
+                                    <td>2</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon potion"></span></td>
+                                    <td>350</td>
+                                    <td>280</td>
+                                    <td>220</td>
+                                    <td>180</td>
+                                    <td>140</td>
+                                    <td>110</td>
+                                    <td>90</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon winder"></span></td>
+                                    <td>70</td>
+                                    <td>20</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -1096,16 +2248,83 @@
                             <thead>
                                 <tr>
                                     <th>Reward</th>
-                                    <th>1st</th><th>2nd</th><th>3rd</th><th>4-5</th><th>6-10</th><th>11-20</th><th>21-50</th><th>51-100</th>
+                                    <th>1st</th>
+                                    <th>2nd</th>
+                                    <th>3rd</th>
+                                    <th>4-5</th>
+                                    <th>6-10</th>
+                                    <th>11-20</th>
+                                    <th>21-50</th>
+                                    <th>51-100</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><span class="game-icon hammer-icon"></span></td><td>175</td><td>140</td><td>110</td><td>90</td><td>70</td><td>50</td><td>40</td><td>30</td></tr>
-                                <tr><td><span class="game-icon coin"></span></td><td>9k</td><td>7k</td><td>5.6k</td><td>4.5k</td><td>3.5k</td><td>2.8k</td><td>2.29k</td><td>1.8k</td></tr>
-                                <tr><td><span class="game-icon ticket-green"></span></td><td>210</td><td>170</td><td>140</td><td>100</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr><td><span class="game-icon key-orange"></span></td><td>1</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr><td><span class="game-icon potion"></span></td><td>180</td><td>140</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-                                <tr><td><span class="game-icon winder"></span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+                                <tr>
+                                    <td><span class="game-icon hammer-icon"></span></td>
+                                    <td>175</td>
+                                    <td>140</td>
+                                    <td>110</td>
+                                    <td>90</td>
+                                    <td>70</td>
+                                    <td>50</td>
+                                    <td>40</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon coin"></span></td>
+                                    <td>9k</td>
+                                    <td>7k</td>
+                                    <td>5.6k</td>
+                                    <td>4.5k</td>
+                                    <td>3.5k</td>
+                                    <td>2.8k</td>
+                                    <td>2.29k</td>
+                                    <td>1.8k</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon ticket-green"></span></td>
+                                    <td>210</td>
+                                    <td>170</td>
+                                    <td>140</td>
+                                    <td>100</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon key-orange"></span></td>
+                                    <td>1</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon potion"></span></td>
+                                    <td>180</td>
+                                    <td>140</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="game-icon winder"></span></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -1122,9 +2341,12 @@
                         Dungeon Basics
                     </h3>
                     <div class="info-list">
-                        <p><span class="game-icon key-orange"></span> <strong>Keys reset at midnight</strong> and are only used if you beat the level</p>
-                        <p><span class="game-icon timer"></span> You can "sweep last" to autocomplete your highest-completed level</p>
-                        <p><span class="game-icon star"></span> Keys over 2/2 remain until used - daily reset only refills to 2/2</p>
+                        <p><span class="game-icon key-orange"></span> <strong>Keys reset at midnight</strong> and are
+                            only used if you beat the level</p>
+                        <p><span class="game-icon timer"></span> You can "sweep last" to autocomplete your
+                            highest-completed level</p>
+                        <p><span class="game-icon star"></span> Keys over 2/2 remain until used - daily reset only
+                            refills to 2/2</p>
                     </div>
                 </div>
 
@@ -1135,7 +2357,8 @@
                                 <span class="game-icon key-gray"></span>
                                 <span class="dungeon-name">Hammer Thief</span>
                                 <span class="dungeon-sep">—</span>
-                                <span class="dungeon-reward"><span class="game-icon hammer-icon"></span> Hammers & <span class="game-icon coin"></span> Coins</span>
+                                <span class="dungeon-reward"><span class="game-icon hammer-icon"></span> Hammers & <span
+                                        class="game-icon coin"></span> Coins</span>
                             </div>
                             <div class="dungeon-unlock">Unlocks at Stage 2-10</div>
                         </div>
@@ -1146,7 +2369,8 @@
                                 <span class="game-icon key-green"></span>
                                 <span class="dungeon-name">Ghost Town</span>
                                 <span class="dungeon-sep">—</span>
-                                <span class="dungeon-reward"><span class="game-icon ticket-green"></span> Ability Tickets</span>
+                                <span class="dungeon-reward"><span class="game-icon ticket-green"></span> Ability
+                                    Tickets</span>
                             </div>
                             <div class="dungeon-unlock">Unlocks at Stage 2-15</div>
                         </div>
@@ -1198,22 +2422,78 @@
                     <div class="data-table">
                         <table>
                             <thead>
-                                <tr><th>Stat</th><th>Per Item</th><th>Max Total*</th></tr>
+                                <tr>
+                                    <th>Stat</th>
+                                    <th>Per Item</th>
+                                    <th>Max Total*</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td>Attack Speed</td><td>40%</td><td>480%</td></tr>
-                                <tr><td>Block Chance</td><td>5%</td><td>60%</td></tr>
-                                <tr><td>Critical Chance</td><td>12%</td><td>144%**</td></tr>
-                                <tr><td>Critical Damage</td><td>100%</td><td>1200%</td></tr>
-                                <tr><td>Damage</td><td>15%</td><td>180%</td></tr>
-                                <tr><td>Double Chance</td><td>40%</td><td>480%**</td></tr>
-                                <tr><td>Health</td><td>15%</td><td>180%</td></tr>
-                                <tr><td>Health Regen</td><td>6%</td><td>72%</td></tr>
-                                <tr><td>Lifesteal</td><td>20%</td><td>240%</td></tr>
-                                <tr><td>Melee Damage</td><td>50%</td><td>600%</td></tr>
-                                <tr><td>Ranged Damage</td><td>15%</td><td>180%</td></tr>
-                                <tr><td>Skill Cooldown</td><td>7%</td><td>84%</td></tr>
-                                <tr><td>Skill Damage</td><td>30%</td><td>360%</td></tr>
+                                <tr>
+                                    <td>Attack Speed</td>
+                                    <td>40%</td>
+                                    <td>480%</td>
+                                </tr>
+                                <tr>
+                                    <td>Block Chance</td>
+                                    <td>5%</td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr>
+                                    <td>Critical Chance</td>
+                                    <td>12%</td>
+                                    <td>144%**</td>
+                                </tr>
+                                <tr>
+                                    <td>Critical Damage</td>
+                                    <td>100%</td>
+                                    <td>1200%</td>
+                                </tr>
+                                <tr>
+                                    <td>Damage</td>
+                                    <td>15%</td>
+                                    <td>180%</td>
+                                </tr>
+                                <tr>
+                                    <td>Double Chance</td>
+                                    <td>40%</td>
+                                    <td>480%**</td>
+                                </tr>
+                                <tr>
+                                    <td>Health</td>
+                                    <td>15%</td>
+                                    <td>180%</td>
+                                </tr>
+                                <tr>
+                                    <td>Health Regen</td>
+                                    <td>6%</td>
+                                    <td>72%</td>
+                                </tr>
+                                <tr>
+                                    <td>Lifesteal</td>
+                                    <td>20%</td>
+                                    <td>240%</td>
+                                </tr>
+                                <tr>
+                                    <td>Melee Damage</td>
+                                    <td>50%</td>
+                                    <td>600%</td>
+                                </tr>
+                                <tr>
+                                    <td>Ranged Damage</td>
+                                    <td>15%</td>
+                                    <td>180%</td>
+                                </tr>
+                                <tr>
+                                    <td>Skill Cooldown</td>
+                                    <td>7%</td>
+                                    <td>84%</td>
+                                </tr>
+                                <tr>
+                                    <td>Skill Damage</td>
+                                    <td>30%</td>
+                                    <td>360%</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -1229,18 +2509,44 @@
                         Substat Effects
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item"><p><strong>Damage:</strong> Increases all weapon and skill damage</p></div>
-                        <div class="faq-item"><p><strong>Health:</strong> Increases your base health by x%</p></div>
-                        <div class="faq-item"><p><strong>Ranged Damage:</strong> Only affects ranged weapons</p></div>
-                        <div class="faq-item"><p><strong>Melee Damage:</strong> Only affects melee weapons (useless without one equipped)</p></div>
-                        <div class="faq-item"><p><strong>Skill Damage:</strong> Boosts skill power and buff skill HP and damage</p></div>
-                        <div class="faq-item"><p><strong>Health Regen:</strong> Restores HP every second, strong early on</p></div>
-                        <div class="faq-item"><p><strong>Lifesteal:</strong> Converts a percentage of weapon damage into HP (pairs with Attack Speed and Double Chance)</p></div>
-                        <div class="faq-item"><p><strong>Attack Speed:</strong> Faster attacks mean more hits and more lifesteal</p></div>
-                        <div class="faq-item"><p><strong>Double Chance:</strong> Chance for main weapon to strike twice</p></div>
-                        <div class="faq-item"><p><strong>Crit Chance:</strong> Chance to land a critical hit (base 120% damage)</p></div>
-                        <div class="faq-item"><p><strong>Crit Damage:</strong> Raises crit multiplier, combine with Crit Chance</p></div>
-                        <div class="faq-item"><p><strong>Block:</strong> Chance to block incoming hits</p></div>
+                        <div class="faq-item">
+                            <p><strong>Damage:</strong> Increases all weapon and skill damage</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Health:</strong> Increases your base health by x%</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Ranged Damage:</strong> Only affects ranged weapons</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Melee Damage:</strong> Only affects melee weapons (useless without one equipped)
+                            </p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Skill Damage:</strong> Boosts skill power and buff skill HP and damage</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Health Regen:</strong> Restores HP every second, strong early on</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Lifesteal:</strong> Converts a percentage of weapon damage into HP (pairs with
+                                Attack Speed and Double Chance)</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Attack Speed:</strong> Faster attacks mean more hits and more lifesteal</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Double Chance:</strong> Chance for main weapon to strike twice</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Crit Chance:</strong> Chance to land a critical hit (base 120% damage)</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Crit Damage:</strong> Raises crit multiplier, combine with Crit Chance</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Block:</strong> Chance to block incoming hits</p>
+                        </div>
                     </div>
                     <p class="info-note">Ranged weapons generally outperform melee unless you have specific bonuses.</p>
                 </div>
@@ -1286,13 +2592,29 @@
                         Quick Tips Summary
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item"><p><span class="game-icon star"></span> Save resources for Clan War days</p></div>
-                        <div class="faq-item"><p><span class="game-icon swords"></span> Stack Attack Speed, Lifesteal, and Double Chance</p></div>
-                        <div class="faq-item"><p><span class="game-icon swords"></span> Ranged weapons are better than Melee for most players</p></div>
-                        <div class="faq-item"><p><span class="game-icon ticket-green"></span> Save Skill Tickets until odds improve</p></div>
-                        <div class="faq-item"><p><span class="game-icon star"></span> Premium Pass is the best investment</p></div>
-                        <div class="faq-item"><p><span class="egg-icon small common"></span> Regen pets are amazing early game</p></div>
-                        <div class="faq-item"><p><span class="game-icon key-orange"></span> Always clear your Dungeons daily</p></div>
+                        <div class="faq-item">
+                            <p><span class="game-icon star"></span> Save resources for Clan War days</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon swords"></span> Stack Attack Speed, Lifesteal, and Double Chance
+                            </p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon swords"></span> Ranged weapons are better than Melee for most
+                                players</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon ticket-green"></span> Save Skill Tickets until odds improve</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon star"></span> Premium Pass is the best investment</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="egg-icon small common"></span> Regen pets are amazing early game</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon key-orange"></span> Always clear your Dungeons daily</p>
+                        </div>
                     </div>
                 </div>
 
@@ -1302,9 +2624,16 @@
                         Smart Spending Tips
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item"><p><strong>Premium Pass:</strong> Best value overall</p></div>
-                        <div class="faq-item"><p><strong>Dungeon Key & Clockwinder Offers:</strong> Great for steady progress</p></div>
-                        <div class="faq-item"><p><strong>Skill Tickets:</strong> Always check skill odds before spending — wait until your desired rarity's chance increases</p></div>
+                        <div class="faq-item">
+                            <p><strong>Premium Pass:</strong> Best value overall</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Dungeon Key & Clockwinder Offers:</strong> Great for steady progress</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><strong>Skill Tickets:</strong> Always check skill odds before spending — wait until your
+                                desired rarity's chance increases</p>
+                        </div>
                     </div>
                 </div>
 
@@ -1314,12 +2643,24 @@
                         Game Limits
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item"><p><span class="egg-icon small common"></span> <strong>Pet max level:</strong> 100</p></div>
-                        <div class="faq-item"><p><span class="game-icon star"></span> <strong>Skill max level:</strong> 255</p></div>
-                        <div class="faq-item"><p><span class="game-icon timer"></span> <strong>Base offline timer:</strong> 4 hours</p></div>
-                        <div class="faq-item"><p><span class="game-icon coin"></span> <strong>Kills give:</strong> 1 coin each</p></div>
-                        <div class="faq-item"><p><span class="game-icon crown"></span> <strong>Creating a clan:</strong> 150 gems</p></div>
-                        <div class="faq-item"><p><span class="game-icon star"></span> <strong>Rename (after first):</strong> 200 gems</p></div>
+                        <div class="faq-item">
+                            <p><span class="egg-icon small common"></span> <strong>Pet max level:</strong> 100</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon star"></span> <strong>Skill max level:</strong> 255</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon timer"></span> <strong>Base offline timer:</strong> 4 hours</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon coin"></span> <strong>Kills give:</strong> 1 coin each</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon crown"></span> <strong>Creating a clan:</strong> 150 gems</p>
+                        </div>
+                        <div class="faq-item">
+                            <p><span class="game-icon star"></span> <strong>Rename (after first):</strong> 200 gems</p>
+                        </div>
                     </div>
                 </div>
 
@@ -1329,8 +2670,14 @@
                         Mounts Are Key
                     </h3>
                     <div class="faq-list">
-                        <div class="faq-item"><p>Mounts can be earned from: Clan War Rewards, Weekly League Rewards, Shop Offers, Premium Pass</p></div>
-                        <div class="faq-item"><p>They're among the <strong>best long-term upgrades</strong> — invest early and consistently!</p></div>
+                        <div class="faq-item">
+                            <p>Mounts can be earned from: Clan War Rewards, Weekly League Rewards, Shop Offers, Premium
+                                Pass</p>
+                        </div>
+                        <div class="faq-item">
+                            <p>They're among the <strong>best long-term upgrades</strong> — invest early and
+                                consistently!</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1338,7 +2685,8 @@
 
         <footer class="footer">
             <p>ForgeMaster Helper • Last update: 31/12/2025</p>
-            <p style="font-size: 0.75rem; opacity: 0.6;">Created by <a href="https://1vcian.me" target="_blank" style="color: inherit;">Lucian Medrihan</a></p>
+            <p style="font-size: 0.75rem; opacity: 0.6;">Created by <a href="https://1vcian.me" target="_blank"
+                    style="color: inherit;">Lucian Medrihan</a></p>
         </footer>
     </div>
 

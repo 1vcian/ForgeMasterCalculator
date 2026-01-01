@@ -123,11 +123,12 @@ const tierClasses = {
 
 // DOM Elements
 const forgeLevelSelect = document.getElementById('forgeLevel');
+const freeSummonPercentInput = document.getElementById('freeSummonPercent');
 const hammerCountInput = document.getElementById('hammerCount');
 const targetExpInput = document.getElementById('targetExp');
 const hammerInputGroup = document.getElementById('hammerInputGroup');
 const targetInputGroup = document.getElementById('targetInputGroup');
-const calculateBtn = document.getElementById('calculateBtn');
+
 const calcModeBtn = document.getElementById('calcModeBtn');
 const targetModeBtn = document.getElementById('targetModeBtn');
 const resultsCard = document.getElementById('resultsCard');
@@ -188,12 +189,13 @@ function saveLevelToStorage(level) {
 function setupEventListeners() {
     calcModeBtn.addEventListener('click', () => switchMode('calculate'));
     targetModeBtn.addEventListener('click', () => switchMode('target'));
-    calculateBtn.addEventListener('click', calculate);
+
 
     forgeLevelSelect.addEventListener('change', () => {
         saveLevelToStorage(forgeLevelSelect.value);
         calculate();
     });
+    freeSummonPercentInput.addEventListener('input', debounce(calculate, 300));
     hammerCountInput.addEventListener('input', debounce(calculate, 300));
     targetExpInput.addEventListener('input', debounce(calculate, 300));
 
@@ -231,8 +233,7 @@ function switchMode(mode) {
     calcResults.classList.toggle('hidden', mode !== 'calculate');
     targetResults.classList.toggle('hidden', mode !== 'target');
 
-    calculateBtn.querySelector('.btn-text').textContent =
-        mode === 'calculate' ? 'Calculate' : 'Find Hammers';
+
 
     calculate();
 }
@@ -255,19 +256,23 @@ function calculateExpPerHammer(level) {
 function calculate() {
     const level = parseInt(forgeLevelSelect.value);
     const expPerHammer = calculateExpPerHammer(level);
+    const freeSummonPercent = parseFloat(freeSummonPercentInput.value) || 0;
+    const freeMultiplier = 1 / (1 - (freeSummonPercent / 100));
 
     if (currentMode === 'calculate') {
         const hammerCount = parseInt(hammerCountInput.value) || 0;
-        const totalExp = expPerHammer * hammerCount;
+        const effectiveHammers = hammerCount * freeMultiplier;
+        const totalExp = expPerHammer * effectiveHammers;
 
         expectedExpEl.textContent = formatNumber(totalExp);
         expPerHammerEl.textContent = expPerHammer.toFixed(4);
     } else {
         const targetExp = parseInt(targetExpInput.value) || 0;
         const hammersNeeded = Math.ceil(targetExp / expPerHammer);
+        const actualHammersNeeded = Math.ceil(hammersNeeded / freeMultiplier);
         const expectedWithHammers = expPerHammer * hammersNeeded;
 
-        recommendedHammersEl.textContent = formatNumber(hammersNeeded);
+        recommendedHammersEl.textContent = formatNumber(actualHammersNeeded);
         expectedWithRecommendedEl.textContent = formatNumber(expectedWithHammers);
     }
 
