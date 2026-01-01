@@ -14,6 +14,7 @@ A comprehensive calculator and game guide for **Forge Master**. Plan your progre
 - **🔨 Forge EXP Calculator** - Calculate expected EXP based on forge level and hammer count. Set a target EXP to find recommended hammer count.
 - **🐴 Mount Points Calculator** - Calculate expected war points from mount summons and find winders needed for target points.
 - **🥚 Egg Hatch Calculator** - View egg drop rates by difficulty and calculate hatching probabilities.
+- **💰 Coin Calculator** - Estimate expected gold earnings from forging with customizable max item levels.
 
 ### Complete Game Guide
 - **🔓 Unlocks** - Game progression and unlock requirements

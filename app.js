@@ -140,6 +140,10 @@ const recommendedHammersEl = document.getElementById('recommendedHammers');
 const expectedWithRecommendedEl = document.getElementById('expectedWithRecommended');
 const probabilityGrid = document.getElementById('probabilityGrid');
 
+const maxItemLevelInput = document.getElementById('maxItemLevel');
+const priceBonusInput = document.getElementById('priceBonus');
+const estimatedCoinsEl = document.getElementById('estimatedCoins');
+
 // Current mode
 let currentMode = 'calculate';
 
@@ -205,6 +209,9 @@ function setupEventListeners() {
     targetExpInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') calculate();
     });
+
+    maxItemLevelInput.addEventListener('input', debounce(calculate, 300));
+    priceBonusInput.addEventListener('input', debounce(calculate, 300));
 }
 
 // Debounce function for input handling
@@ -266,6 +273,38 @@ function calculate() {
 
         expectedExpEl.textContent = formatNumber(totalExp);
         expPerHammerEl.textContent = expPerHammer.toFixed(4);
+
+        // Calculate Coins
+        const maxLevel = parseInt(maxItemLevelInput.value) || 100;
+        const priceBonus = parseFloat(priceBonusInput.value) || 0;
+        const bonusMultiplier = 1 + (priceBonus / 100);
+
+        const probs = forgeProbabilities[level];
+        let standardProb = 0;
+        if (probs) {
+            standardProb = Math.max(...Object.values(probs));
+        }
+        const rareProb = 100 - standardProb;
+
+        const priceBase = 20;
+        // Standard items: Max - 5 (ensure min level 1)
+        const standardItemLevel = Math.max(1, maxLevel - 5);
+        const priceStandard = priceBase * Math.pow(1.01, standardItemLevel - 1);
+
+        // Rare items Min: Level 1
+        const priceRareMin = priceBase; // 20 * 1.01^0
+
+        // Rare items Max: Max Level
+        const priceRareMax = priceBase * Math.pow(1.01, maxLevel - 1);
+
+        // Weighted Averages
+        const avgPriceMin = ((standardProb * priceStandard) + (rareProb * priceRareMin)) / 100;
+        const avgPriceMax = ((standardProb * priceStandard) + (rareProb * priceRareMax)) / 100;
+
+        const totalCoinsMin = avgPriceMin * effectiveHammers * bonusMultiplier;
+        const totalCoinsMax = avgPriceMax * effectiveHammers * bonusMultiplier;
+
+        estimatedCoinsEl.textContent = `${formatNumber(totalCoinsMin)} - ${formatNumber(totalCoinsMax)}`;
     } else {
         const targetExp = parseInt(targetExpInput.value) || 0;
         const hammersNeeded = Math.ceil(targetExp / expPerHammer);

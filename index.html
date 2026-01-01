@@ -128,6 +128,27 @@
                         placeholder="Enter hammer count">
                 </div>
 
+                <!-- Coin Calculator Inputs -->
+                <div class="input-group" id="coinInputs">
+                    <div class="split-inputs">
+                        <div class="half-input">
+                            <label for="maxItemLevel">
+                                <span class="game-icon star"></span>
+                                Max Item Lvl
+                            </label>
+                            <input type="number" id="maxItemLevel" min="1" max="200" value="100"
+                                placeholder="Max Level">
+                        </div>
+                        <div class="half-input">
+                            <label for="priceBonus">
+                                <span class="game-icon coin-icon"></span>
+                                Price % Bonus
+                            </label>
+                            <input type="number" id="priceBonus" min="0" max="1000" value="0" placeholder="Bonus %">
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Target EXP Input (Target Mode) -->
                 <div class="input-group hidden" id="targetInputGroup">
                     <label for="targetExp">
@@ -160,6 +181,10 @@
                     <div class="result-item">
                         <span class="result-label">War Points per Hammer</span>
                         <span class="result-value" id="expPerHammer">0</span>
+                    </div>
+                    <div class="result-item highlight-alt">
+                        <span class="result-label">Est. Coins</span>
+                        <span class="result-value" id="estimatedCoins">0 - 0</span>
                     </div>
                 </div>
 
