@@ -280,26 +280,30 @@ function calculate() {
         const bonusMultiplier = 1 + (priceBonus / 100);
 
         const probs = forgeProbabilities[level];
-        let standardProb = 0;
+        let lowestProb = 0;
         if (probs) {
-            standardProb = Math.max(...Object.values(probs));
+            lowestProb = Math.min(...Object.values(probs));
         }
-        const rareProb = 100 - standardProb;
+        const standardProb = 100 - lowestProb;
 
         const priceBase = 20;
-        // Standard items: Max - 5 (ensure min level 1)
-        const standardItemLevel = Math.max(1, maxLevel - 5);
-        const priceStandard = priceBase * Math.pow(1.01, standardItemLevel - 1);
 
-        // Rare items Min: Level 1
-        const priceRareMin = priceBase; // 20 * 1.01^0
+        // Standard items Min: Max - 5 (ensure min level 1)
+        const standardItemLevelMin = Math.max(1, maxLevel - 5);
+        const priceStandardMin = priceBase * Math.pow(1.01, standardItemLevelMin - 1);
 
-        // Rare items Max: Max Level
-        const priceRareMax = priceBase * Math.pow(1.01, maxLevel - 1);
+        // Lowest Probability Item Min: Level 1
+        const priceLowestMin = priceBase; // 20 * 1.01^0
+
+        // Max Price for ALL items: at Max Level
+        const priceMax = priceBase * Math.pow(1.01, maxLevel - 1);
 
         // Weighted Averages
-        const avgPriceMin = ((standardProb * priceStandard) + (rareProb * priceRareMin)) / 100;
-        const avgPriceMax = ((standardProb * priceStandard) + (rareProb * priceRareMax)) / 100;
+        // Min: Standard uses Max-5, Lowest uses Level 1
+        const avgPriceMin = ((standardProb * priceStandardMin) + (lowestProb * priceLowestMin)) / 100;
+
+        // Max: All use Max Level
+        const avgPriceMax = priceMax;
 
         const totalCoinsMin = avgPriceMin * effectiveHammers * bonusMultiplier;
         const totalCoinsMax = avgPriceMax * effectiveHammers * bonusMultiplier;

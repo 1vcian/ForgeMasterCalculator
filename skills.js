@@ -212,7 +212,9 @@ function calculate() {
     const rates = generateSkillRatesForLevel(level);
 
     const costPerSummon = getCostPerSummon();
-    const pointsPerSummon = getExpectedPointsPerSummon(level);
+    // 5 items per summon action (plus free summon efficiency handled by multiplier)
+    const itemsPerAction = 5;
+    const pointsPerSummon = getExpectedPointsPerSummon(level) * itemsPerAction;
     const freeSummonPercent = parseFloat(freeSummonPercentInput.value) || 0;
     const freeMultiplier = 1 / (1 - (freeSummonPercent / 100));
 
