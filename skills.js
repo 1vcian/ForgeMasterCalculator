@@ -227,6 +227,9 @@ function calculate() {
         expectedPointsEl.textContent = formatNumber(expectedPoints);
         pointsPerSummonEl.textContent = formatNumber(pointsPerSummon);
         expectedSummonsEl.textContent = formatNumber(actualSummons);
+
+        // Total items is actual summons * 5
+        updateProbabilityBreakdown(rates, actualSummons * itemsPerAction);
     } else {
         const targetPoints = parseInt(targetPointsInput.value) || 0;
         const summonsNeeded = Math.ceil(targetPoints / pointsPerSummon);
@@ -236,12 +239,12 @@ function calculate() {
         gemsForTargetEl.textContent = formatNumber(actualTicketsNeeded);
         summonsNeededEl.textContent = formatNumber(summonsNeeded);
         pointsPerSummonTargetEl.textContent = formatNumber(pointsPerSummon);
-    }
 
-    updateProbabilityBreakdown(rates);
+        updateProbabilityBreakdown(rates, 0);
+    }
 }
 
-function updateProbabilityBreakdown(rates) {
+function updateProbabilityBreakdown(rates, totalItems = 0) {
     probabilityGrid.innerHTML = '';
 
     const tiers = ['common', 'rare', 'epic', 'legendary', 'ultimate', 'mythic'];
@@ -257,7 +260,14 @@ function updateProbabilityBreakdown(rates) {
 
             const valueSpan = document.createElement('span');
             valueSpan.className = 'prob-value';
-            valueSpan.textContent = `${(rates[tier] * 100).toFixed(2)}%`;
+
+            // Show count if we have total items calculated
+            if (totalItems > 0) {
+                const count = Math.floor(totalItems * rates[tier]);
+                valueSpan.innerHTML = `<span class="prob-percent">${(rates[tier] * 100).toFixed(2)}%</span> <span class="prob-count">(~${formatNumber(count)})</span>`;
+            } else {
+                valueSpan.textContent = `${(rates[tier] * 100).toFixed(2)}%`;
+            }
 
             const warPtsSpan = document.createElement('span');
             warPtsSpan.className = 'prob-war-pts';

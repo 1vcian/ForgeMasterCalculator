@@ -260,6 +260,8 @@ function calculate() {
         expectedPointsEl.textContent = formatNumber(expectedPoints);
         pointsPerMountEl.textContent = formatNumber(pointsPerMount);
         expectedMountsEl.textContent = formatNumber(expectedMounts);
+
+        updateProbabilityBreakdown(level, expectedMounts);
     } else {
         const targetPoints = parseInt(targetPointsInput.value) || 0;
         const mountsNeeded = Math.ceil(targetPoints / pointsPerMount);
@@ -269,9 +271,9 @@ function calculate() {
         windersForTargetEl.textContent = formatNumber(actualWindersNeeded);
         mountsNeededEl.textContent = formatNumber(mountsNeeded);
         pointsPerMountTargetEl.textContent = formatNumber(pointsPerMount);
-    }
 
-    updateProbabilityBreakdown(level);
+        updateProbabilityBreakdown(level, 0);
+    }
 }
 
 // Mount icons by tier for display
@@ -284,7 +286,7 @@ const mountTierIcons = {
     mythic: 'hover-disk'
 };
 
-function updateProbabilityBreakdown(level) {
+function updateProbabilityBreakdown(level, totalAttempts = 0) {
     const rates = mountSummonRates[level];
     probabilityGrid.innerHTML = '';
 
@@ -308,7 +310,14 @@ function updateProbabilityBreakdown(level) {
 
             const valueSpan = document.createElement('span');
             valueSpan.className = 'prob-value';
-            valueSpan.textContent = `${(rates[tier] * 100).toFixed(2)}%`;
+
+            // Show count if we have attempts
+            if (totalAttempts > 0) {
+                const count = Math.floor(totalAttempts * rates[tier]);
+                valueSpan.innerHTML = `<span class="prob-percent">${(rates[tier] * 100).toFixed(2)}%</span> <span class="prob-count">(~${formatNumber(count)})</span>`;
+            } else {
+                valueSpan.textContent = `${(rates[tier] * 100).toFixed(2)}%`;
+            }
 
             // Add war points info
             const warPtsSpan = document.createElement('span');

@@ -309,6 +309,8 @@ function calculate() {
         const totalCoinsMax = avgPriceMax * effectiveHammers * bonusMultiplier;
 
         estimatedCoinsEl.textContent = `${formatNumber(totalCoinsMin)} - ${formatNumber(totalCoinsMax)}`;
+
+        updateProbabilityBreakdown(level, effectiveHammers);
     } else {
         const targetExp = parseInt(targetExpInput.value) || 0;
         const hammersNeeded = Math.ceil(targetExp / expPerHammer);
@@ -317,13 +319,13 @@ function calculate() {
 
         recommendedHammersEl.textContent = formatNumber(actualHammersNeeded);
         expectedWithRecommendedEl.textContent = formatNumber(expectedWithHammers);
-    }
 
-    updateProbabilityBreakdown(level);
+        updateProbabilityBreakdown(level, 0);
+    }
 }
 
 // Update the probability breakdown grid
-function updateProbabilityBreakdown(level) {
+function updateProbabilityBreakdown(level, totalAttempts = 0) {
     const probs = forgeProbabilities[level];
     probabilityGrid.innerHTML = '';
 
@@ -343,7 +345,14 @@ function updateProbabilityBreakdown(level) {
 
         const valueSpan = document.createElement('span');
         valueSpan.className = 'prob-value';
-        valueSpan.textContent = `${probability.toFixed(2)}%`;
+
+        // Show count if we have attempts
+        if (totalAttempts > 0) {
+            const count = Math.floor(totalAttempts * (probability / 100));
+            valueSpan.innerHTML = `<span class="prob-percent">${probability.toFixed(2)}%</span> <span class="prob-count">(~${formatNumber(count)})</span>`;
+        } else {
+            valueSpan.textContent = `${probability.toFixed(2)}%`;
+        }
 
         item.appendChild(tierSpan);
         item.appendChild(valueSpan);

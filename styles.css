@@ -675,6 +675,15 @@ body::after {
 .prob-value {
     color: var(--text-secondary);
     font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.prob-count {
+    color: var(--accent-primary);
+    font-size: 0.85em;
+    opacity: 0.9;
 }
 
 .prob-war-pts {
