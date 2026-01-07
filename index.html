@@ -131,8 +131,15 @@
 
                 <!-- Coin Calculator Inputs -->
                 <div class="input-group" id="coinInputs">
-                    <div class="split-inputs">
-                        <div class="half-input">
+                    <label style="margin-bottom: 0.5rem; display: block; line-height: 1.3;">
+                        <span class="game-icon coin-icon"></span>
+                        Coin Calculator <br>
+                        <span style="font-size: 0.85rem; font-weight: 400; opacity: 0.7;">
+                            Enter "Max Coin Val" seen in-game from a forge OR "Price % Bonus" from tech tree.
+                        </span>
+                    </label>
+                    <div class="split-inputs three-cols">
+                        <div class="input-wrapper">
                             <label for="maxItemLevel">
                                 <span class="game-icon star"></span>
                                 Max Item Lvl
@@ -140,12 +147,19 @@
                             <input type="number" id="maxItemLevel" min="1" max="200" value="100"
                                 placeholder="Max Level">
                         </div>
-                        <div class="half-input">
+                        <div class="input-wrapper">
+                            <label for="maxCoinValue">
+                                <span class="game-icon coin-icon"></span>
+                                Max Coin Val
+                            </label>
+                            <input type="number" id="maxCoinValue" min="0" value="54" placeholder="Max Coin">
+                        </div>
+                        <div class="input-wrapper">
                             <label for="priceBonus">
                                 <span class="game-icon coin-icon"></span>
                                 Price % Bonus
                             </label>
-                            <input type="number" id="priceBonus" min="0" max="1000" value="0" placeholder="Bonus %">
+                            <input type="number" id="priceBonus" min="0" max="5000" value="0" placeholder="Bonus %">
                         </div>
                     </div>
                 </div>
