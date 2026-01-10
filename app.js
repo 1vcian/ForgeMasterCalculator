@@ -142,7 +142,6 @@ const probabilityGrid = document.getElementById('probabilityGrid');
 
 const maxItemLevelInput = document.getElementById('maxItemLevel');
 const priceBonusInput = document.getElementById('priceBonus');
-const maxCoinValueInput = document.getElementById('maxCoinValue');
 const estimatedCoinsEl = document.getElementById('estimatedCoins');
 
 // Current mode
@@ -213,25 +212,6 @@ function setupEventListeners() {
 
     maxItemLevelInput.addEventListener('input', debounce(calculate, 300));
     priceBonusInput.addEventListener('input', debounce(calculate, 300));
-
-    // Coin Sync Logic
-    maxItemLevelInput.addEventListener('input', () => {
-        // When Level changes, keep Bonus constant, update Max Coin
-        updateMaxCoinFromBonus();
-        debounce(calculate, 300)();
-    });
-
-    priceBonusInput.addEventListener('input', () => {
-        // User changed Bonus -> Update Max Coin
-        updateMaxCoinFromBonus();
-        debounce(calculate, 300)();
-    });
-
-    maxCoinValueInput.addEventListener('input', () => {
-        // User changed Max Coin -> Update Bonus
-        updateBonusFromMaxCoin();
-        debounce(calculate, 300)();
-    });
 }
 
 // Logic: Base Price = 20 * 1.01^(ItemLevel - 1)
@@ -239,38 +219,6 @@ function getBasePrice(level) {
     return 20 * Math.pow(1.01, level - 1);
 }
 
-function updateMaxCoinFromBonus() {
-    const level = parseInt(maxItemLevelInput.value) || 1;
-    const bonus = parseFloat(priceBonusInput.value) || 0;
-    const base = getBasePrice(level);
-
-    const maxCoin = base * (1 + bonus / 100);
-
-    // Avoid circular loop by checking if focused? No, this is triggered by specific inputs.
-    // Just set the value.
-    if (document.activeElement !== maxCoinValueInput) {
-        maxCoinValueInput.value = Math.ceil(maxCoin); // Round up
-    }
-}
-
-function updateBonusFromMaxCoin() {
-    const level = parseInt(maxItemLevelInput.value) || 1;
-    const maxCoin = parseFloat(maxCoinValueInput.value) || 0;
-    const base = getBasePrice(level);
-
-    if (base === 0) return;
-
-    // maxCoin = base * (1 + bonus/100)
-    // maxCoin/base = 1 + bonus/100
-    // (maxCoin/base - 1) * 100 = bonus
-
-    let bonus = ((maxCoin / base) - 1) * 100;
-    if (bonus < 0) bonus = 0; // Clamp min bonus
-
-    if (document.activeElement !== priceBonusInput) {
-        priceBonusInput.value = Math.ceil(bonus); // Round up
-    }
-}
 
 
 // Debounce function for input handling
